@@ -4,9 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
-    @graph = Koala::Facebook::GraphAPI.new(@user.token)
-    @graph.put_wall_post("")
   end
 
   def show
