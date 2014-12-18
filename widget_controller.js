@@ -15,5 +15,11 @@ var widgetContoller = function(start, stop) {
   });
 };
 
+widgetContoller.prototype.returnSnippet = function() {
+  widget.getPosition(function(pos){
+    console.log(pos);
+  })
+}
+
 test = new widgetContoller(95,120);
-Mousetrap.bind('command+j', function() { this.widget.getPosition(function(pos){alert(pos)}) }).bind(test);
+test2 = Mousetrap.bindGlobal('command+j', function(){test.returnSnippet()})
