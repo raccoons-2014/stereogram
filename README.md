@@ -13,6 +13,16 @@ Stereogram is a webapp for sharing the best part of an audio recording to your f
 Nobody merges their own code.
 Daily meetings: 15-30 minutes; beginning and end of the day.
 
+##Reviewers
+No One merges their own code.
+Push to your to github, make a pull request to Development, send at @ tag to your reviewer
+  - Alex reviews Chris's code
+  - Chris reviews Liam's Code
+  - Liam reviews Pat's code
+  - Pat reviews Zahid's code
+  - Zahid reviews Alex's code
+(Order decided alphabetically)
+
 ##Trello
 https://trello.com/b/rha1zh8L/mvp
 
