@@ -8,6 +8,15 @@ Raccoons - Phase 3 Final Project
 ##Mission Statement
 Stereogram is a webapp for sharing the best part of an audio recording to your friends/followers.
 
+##Working Agreement
+12/24, 12/25, 12/31, 1/1. Free days.
+Nobody merges their own code.
+Daily meetings: 15-30 minutes; beginning and end of the day.
+
+#MVP
+-Web
+
+
 ##Potential Features
 -Social Media
 -Sample of MP4
@@ -19,6 +28,11 @@ Stereogram is a webapp for sharing the best part of an audio recording to your f
 -What friends are listening to
 -Transcribe
 -APIs
+-Community is critical.
+  -Favorites and Interests considered
+
+-How do we get snippets?
+  -Start and end times
 
 ##Interface
 -Headphone interface?
@@ -28,4 +42,14 @@ Stereogram is a webapp for sharing the best part of an audio recording to your f
 -Small as possible -> Login -> Topshare
 -Button Press. Single for short. Double for longer. Simple interface.
 -Push Notifications
+-Social Media and Soundcloud (podcasts?)
+-Mimic features
+-Native sharing + twitter and Facebook
+-Snippets and Links, with a tag
+-Soundcloud API start, stop, stream
 
+##Research
+-Soundcloud API
+-OAuth
+-Visualize sound
+-DB SCHEMA
