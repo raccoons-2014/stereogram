@@ -48,9 +48,18 @@ gem 'faker', group: [:development, :test]
 #For generating test models
 gem "factory_girl_rails", group: [:development, :test]
 
+#Use Capybara
 group :test do
   gem 'capybara'
 end
+
+
+# Must brew install graphviz
+#Use Visual Representation Gem for Schema
+group :development, :test do
+  gem 'railroady'
+end
+#Run from command line 'railroady -o models.dot -M'
 
 
 # Use unicorn as the app server
