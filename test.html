@@ -17,6 +17,9 @@
         widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
           widget.getPosition(function(position) {
             console.log('current position is ' + position);
+            if (position > 60000){
+              widget.pause();
+            }
           })
         });
       });
