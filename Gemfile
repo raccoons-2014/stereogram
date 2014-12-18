@@ -33,6 +33,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+#Use ENV
+gem 'dotenv'
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
