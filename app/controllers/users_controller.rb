@@ -3,6 +3,6 @@ class UsersController < ApplicationController
 
   end
 
-  def create
+  def show
   end
 end
