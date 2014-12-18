@@ -36,6 +36,9 @@ gem 'omniauth-facebook'
 #Use ENV
 gem 'dotenv-rails'
 
+#Koala gem
+gem 'koala'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -45,4 +48,3 @@ gem 'dotenv-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
