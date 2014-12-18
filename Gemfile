@@ -39,6 +39,19 @@ gem 'dotenv-rails'
 #Koala gem
 gem 'koala'
 
+# Use Rspec for testing
+gem 'rspec-rails', group: [:development, :test]
+
+# Faker for fake data
+gem 'faker', group: [:development, :test]
+
+#For generating test models
+gem "factory_girl_rails", group: [:development, :test]
+
+group :test do
+  gem 'capybara'
+end
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
