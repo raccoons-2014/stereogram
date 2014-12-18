@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   end
 
+  def create
+    @graph = Koala::Facebook::GraphAPI.new()
+  end
+
   def show
     @user = User.find(session[:user_id])
   end
