@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
+  resources :users
   get 'auth/:provider/callback' => 'sessions#create'
   get 'signin' => 'sessions#new', :as => :signin
 
