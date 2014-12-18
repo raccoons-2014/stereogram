@@ -56,10 +56,11 @@ end
 
 # Must brew install graphviz
 #Use Visual Representation Gem for Schema
+#Run from command line 'railroady -o models.dot -M'
+#Run from command line to process .dot file as an image '-Tpng models.dot > models.png'
 group :development, :test do
   gem 'railroady'
 end
-#Run from command line 'railroady -o models.dot -M'
 
 
 # Use unicorn as the app server
