@@ -13,6 +13,9 @@ Stereogram is a webapp for sharing the best part of an audio recording to your f
 Nobody merges their own code.
 Daily meetings: 15-30 minutes; beginning and end of the day.
 
+##Trello
+https://trello.com/b/rha1zh8L/mvp
+
 ##MVP
 -Webapp
 -Handle an event to do snippet
