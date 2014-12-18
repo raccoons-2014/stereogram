@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
       user.uid = auth['uid']
       if auth['info']
         user.username = auth['info']['name'] ||  ""
+        user.token = auth['credentials']['token'] || ""
       end
     end
   end
