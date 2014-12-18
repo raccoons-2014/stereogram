@@ -1,4 +1,5 @@
 var widgetContoller = function(start, stop) {
+  this.snippetTime = 0
   widgetIframe = document.getElementById('sc-widget'),
   widget = SC.Widget(widgetIframe);
   widget.bind(SC.Widget.Events.READY, function() {
@@ -16,10 +17,11 @@ var widgetContoller = function(start, stop) {
 };
 
 widgetContoller.prototype.returnSnippet = function() {
+  var that = this;
   widget.getPosition(function(pos){
-    console.log(pos);
+    that.snippetTime = pos;
   })
 }
 
-test = new widgetContoller(95,120);
-test2 = Mousetrap.bindGlobal('command+j', function(){test.returnSnippet()})
+test = new widgetContoller(0);
+Mousetrap.bindGlobal('command+j', function(){test.returnSnippet()})
