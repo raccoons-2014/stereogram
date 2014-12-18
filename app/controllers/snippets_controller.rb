@@ -2,14 +2,15 @@ class SnippetsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @snippet = Snippet.new(snippet_params)
+    @snippet = @user.snippets.create(snippet_params)
+
     @graph = Koala::Facebook::GraphAPI.new(@user.token)
-    @graph.put_wall_post(@snippet.text)
+    @graph.put_wall_post(@snippet)
     redirect_to :back
   end
 
   private
     def snippet_params
-      params.require(:snippet).permit(:text)
+      params.require(:snippet).permit(:track_id, :start_time, :end_time)
     end
 end
