@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    session[:fb_permissions] = 'publish_actions'
     redirect_to '/auth/facebook'
   end
 
