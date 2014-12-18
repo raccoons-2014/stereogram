@@ -13,8 +13,20 @@ Stereogram is a webapp for sharing the best part of an audio recording to your f
 Nobody merges their own code.
 Daily meetings: 15-30 minutes; beginning and end of the day.
 
-#MVP
--Web
+##MVP
+-Webapp
+-Handle an event to do snippet
+  -Widget
+-Send it
+-OAuth account
+-Stream a song from soundcloud on our site
+-UX massive focus.
+
+###User Story
+go to stereogram site
+go to site without username
+homepage: make an account. Entice user to join your site.
+allow visitor to look at main feed
 
 
 ##Potential Features
