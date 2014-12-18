@@ -34,7 +34,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 #Use ENV
-gem 'dotenv'
+gem 'dotenv-rails'
 
 
 # Use unicorn as the app server
