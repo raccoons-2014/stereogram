@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-
+  resources :tracks
   resources :snippets
+  
   get 'auth/:provider/callback' => 'sessions#create'
   get 'signin' => 'sessions#new', :as => :signin
 
