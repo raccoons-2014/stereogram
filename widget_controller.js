@@ -6,7 +6,7 @@ var widgetContoller = function(start, stop) {
       widget.getCurrentSound(function(currentSound){});
       widget.seekTo(start*1000);
       widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
-        widget.getPosition(function(position) {console.log('current position is ' + position);
+        widget.getPosition(function(position) {
           if (position > stop*1000){widget.pause();}
         });
       });
@@ -16,3 +16,4 @@ var widgetContoller = function(start, stop) {
 };
 
 test = new widgetContoller(95,120);
+Mousetrap.bind('command+j', function() { this.widget.getPosition(function(pos){alert(pos)}) }).bind(test);
