@@ -1,6 +1,6 @@
 var widgetController = function(track) {
-  var start = track.startTime;
-  var stop = track.stopTime;
+  var startTime = track.startTime;
+  var stopTime = track.stopTime;
   var id = track.trackID;
   var that = this
   this.snippetTimes = [];
@@ -17,13 +17,12 @@ var widgetController = function(track) {
   });
 
   this.widget.bind(SC.Widget.Events.PLAY, function() {
-    that.widget.seekTo(start*1000);
-    alert('you guuuyyyss');
+    that.widget.seekTo(startTime*1000);
   });
 
   this.widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
     that.widget.getPosition(function(position) {
-      if (position > stop*1000){that.widget.pause()}
+      if (position > stopTime*1000){that.widget.pause()}
       });
   });
 };
@@ -52,16 +51,21 @@ song4 = new someAudio(43432304,100, 115, 4);
 songArray.push(song4);
 song5 = new someAudio(71965257,10, 50, 5);
 songArray.push(song5);
-test = new widgetController(song1);
 
-$('body').on('click', 'img', function(){
-  // var index = $(this).index();
-  // var clickedSong = songArray[index];
-  // test = new widgetController(clickedSong);
-  // widget.bind(SC.Widget.Events.READY,function(){
+
+
+$.each(songArray, function(index, val) {
+   $('.tracks').append("<img id='" + index +"' src='play.png'></>")
+});
+
+$('.tracks').on('click', 'img', function(){
+  var index = $(this).index();
+  var clickedSong = songArray[index];
+  test = new widgetController(clickedSong);
+  test.widget.bind(SC.Widget.Events.READY,function(){
     $widgetIframe.delay(300).css('display','block');
-    setTimeout(test.widget.play(),1000);
-  // });
+    setTimeout(test.widget.play(),100);
+  });
 });
 
 
