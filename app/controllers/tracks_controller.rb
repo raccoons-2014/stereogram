@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  before_action :redirect_guests
   def index
     @tracks = Track.all
   end
@@ -12,8 +13,6 @@ class TracksController < ApplicationController
   end
 
   def create
-    redirect_guests
-    
     @track = current_user.tracks.new(track_params)
 
     if @track.save
