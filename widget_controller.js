@@ -3,10 +3,20 @@ var widgetController = function(track) {
   var stopTime = track.stopTime;
   var id = track.trackID;
   var that = this
-  this.snippetTimes = [];
+  // var yourwidget
+
+  // function(){
+  //   return yourwidget || $('.widgeIfram ')
+  // }
+
+  // this.snippetTimes = [];
+
   $('.widget').html('<iframe id="sc-widget" src="" width="100%" scrolling="no" frameborder="no"></iframe>')
+
   $widgetIframe = $('#sc-widget');
+
   this.trackString = "https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/" + track.trackID + "&buying=false&show_playcount=false&show_comments=false&sharing=false";
+
   $widgetIframe.attr('src', this.trackString);
   this.widget = SC.Widget($widgetIframe[0]);
 
@@ -32,7 +42,7 @@ widgetController.prototype.returnSnippet = function() {
   })
 }
 
-var audioTrack = function(trackID, startTime, stopTime, val) {
+var audioTrack = function(trackID, startTime, stopTime) {
   this.trackID = trackID;
   this.startTime = startTime;
   this.stopTime = stopTime;
