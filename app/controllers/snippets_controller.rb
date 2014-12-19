@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  before_action :redirect_guests
 
   def index
   end
@@ -8,8 +9,6 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    redirect_guests
-    
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
 
