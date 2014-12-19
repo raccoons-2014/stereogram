@@ -41,4 +41,13 @@ describe SnippetsController do
       expect(assigns(:snippet).track).to eq(nil)
     end
   end
+
+  describe "#destroy" do
+    it "deletes a snippet from the database" do
+      expect{
+        post :delete, id: test_snippet.id
+      }.to change {Snippet.count}.by(1)
+    end
+
+  end
 end
