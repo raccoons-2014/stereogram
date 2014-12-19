@@ -1,7 +1,7 @@
 class SnippetsController < ApplicationController
 
   def create
-    redirect_to signin if current_user.nil?
+    return redirect_to signin_path if current_user.nil?
 
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
