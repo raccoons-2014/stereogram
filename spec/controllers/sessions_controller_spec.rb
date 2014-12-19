@@ -15,5 +15,13 @@ describe SessionsController do
       post :create
     }.to change {User.count}.by(1)
     end
+
+    it 'returns a user already created' do
+      post :create
+      expect{
+        post :create
+      }.to_not change {User.count}
+    end
+
   end
 end
