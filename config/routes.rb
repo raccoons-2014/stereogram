@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback' => 'sessions#create'
   get 'signin' => 'sessions#new', :as => :signin
+  post 'signin' => 'sessions#create'
 
   get '/auth/facebook/setup', :to => 'facebook#setup'
 
