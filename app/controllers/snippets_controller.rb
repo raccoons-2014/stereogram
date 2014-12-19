@@ -1,5 +1,8 @@
 class SnippetsController < ApplicationController
 
+  def index
+  end
+
   def show
     @snippet = Snippet.find(params[:id])
   end
