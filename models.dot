@@ -1,0 +1,9 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Snippet" [shape=Mrecord, label="{Snippet|id :integer\ltrack_id :integer\luser_id :integer\lstart_time :string\lend_time :string\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Track" [shape=Mrecord, label="{Track|id :integer\lsoundcloud_url :string\luser_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"User" [shape=Mrecord, label="{User|id :integer\lfirst_name :string\llast_name :string\lprovider :string\luid :string\ltoken :string\lprofile_img_url :string\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Track" -> "Snippet" [arrowtail=odot, arrowhead=crow, dir=both color="#679688"]
+	"User" -> "Track" [arrowtail=odot, arrowhead=crow, dir=both color="#96A4B0"]
+	"User" -> "Snippet" [arrowtail=odot, arrowhead=crow, dir=both color="#E900EB"]
+}

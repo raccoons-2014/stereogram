@@ -27,7 +27,41 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+#Use Omniauth-facebook
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+#Use ENV
+gem 'dotenv-rails'
+
+#Koala gem
+gem 'koala'
+
+# Use Rspec for testing
+gem 'rspec-rails', group: [:development, :test]
+
+# Faker for fake data
+gem 'faker', group: [:development, :test]
+
+#For generating test models
+gem "factory_girl_rails", group: [:development, :test]
+
+#Use Capybara
+group :test do
+  gem 'capybara'
+end
+
+
+#Use Visual Representation Gem for Schema
+# Must brew install graphviz
+#Run from command line 'railroady -o models.dot -M'
+#Run from command line to process .dot file as an image '-Tpng models.dot > models.png'
+group :development, :test do
+  gem 'railroady'
+end
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -37,4 +71,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
