@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218210728) do
+ActiveRecord::Schema.define(version: 20141219031730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "snippets", force: true do |t|
     t.integer  "track_id"
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.string   "start_time"
     t.string   "end_time"
     t.datetime "created_at"
@@ -27,18 +27,18 @@ ActiveRecord::Schema.define(version: 20141218210728) do
 
   create_table "tracks", force: true do |t|
     t.string   "soundcloud_url"
-    t.integer  "user_id"
+    t.integer  "user_id",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "token"
-    t.string   "profile_img_url"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "provider",        null: false
+    t.string   "uid",             null: false
+    t.string   "token",           null: false
+    t.string   "profile_img_url", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
