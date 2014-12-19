@@ -1,5 +1,5 @@
 <p>
-  <h5><%= @track.soundcloud_url %></h5>
+  <h5><%= @track.soundcloud_track_id %></h5>
   <h4>Posted By: <%= User.find(@track.user_id).first_name %></h4>
   <p>Created At:</p><p><%= @track.created_at %></p>
   <p> This Track Has <%= @track.snippets.count %> snippets </p>

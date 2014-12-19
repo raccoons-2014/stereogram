@@ -8,8 +8,8 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    return redirect_to signin_path if current_user.nil?
-
+    redirect_guests
+    
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
 
@@ -19,6 +19,12 @@ class SnippetsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  def destroy
+    snippet = Snippet.find(params[:id])
+    snippet.destroy
+    redirect_to root_path
   end
 
   private

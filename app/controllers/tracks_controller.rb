@@ -12,7 +12,7 @@ class TracksController < ApplicationController
   end
 
   def create
-    return redirect_to signin_path if current_user.nil?
+    redirect_guests
     
     @track = current_user.tracks.new(track_params)
 
@@ -35,6 +35,6 @@ class TracksController < ApplicationController
 
   private
     def track_params
-      params.require(:track).permit(:soundcloud_url, :user_id)
+      params.require(:track).permit(:soundcloud_track_id, :user_id)
     end
 end
