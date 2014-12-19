@@ -18,9 +18,9 @@ describe SnippetsController do
 
     it "fails for a snippet with invalid params" do
       session[:user_id] = nil
-      expect{
+      expect(
         post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
-      }.to be_redirect
+      ).to be_redirect
     end
 
   end
