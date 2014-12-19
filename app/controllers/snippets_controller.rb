@@ -2,9 +2,13 @@ class SnippetsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @snippet = @user.snippets.create(snippet_params)
+    @snippet = @user.snippets.new(snippet_params)
 
-    redirect_to snippet_path(@snippet)
+    if @snippet.save
+      redirect_to snippet_path(@snippet)
+    else
+      redirect_to :back
+    end
   end
 
   private
