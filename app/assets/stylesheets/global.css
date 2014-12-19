@@ -1,0 +1,9 @@
+.widget{
+width:100%;
+background-color: black;
+position: absolute;
+}
+
+#sc-widget{
+  width: 100%;
+}
