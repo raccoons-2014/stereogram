@@ -1,1 +1,23 @@
-<%= @user.first_name %>
+<%= image_tag @user.profile_img_url %>
+
+<%= simple_format(@user.full_name) %>
+
+<div class='user-tracks'>
+  <% if !@user.tracks.empty? %>
+    <% @user.tracks.each do |track| %>
+      <%= link_to track_path(track) %>
+    <% end %>
+  <% else %>
+    <h3>You haven't made any tracks yet</h3>
+  <% end %>
+</div>
+
+<div class='user-snippets'>
+  <% if !@user.snippets.empty? %>
+    <% @user.snippets.each do |snippet| %>
+      <%= link_to snippet_path(snippet) %>
+    <% end %>
+  <% else %>
+    <h3>You haven't made any snippets yet</h3>
+  <% end %>
+</div>
