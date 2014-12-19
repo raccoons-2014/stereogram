@@ -1,12 +1,21 @@
 class TracksController < ApplicationController
   def new
-    @track = Track.new
+    if current_user
+      @track = Track.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
-    # if current_user
-      @track = user.tracks.create track_params
+    @track = Track.new(track_params)
+    @track.user_id = current_user.id
 
+    if @track.save
+      redirect_to track_path(@track)
+    else
+      redirect_to new_track_path
+    end
   end
 
   private
