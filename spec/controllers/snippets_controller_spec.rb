@@ -16,5 +16,12 @@ describe SnippetsController do
       }.to change {Snippet.count}.by(1)
     end
 
+    it "fails for a snippet with invalid params" do
+      session[:user_id] = nil
+      expect{
+        post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
+      }.to be_redirect
+    end
+
   end
 end
