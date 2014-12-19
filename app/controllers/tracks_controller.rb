@@ -4,11 +4,11 @@ class TracksController < ApplicationController
   end
 
   def new
-    # if current_user
+    if current_user
       @track = Track.new
-    # else
-    #   redirect_to root_path
-    # end
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -16,13 +16,6 @@ class TracksController < ApplicationController
     @track.user_id = current_user.id
 
     if @track.save
-
-      p "*" * 50
-      p @track
-      p current_user
-      p @track.user_id
-      p "*" * 50
-
       redirect_to track_path @track
     else
       redirect_to new_track_path
