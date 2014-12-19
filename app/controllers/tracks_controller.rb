@@ -8,11 +8,11 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(track_params)
+    @track = Track.new track_params
     @track.user_id = current_user.id
 
     if @track.save
-      redirect_to track_path(@track)
+      redirect_to track_path @track
     else
       redirect_to new_track_path
     end
@@ -20,6 +20,12 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find params[:id]
+  end
+
+  def destroy
+    @track = Track.find params[:id]
+    @track.destroy
+    redirect_to root_path
   end
 
   private
