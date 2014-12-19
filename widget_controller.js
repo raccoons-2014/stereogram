@@ -2,35 +2,35 @@ var widgetController = function(track) {
   var start = track.startTime;
   var stop = track.stopTime;
   var id = track.trackID;
-
+  var that = this
   this.snippetTimes = [];
   $widgetIframe = $('#sc-widget');
   this.trackString = "https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/" + track.trackID + "&buying=false&show_playcount=false&show_comments=false&sharing=false";
   $widgetIframe.attr('src', this.trackString);
-  widget = SC.Widget($widgetIframe[0]);
+  this.widget = SC.Widget($widgetIframe[0]);
 
   //Emmit Ready Event... have another function that is listening for that event...
 
   // play...
-  widget.bind(SC.Widget.Events.READY, function() {
-    widget.setVolume(50);
+  this.widget.bind(SC.Widget.Events.READY, function() {
+    that.widget.setVolume(50);
   });
 
-  widget.bind(SC.Widget.Events.PLAY, function() {
-    widget.seekTo(start*1000);
+  this.widget.bind(SC.Widget.Events.PLAY, function() {
+    that.widget.seekTo(start*1000);
     alert('you guuuyyyss');
   });
 
-  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
-    widget.getPosition(function(position) {
-      if (position > stop*1000){widget.pause()}
+  this.widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
+    that.widget.getPosition(function(position) {
+      if (position > stop*1000){that.widget.pause()}
       });
   });
 };
 
 widgetController.prototype.returnSnippet = function() {
   var that = this;
-  widget.getPosition(function(pos){
+  this.widget.getPosition(function(pos){
     that.snippetTimes.push(Math.floor(pos));
   })
 }
@@ -60,7 +60,7 @@ $('body').on('click', 'img', function(){
   // test = new widgetController(clickedSong);
   // widget.bind(SC.Widget.Events.READY,function(){
     $widgetIframe.delay(300).css('display','block');
-    setTimeout(widget.play(),1000);
+    setTimeout(test.widget.play(),1000);
   // });
 });
 
