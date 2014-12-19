@@ -1,5 +1,9 @@
 class SnippetsController < ApplicationController
 
+  def show
+    @snippet = Snippet.find(params[:id])
+  end
+
   def create
     return redirect_to signin_path if current_user.nil?
 
