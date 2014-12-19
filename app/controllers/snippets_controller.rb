@@ -1,12 +1,21 @@
 class SnippetsController < ApplicationController
 
-  def create
-    @user = User.find(session[:user_id])
-    @snippet = @user.snippets.create(snippet_params)
+  def show
+    @snippet = Snippet.find(params[:id])
+  end
 
-    @graph = Koala::Facebook::GraphAPI.new(@user.token)
-    @graph.put_wall_post(@snippet)
-    redirect_to :back
+  def create
+    return redirect_to signin_path if current_user.nil?
+
+    @user = current_user
+    @snippet = @user.snippets.new(snippet_params)
+
+    if @snippet.save
+      Track.find(params[:track_id]).snippets << @snippet if params[:track_id]
+      redirect_to snippet_path(@snippet)
+    else
+      redirect_to :back
+    end
   end
 
   private
