@@ -4,6 +4,6 @@ module SessionsHelper
   end
 
   def redirect_guests
-    return redirect_to signin_path if current_user.nil?
+    redirect_to signin_path if current_user.nil?
   end
 end
