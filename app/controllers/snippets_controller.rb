@@ -1,7 +1,9 @@
 class SnippetsController < ApplicationController
 
   def create
-    @user = User.find(session[:user_id])
+    redirect_to signin if current_user.nil?
+
+    @user = current_user
     @snippet = @user.snippets.new(snippet_params)
 
     if @snippet.save
