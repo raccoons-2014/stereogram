@@ -3,6 +3,13 @@ var widgetController = function(track) {
   var stopTime = track.stopTime;
   var id = track.trackID;
   var that = this
+  // var yourwidget
+
+  // function(){
+  //   return yourwidget || $('.widgeIfram ')
+  // }
+
+  // this.snippetTimes = [];
 
   $('.widget').html('<iframe id="sc-widget" src="" width="100%" scrolling="no" frameborder="no"></iframe>')
 
