@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stereogram</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="widget">
+    <iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/177307209&buying=false&show_playcount=false&show_artwork=false&show_comments=false&sharing=false" width="60%" height="20%" scrolling="no" frameborder="no"></iframe>
+</div>
+<div class="container">
+<%= yield %>
+</div>
+
+</body>
+</html>
