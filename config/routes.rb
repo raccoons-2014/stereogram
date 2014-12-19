@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'snippets#index'
 
-  resources :users
-  resources :tracks
-  resources :snippets
+  resources :users, only: [:show]
+  resources :tracks, only: [:index, :new, :create, :show, :destroy]
+  resources :snippets, only: [:index, :show, :create, :destroy]
 
   get 'auth/:provider/callback' => 'sessions#create'
   get 'signin' => 'sessions#new', :as => :signin
