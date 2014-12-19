@@ -16,4 +16,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def redirect_guests
+    return redirect_to signin_path if current_user.nil?
+  end
 end
