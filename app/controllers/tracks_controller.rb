@@ -18,6 +18,10 @@ class TracksController < ApplicationController
     end
   end
 
+  def show
+    @track = Track.find params[:id]
+  end
+
   private
     def track_params
       params.require(:track).permit(:soundcloud_url, :user_id)
