@@ -7,6 +7,7 @@ class SnippetsController < ApplicationController
     @snippet = @user.snippets.new(snippet_params)
 
     if @snippet.save
+      Track.find(params[:track_id]).snippets << @snippet if params[:track_id]
       redirect_to snippet_path(@snippet)
     else
       redirect_to :back
