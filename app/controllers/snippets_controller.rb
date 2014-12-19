@@ -21,6 +21,12 @@ class SnippetsController < ApplicationController
     end
   end
 
+  def destroy
+    snippet = Snippet.find(params[:id])
+    snippet.destroy
+    redirect_to root_path
+  end
+
   private
     def snippet_params
       params.require(:snippet).permit(:track_id, :start_time, :end_time)
