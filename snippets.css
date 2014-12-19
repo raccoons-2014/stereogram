@@ -1,15 +1,21 @@
-/*body {
-
-}
-*/
 img {
   background-image: 'play.png';
-  height:100px;
-  width: 100px;
+  width:15%;
+  height:auto;
   display: inline-block;
   margin: 2%;
 }
 
+.tracks {
+  width:75%;
+}
+
+.widget {
+  width:70%;
+  height:auto;
+}
+
 #sc-widget {
-  display: none;
+  opacity: 0;
+  /*display: none;*/
 }
