@@ -8,16 +8,23 @@ var widgetController = function(track) {
   this.trackString = "https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/" + track.trackID + "&buying=false&show_playcount=false&show_comments=false&sharing=false";
   $widgetIframe.attr('src', this.trackString);
   widget = SC.Widget($widgetIframe[0]);
+
+  //Emmit Ready Event... have another function that is listening for that event...
+
+  // play...
   widget.bind(SC.Widget.Events.READY, function() {
-    widget.bind(SC.Widget.Events.PLAY, function() {
-      widget.seekTo(start*1000);
-      widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
-        widget.getPosition(function(position) {
-          if (position > stop*1000){widget.pause();}
-        });
+    widget.setVolume(50);
+  });
+
+  widget.bind(SC.Widget.Events.PLAY, function() {
+    widget.seekTo(start*1000);
+    alert('you guuuyyyss');
+  });
+
+  widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
+    widget.getPosition(function(position) {
+      if (position > stop*1000){widget.pause()}
       });
-    });
-  widget.setVolume(50);
   });
 };
 
@@ -45,15 +52,16 @@ song4 = new someAudio(43432304,100, 115, 4);
 songArray.push(song4);
 song5 = new someAudio(71965257,10, 50, 5);
 songArray.push(song5);
-// test = new widgetController(song1);
+test = new widgetController(song1);
 
 $('body').on('click', 'img', function(){
-  var index = $(this).index();
-  var clickedSong = songArray[index];
-  test = new widgetController(clickedSong);
-  widget.bind(SC.Widget.Events.PLAY,function(){
-    $widgetIframe.css('display','block');
-  });
+  // var index = $(this).index();
+  // var clickedSong = songArray[index];
+  // test = new widgetController(clickedSong);
+  // widget.bind(SC.Widget.Events.READY,function(){
+    $widgetIframe.delay(300).css('display','block');
+    setTimeout(widget.play(),1000);
+  // });
 });
 
 
