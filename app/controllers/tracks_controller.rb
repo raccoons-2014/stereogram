@@ -12,8 +12,8 @@ class TracksController < ApplicationController
   end
 
   def create
-    return redirect_to signin_path if current_user.nil?
-
+    redirect_guests
+    
     @track = current_user.tracks.new(track_params)
 
     if @track.save

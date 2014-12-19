@@ -8,8 +8,8 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    return redirect_to signin_path if current_user.nil?
-
+    redirect_guests
+    
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
 
