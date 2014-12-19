@@ -3,11 +3,11 @@ var widgetContoller = function(track) {
   var stop = track.stopTime;
   var id = track.trackID;
 
-  this.snippetTimes = []
+  this.snippetTimes = [];
   $widgetIframe = $('#sc-widget');
   trackString = "https://w.soundcloud.com/player/?url=http://api.soundcloud.com/tracks/" + track.trackID + "&buying=false&show_playcount=false&show_comments=false&sharing=false";
   $widgetIframe.attr('src', trackString);
-  widget = SC.Widget($widgetIframe);
+  widget = SC.Widget($widgetIframe[0]);
   widget.bind(SC.Widget.Events.READY, function() {
     widget.bind(SC.Widget.Events.PLAY, function() {
       widget.getCurrentSound(function(currentSound){});
@@ -29,13 +29,18 @@ widgetContoller.prototype.returnSnippet = function() {
   })
 }
 
-var someAudio = function(trackID, startTime, stopTime) {
+var someAudio = function(trackID, startTime, stopTime, val) {
   this.trackID = trackID;
   this.startTime = startTime;
-  this.endTime = stopTime;
+  this.stopTime = stopTime;
+  this.$element = $('#'+ val);
 }
 
-song = new someAudio(177307209,30, 45);
-
+song = new someAudio(177307209,30, 45, 1);
 test = new widgetContoller(song);
+song.$element.on('click', function(){
+  $widgetIframe.css('display','block'),
+  widget.play()});
+
+
 Mousetrap.bindGlobal('s n i p', function(){test.returnSnippet(), alert('SNIP!')})
