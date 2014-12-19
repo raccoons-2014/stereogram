@@ -23,5 +23,10 @@ describe SnippetsController do
       ).to be_redirect
     end
 
+    it "associates a snippet with a track" do
+      post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
+      expect(assigns(:snippet).track).to eq(test_track)
+    end
+
   end
 end
