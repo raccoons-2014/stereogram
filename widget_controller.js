@@ -36,17 +36,16 @@ var audioTrack = function(trackID, startTime, stopTime, val) {
   this.trackID = trackID;
   this.startTime = startTime;
   this.stopTime = stopTime;
-  this.$element = $('#'+ val);
 }
 
 songArray = [];
-song0 = new audioTrack(177307209,30, 45, 1);
+song0 = new audioTrack(177307209,30, 45);
 songArray.push(song0);
-song1 = new audioTrack(141551003,10, 50, 2);
+song1 = new audioTrack(141551003,10, 50);
 songArray.push(song1);
-song2 = new audioTrack(60173536,10, 50, 3);
+song2 = new audioTrack(60173536,10, 50);
 songArray.push(song2);
-song3 = new audioTrack(43432304,100, 115, 4);
+song3 = new audioTrack(43432304,100, 115);
 songArray.push(song3);
 song4 = new audioTrack(71965257);
 songArray.push(song4);
