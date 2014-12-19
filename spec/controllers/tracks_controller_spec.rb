@@ -12,8 +12,7 @@ describe TracksController do
   describe "#create" do
     it "should save new Track instance to the database with valid params" do
       expect{
-        session[:user_id] = test_user.id
-        post :create, user_id: test_user.id, track: attributes_for(:track)
+        post :create, track: attributes_for(:track)
       }.to change {Track.count}.by(1)
     end
 

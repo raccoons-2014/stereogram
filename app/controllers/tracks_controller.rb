@@ -12,8 +12,9 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new track_params
-    @track.user_id = current_user.id
+    return redirect_to signin_path if current_user.nil?
+    
+    @track = current_user.tracks.new(track_params)
 
     if @track.save
       redirect_to track_path @track
