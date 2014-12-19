@@ -2,6 +2,7 @@ class SnippetsController < ApplicationController
   before_action :redirect_guests
 
   def index
+    @snippets = Snippet.all
   end
 
   def show
