@@ -44,9 +44,10 @@ describe SnippetsController do
 
   describe "#destroy" do
     it "deletes a snippet from the database" do
+      test_snippet
       expect{
-        post :delete, id: test_snippet.id
-      }.to change {Snippet.count}.by(1)
+        delete :destroy, id: test_snippet.id
+      }.to change {Snippet.count}.by(-1)
     end
 
   end
