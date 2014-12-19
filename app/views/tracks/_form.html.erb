@@ -1,0 +1,9 @@
+<ul>
+  <%= form_for @track, remote: true do |f| %>
+    <%f.label :soundcloud_url %>
+    <%= f.text_field :soundcloud_url, :placeholder => "Enter your soundcloud url"%>
+  <br>
+  <br>
+    <%= f.submit "Create Your Track", remote: true %>
+  <% end %>
+</ul>
