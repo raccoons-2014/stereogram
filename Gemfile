@@ -33,7 +33,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-#User CarrierWave
+#Use Fog
+gem 'fog'
+
+#Use CarrierWave
 gem 'carrierwave'
 
 #Use ENV
