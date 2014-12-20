@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+#User CarrierWave
+gem 'carrierwave'
+
 #Use ENV
 gem 'dotenv-rails'
 
