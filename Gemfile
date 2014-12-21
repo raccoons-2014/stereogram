@@ -48,6 +48,9 @@ gem 'dotenv-rails'
 #Koala gem
 gem 'koala'
 
+# jPlayer gem
+gem 'jplayer-rails'
+
 # Use Rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
