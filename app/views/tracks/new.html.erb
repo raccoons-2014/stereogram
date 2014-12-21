@@ -1,6 +1,5 @@
-<span class="new-tracks">
-  <h3>Create Track</h3>
-  <p>Add Track Credentials Here:</p>
-  <br>
-  <%= render 'form', locals: {track: @track} %>
-</span>
+<h2>Upload a new MP3:</h2>
+<%= form_tag upload_path, :method => "post", :multipart => true do %>
+    <%= file_field_tag "mp3file" %>
+    <%= submit_tag "Upload" %>
+<% end %>
