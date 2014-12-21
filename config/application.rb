@@ -28,10 +28,9 @@ module Stereogram
     # config.i18n.default_locale = :de
 
     AWS::S3::Base.establish_connection!(
-    :access_key_id     => aws_access_key,
-    :secret_access_key => aws_secret
+    :access_key_id     => ENV["AWS_KEY"],
+    :secret_access_key => ENV["AWS_SECRET"]
     )
 
-    BUCKET='dbc-stereogram'
   end
 end
