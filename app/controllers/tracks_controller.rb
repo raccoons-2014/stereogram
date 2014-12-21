@@ -1,4 +1,5 @@
 class TracksController < ApplicationController
+  include TracksHelper
   before_action :redirect_guests
   def index
     @tracks = Track.all
