@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
   resources :snippets, only: [:index, :show, :create, :destroy]
 
+  post "tracks/upload", :as => :upload
+
   get 'auth/:provider/callback' => 'sessions#create'
   get 'signin' => 'sessions#new', :as => :signin
   post 'signin' => 'sessions#create'
