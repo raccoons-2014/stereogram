@@ -1,6 +1,8 @@
 stereogram
 ==========
 
+[![Circle CI](https://circleci.com/gh/raccoons-2014/stereogram.svg?style=svg)](https://circleci.com/gh/raccoons-2014/stereogram)
+
 Raccoons - Phase 3 Final Project
 
 #Stereogram Group
