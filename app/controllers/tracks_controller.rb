@@ -38,9 +38,12 @@ class TracksController < ApplicationController
   end
 
   def destroy
-    @track = Track.find params[:id]
-    @track.destroy
-    redirect_to root_path
+    if (params[:song])
+      AWS::S3::S3Object.find(params[:song], BUCKET).delete
+      redirect_to root_path
+    else
+      render :text => "No song was found to delete!"
+    end
   end
 
   private
