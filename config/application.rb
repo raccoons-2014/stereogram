@@ -26,5 +26,12 @@ module Stereogram
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    AWS::S3::Base.establish_connection!(
+    :access_key_id     => aws_access_key,
+    :secret_access_key => aws_secret
+    )
+
+    BUCKET='dbc-stereogram'
   end
 end
