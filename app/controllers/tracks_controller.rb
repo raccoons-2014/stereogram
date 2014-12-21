@@ -2,6 +2,7 @@ class TracksController < ApplicationController
   before_action :redirect_guests
   def index
     @tracks = Track.all
+    @songs = AWS::S3::Bucket.find('dbc-stereogram').objects
   end
 
   def new
