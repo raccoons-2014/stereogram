@@ -11,3 +11,24 @@ top:0;
 .jp-volume-controls{
   color:red;
 }
+
+button.jp-play{
+  background:url(play_button.png) no-repeat;
+    background-size: 100%;
+    width: 90px;
+    height: 90px;
+    border: none;
+    position: fixed;
+    left:0;
+
+}
+
+button.jp-stop{
+  background-color: red;
+}
+
+.jp-volume-controls{
+  position: fixed;
+  right:0;
+  top:10px;
+}
