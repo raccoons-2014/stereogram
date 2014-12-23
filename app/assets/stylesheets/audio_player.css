@@ -1,0 +1,13 @@
+#jp_container_1{
+position: absolute;
+width: 100%;
+top:0;
+}
+/*Bubble + Numbers*/
+.jp-type-single{
+  color:blue;
+}
+
+.jp-volume-controls{
+  color:red;
+}
