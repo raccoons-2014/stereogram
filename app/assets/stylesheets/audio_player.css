@@ -5,7 +5,8 @@ top:0;
 }
 /*Bubble + Numbers*/
 .jp-type-single{
-  color:blue;
+  color:white;
+  font-weight: bold;
 }
 
 .jp-volume-controls{
@@ -14,6 +15,18 @@ top:0;
 
 button.jp-play{
   background:url(play_button.png) no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: fixed;
+    left:20px;
+    top:10px;
+
+}
+
+button.jp-pause{
+  background:url(pause.png) no-repeat;
     background-size: 100%;
     width: 30px;
     height: 30px;
@@ -46,3 +59,69 @@ button.jp-mute{
 
 }
 
+button.jp-volume-max{
+  background:url(max_volume.png) no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: fixed;
+    right:20px;
+    top:10px;
+
+}
+
+button.jp-stop{
+  background:url(stop.png) no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: fixed;
+    left:50px;
+    top:10px;
+
+}
+
+.jp-current-time{
+  position: fixed;
+  left: 100px;
+  top:15px;
+}
+
+.jp-duration{
+  position: fixed;
+  right: 120px;
+  top:15px;
+}
+
+.jp-repeat{
+  background:url(repeat.png) no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    position: fixed;
+    right:80px;
+    top:10px;
+}
+
+div.jp-audio div.jp-progress{
+  position: fixed !important;
+  top:12px !important;
+  left:180px !important;
+  width:70% !important;
+  height:20px !important;
+  border-radius: 10px !important;
+}
+div.jp-audio div.jp-type-single div.jp-interface{
+height: 50px !important;
+background-color:#F56545;
+border: none;
+}
+
+div.jp-title, div.jp-playlist{
+  height: 25px;
+  font-size: 0.8em;
+  background-color:#326EDB !important;
+}
