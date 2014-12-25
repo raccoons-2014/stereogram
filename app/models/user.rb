@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :omniauthable
+         :confirmable, :omniauthable, :omniauth_providers => [:facebook, :soundcloud]
   has_many :tracks
   has_many :snippets
 
