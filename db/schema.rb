@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141225222746) do
+ActiveRecord::Schema.define(version: 20141225235454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "omniauths", force: true do |t|
+    t.integer "user_id"
+    t.string  "provider"
+    t.string  "uid"
+    t.string  "image"
+    t.string  "url"
+  end
+
+  add_index "omniauths", ["user_id"], name: "index_omniauths_on_user_id", using: :btree
 
   create_table "snippets", force: true do |t|
     t.integer  "track_id"
