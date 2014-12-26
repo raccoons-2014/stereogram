@@ -43,6 +43,7 @@ module OmniauthCallbacks
           omniauth.uid      = auth.uid
           omniauth.image    = auth.info.image
           omniauth.url      = auth.info.urls.Facebook if auth.provider == 'facebook'
+          omniauth.url      = auth.info.urls.Soundcloud if auth.provider == 'soundcloud'
         end
       end
     end
