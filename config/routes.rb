@@ -9,10 +9,6 @@ Rails.application.routes.draw do
 
   post "tracks/upload", :as => :upload
 
-  # get 'auth/:provider/callback' => 'sessions#create'
-
-  # get '/auth/facebook/setup', :to => 'facebook#setup'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
