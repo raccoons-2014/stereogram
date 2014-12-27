@@ -2,7 +2,7 @@ var widgetController = function(track) {
   var startTime = track.startTime;
   var stopTime = track.stopTime;
   var id = track.trackID;
-  var that = this
+  var that = this;
   // var yourwidget
 
   // function(){
