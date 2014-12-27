@@ -38,7 +38,6 @@ module OmniauthCallbacks
       end
 
       def bind_omniauth_service(auth)
-        binding.pry
         Omniauth.create do |omniauth|
           omniauth.user_id  = id
           omniauth.provider = auth.provider
