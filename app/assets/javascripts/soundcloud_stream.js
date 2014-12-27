@@ -15,7 +15,7 @@ var songLoad = function(){
 }
 
 var snippetController = function(){
-
-
-
 }
+
+snippetController.prototype.getSong = function(track, artist) {
+  SC.get('/tracks', {q:track,q:artist}, function(tracks){});}
