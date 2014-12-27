@@ -16,7 +16,7 @@ module OmniauthCallbacks
       end
 
       def self.find_by_omniauth(auth)
-        includes(:omniauths).where(omniauths: {provider: auth.provider, uid: auth.uid}).first
+        includes(:omniauths).where(omniauths: {provider: auth.provider, uid: auth.uid.to_s}).first
       end
 
       def self.create_by_omniauth(auth)
@@ -25,13 +25,13 @@ module OmniauthCallbacks
           user.uid = auth.uid
 
           if auth.info
-            user.first_name = auth.info.first_name
-            user.last_name = auth.info.last_name
-            user.email = auth.info.email
+            user.first_name      = auth.info.first_name
+            user.last_name       = auth.info.last_name
+            user.email           = auth.info.email
             user.profile_img_url = auth.info.image
-            user.password = Devise.friendly_token[0,20]
-            user.confirmed_at = Time.now
-            user.token = auth.credentials.token
+            user.token           = auth.credentials.token
+            user.password        = Devise.friendly_token[0,20]
+            user.confirmed_at    = Time.now
           end
         end
       end
@@ -43,7 +43,7 @@ module OmniauthCallbacks
           omniauth.uid      = auth.uid
           omniauth.image    = auth.info.image
           omniauth.url      = auth.info.urls.Facebook if auth.provider == 'facebook'
-          omniauth.url      = auth.info.urls.Soundcloud if auth.provider == 'soundcloud'
+          omniauth.url      = auth.info.website if auth.provider == 'soundcloud'
         end
       end
     end
