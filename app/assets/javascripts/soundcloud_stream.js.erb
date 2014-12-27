@@ -1,0 +1,79 @@
+$('#connect').on('click', function(){
+  preventDefault();
+  SC.connect(function(){
+    currentUser = new SoundcloudUser();
+    currentUser.searchSongs();
+  });
+});
+
+var Track = function(opts){
+  this.id = opts.id;
+  this.permalinkUrl = opts.permalinkUrl;
+  this.artworkUrl = opts.artworkUrl;
+  this.description = opts.description;
+  this.duration = opts.duration;
+  this.waveformUrl = opts.waveformUrl;
+  this.bpm = opts.bpm;
+  this.streamUrl = opts.streamUrl;
+  this.audio = {};
+}
+
+var SongView = function(){
+  $body = $('body');
+  $startButton = $('input');
+  $stopButton = $('input');
+  $playbackWidget = $('widget');
+}
+
+var SoundcloudUser = function(){
+  this.userTracks = [];
+}
+
+var Snippet = function(track, startTime, endTime){
+  this.track = track;
+  this.startTime = startTime;
+  this.endTime = endTime;
+  this.snippedAudio = this.track.audio;
+}
+
+Snippet.prototype.playSnip = function(){
+  this.snippedAudio.currentTime = this.startTime;
+  this.snippedAudio.play();
+  this.cutoff();
+}
+
+Snippet.prototype.cutoff = function(){
+  setInterval(function(){
+    if (this.snippedAudio.currentTime >= this.endTime){
+      this.snippedAudio.pause();
+    }
+  }, 100 );
+}
+
+Snippet.prototype.playFull = function(){
+  this.track.audio.play();
+}
+
+Track.prototype.audioCreator = function(){
+  this.audio = new Audio(streamUrl + '?client_id=' + <%= ENV['SOUNDCLOUD_APP_ID'] %>)
+}
+
+SoundcloudUser.prototype.searchSongs = function(){
+  that = this;
+  SC.get('http://api.soundcloud.com/me/tracks', function(tracks){
+    $(tracks).each(function(i, userTrack){
+      var opts = {
+        id: userTrack.id,
+        permalinkUrl: userTrack.permalinkUrl,
+        artworkUrl: userTrack.artworkUrl,
+        description: userTrack.description,
+        duration: userTrack.duration,
+        waveformUrl: userTrack.waveform_url,
+        bpm: userTrack.bpm,
+        streamUrl: userTrack.stream_url
+      }
+      that.userTracks.push(new track(opts)
+      );
+    });
+  });
+}
