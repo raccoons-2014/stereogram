@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  get '/callback', :to => 'pages#callback'
   root 'snippets#index'
 
-  resources :users, only: [:show]
+  get 'users/:id', to: 'users#show'
+  resources :users, only: [:show], controllers: 'users'
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
   resources :snippets, only: [:index, :show, :create, :destroy]
 
-  get 'auth/:provider/callback' => 'sessions#create'
-  get 'signin' => 'sessions#new', :as => :signin
-  post 'signin' => 'sessions#create'
-
-  get '/auth/facebook/setup', :to => 'facebook#setup'
+  post "tracks/upload", :as => :upload
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

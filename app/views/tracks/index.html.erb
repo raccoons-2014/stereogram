@@ -1,7 +1,16 @@
+<%= link_to "Upload a New Song", new_track_path %>
+
+<h2>Stream A Song</h2>
+<section id='audio'>
+
+</section>
 <ol>
-  <% @tracks.each do |track| %>
+  <% @songs.each do |song| %>
     <li>
-      <%= track.soundcloud_track_id %>
+      <%= song.key %>
+      <%= link_to "HTML5 Audio", download_url_for(song.key), :class => "html5" %>
+      <br>
+      <%= link_to 'Destroy',  track_path(song),  method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ol>

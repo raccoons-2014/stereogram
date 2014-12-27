@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -29,9 +30,26 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#Use Omniauth-facebook
+#Use Omniauth
 gem 'omniauth'
+
+#Use Omniauth-facebook
 gem 'omniauth-facebook'
+
+#Use Omniauth-soundcloud
+gem 'omniauth-soundcloud'
+
+#Use Devise for consistent omniauth user entity
+gem 'devise'
+
+#Use Fog
+gem 'fog'
+
+#Use CarrierWave
+gem 'carrierwave'
+
+#Use AWS
+gem 'aws-s3', :require => 'aws/s3'
 
 #Use ENV
 gem 'dotenv-rails'
