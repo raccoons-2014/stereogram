@@ -10,6 +10,7 @@ module OmniauthCallbacks
           unless user = User.find_by_email(auth.info.email)
             user = User.create_by_omniauth(auth)
           end
+
           user.bind_omniauth_service(auth)
         end
         user
@@ -25,25 +26,26 @@ module OmniauthCallbacks
           user.uid = auth.uid
 
           if auth.info
-            user.first_name      = auth.info.first_name
-            user.last_name       = auth.info.last_name
-            user.email           = auth.info.email
+            user.first_name = auth.info.first_name
+            user.last_name = auth.info.last_name
+            user.email = auth.info.email
             user.profile_img_url = auth.info.image
-            user.token           = auth.credentials.token
-            user.password        = Devise.friendly_token[0,20]
-            user.confirmed_at    = Time.now
+            user.password = Devise.friendly_token[0,20]
+            user.confirmed_at = Time.now
+            user.token = auth.credentials.token
           end
         end
       end
 
       def bind_omniauth_service(auth)
+        binding.pry
         Omniauth.create do |omniauth|
           omniauth.user_id  = id
           omniauth.provider = auth.provider
           omniauth.uid      = auth.uid
           omniauth.image    = auth.info.image
           omniauth.url      = auth.info.urls.Facebook if auth.provider == 'facebook'
-          omniauth.url      = auth.info.website if auth.provider == 'soundcloud'
+          omniauth.url      = auth.info.urls.Website if auth.provider == 'soundcloud'
         end
       end
     end
