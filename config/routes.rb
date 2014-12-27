@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'snippets#index'
 
-  resources :users, only: [:show]
+  get 'users/:id', to: 'users#show'
+  resources :users, only: [:show], controllers: 'users'
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
   resources :snippets, only: [:index, :show, :create, :destroy]
 
