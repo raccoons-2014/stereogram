@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -38,7 +39,7 @@ gem 'omniauth-facebook'
 #Use Omniauth-soundcloud
 gem 'omniauth-soundcloud'
 
-#Use Devise for consistent omniauth user entity 
+#Use Devise for consistent omniauth user entity
 gem 'devise'
 
 #Use Fog
