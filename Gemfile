@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Use Devise
+gem 'devise'
+
 #Use Omniauth-facebook
 gem 'omniauth'
 gem 'omniauth-facebook'
