@@ -34,7 +34,10 @@ gem 'devise'
 
 #Use Omniauth-facebook
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', "~> 1.4.1"
+
+#user Omniauth-soundcloud
+gem 'omniauth-soundcloud', '~> 1.0.0'
 
 #Use Fog
 gem 'fog'
