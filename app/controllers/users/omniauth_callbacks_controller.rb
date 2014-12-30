@@ -10,4 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
+
+  def soundcloud
+    current_user.link_soundcloud_account(request.env["omniauth.auth"])
+    redirect_to user_path(current_user)
+  end
 end
