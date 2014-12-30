@@ -48,7 +48,7 @@ gem 'fog'
 gem 'carrierwave'
 
 #Use AWS
-gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk'
 
 #Use ENV
 gem 'dotenv-rails'
