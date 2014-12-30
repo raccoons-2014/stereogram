@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  devise :database_authenticatable, :rememberable, :omniauthable, :omniauth_providers => [:facebook, :soundcloud]
+  devise :database_authenticatable, :rememberable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :tracks
   has_many :snippets
 
