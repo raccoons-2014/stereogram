@@ -29,15 +29,17 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#Use Devise
-gem 'devise'
+# Use Omniauth
+gem 'omniauth'
 
 #Use Omniauth-facebook
-gem 'omniauth'
-gem 'omniauth-facebook', "~> 1.4.1"
+gem 'omniauth-facebook'
 
 #user Omniauth-soundcloud
-gem 'omniauth-soundcloud', '~> 1.0.0'
+gem 'omniauth-soundcloud'
+
+#Use Devise
+gem 'devise'
 
 #Use Fog
 gem 'fog'

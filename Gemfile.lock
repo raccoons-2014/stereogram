@@ -288,8 +288,8 @@ DEPENDENCIES
   jquery-rails
   koala
   omniauth
-  omniauth-facebook (~> 1.4.1)
-  omniauth-soundcloud (~> 1.0.0)
+  omniauth-facebook
+  omniauth-soundcloud
   pg
   railroady
   rails (= 4.1.8)
