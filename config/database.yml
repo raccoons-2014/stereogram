@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: stereogram_production
-  username: stereogram
+  database: dfocjjcslv1vup
+  username: gooaqlfjiohope
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV['STEREOGRAM_DATABASE_PASSWORD'] %>
