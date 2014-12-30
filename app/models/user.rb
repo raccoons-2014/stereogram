@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def link_soundcloud_account(auth)
+    self.sound_cloud_id = auth['id']
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
