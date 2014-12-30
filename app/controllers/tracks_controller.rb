@@ -3,7 +3,7 @@ class TracksController < ApplicationController
   before_action :redirect_guests
   def index
     @tracks = Track.all
-    @songs = AWS::S3::Bucket.find('dbc-stereogram').objects
+    @songs = $s3.buckets.first.objects
   end
 
   def new
@@ -16,7 +16,7 @@ class TracksController < ApplicationController
 
   def upload
     begin
-        AWS::S3::S3Object.store(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, 'dbc-stereogram', :access => :public_read)
+        $s3.buckets.first.objects.create(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, 'dbc-stereogram', :access => :public_read)
         redirect_to tracks_path
     rescue
         render :text => "Couldn't complete the upload"
@@ -39,7 +39,7 @@ class TracksController < ApplicationController
 
   def destroy
     if (params[:song])
-      AWS::S3::S3Object.find(params[:song], BUCKET).delete
+      $s3.buckets.first.objects.find(params[:song], BUCKET).delete
       redirect_to root_path
     else
       render :text => "No song was found to delete!"
