@@ -30,7 +30,6 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Omniauth
-gem 'omniauth'
 
 #Use Omniauth-facebook
 gem 'omniauth-facebook'

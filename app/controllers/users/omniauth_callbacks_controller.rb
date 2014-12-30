@@ -13,6 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def soundcloud
     current_user.link_soundcloud_account(request.env["omniauth.auth"])
+    binding.pry
     redirect_to user_path(current_user)
   end
 end

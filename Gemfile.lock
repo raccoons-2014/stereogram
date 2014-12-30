@@ -294,7 +294,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   koala
-  omniauth
   omniauth-facebook
   omniauth-soundcloud
   pg
