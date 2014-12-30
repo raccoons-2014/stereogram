@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219163742) do
+ActiveRecord::Schema.define(version: 20141229220845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +33,17 @@ ActiveRecord::Schema.define(version: 20141219163742) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "provider",        null: false
-    t.string   "uid",             null: false
-    t.string   "token",           null: false
-    t.string   "profile_img_url", null: false
+    t.string   "first_name",                      null: false
+    t.string   "last_name",                       null: false
+    t.string   "provider",                        null: false
+    t.string   "uid",                             null: false
+    t.string   "token",                           null: false
+    t.string   "profile_img_url",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",                           null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.string   "sound_cloud_id"
   end
 
 end

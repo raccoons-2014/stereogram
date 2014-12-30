@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use postgresql as the database for Active Record
@@ -30,8 +30,10 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 #Use Omniauth-facebook
-gem 'omniauth'
 gem 'omniauth-facebook'
+
+#Use Devise
+gem 'devise'
 
 #Use Fog
 gem 'fog'
@@ -40,7 +42,7 @@ gem 'fog'
 gem 'carrierwave'
 
 #Use AWS
-gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk'
 
 #Use ENV
 gem 'dotenv-rails'
