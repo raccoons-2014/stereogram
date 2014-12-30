@@ -33,15 +33,16 @@ ActiveRecord::Schema.define(version: 20141229220845) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name",      null: false
-    t.string   "last_name",       null: false
-    t.string   "provider",        null: false
-    t.string   "uid",             null: false
-    t.string   "token",           null: false
-    t.string   "profile_img_url", null: false
+    t.string   "first_name",                      null: false
+    t.string   "last_name",                       null: false
+    t.string   "provider",                        null: false
+    t.string   "uid",                             null: false
+    t.string   "token",                           null: false
+    t.string   "profile_img_url",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",           null: false
+    t.string   "email",                           null: false
+    t.string   "encrypted_password", default: "", null: false
     t.string   "sound_cloud_id"
   end
 
