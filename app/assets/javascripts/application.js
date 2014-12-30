@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
 //= require turbolinks
+//= require jquery
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
+//= require jquery_ujs
+//= require jquery.jplayer.min
