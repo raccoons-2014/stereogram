@@ -6,7 +6,7 @@ describe SnippetsController do
   let (:test_snippet) {create :snippet}
 
   before :each do
-    session[:user_id] = test_user.id
+    sign_in :user, test_user
   end
 
   describe "#create" do
