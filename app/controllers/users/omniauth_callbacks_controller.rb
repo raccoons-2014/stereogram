@@ -11,6 +11,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
   def soundcloud
-    redirect_to soundcloud_client.authorize_url(:display => "popup")
   end
 end
