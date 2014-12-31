@@ -1,6 +1,8 @@
 $('#connect').on('click', function(){
   preventDefault();
   SC.connect(function(){
+    currentUser = new SoundcloudUser();
+    currentUser.searchSongs();
   });
 });
 
