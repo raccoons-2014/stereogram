@@ -1,5 +1,5 @@
 class SnippetsController < ApplicationController
-  before_action :redirect_guests
+  before_action :authenticate_user!
 
   def index
   end

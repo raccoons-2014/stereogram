@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   include TracksHelper
-  before_action :redirect_guests
+  before_action :authenticate_user!
   def index
     @tracks = Track.all
     @songs = $s3.buckets.first.objects
