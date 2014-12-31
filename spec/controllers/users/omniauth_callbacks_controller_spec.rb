@@ -7,6 +7,7 @@ describe Users::OmniauthCallbacksController do
 
   before :each do
     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+    request.env["devise.mapping"] = Devise.mappings[:user]
   end
 
   describe "#facebook" do
