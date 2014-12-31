@@ -23,13 +23,11 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = current_user.tracks.new(track_params)
-
-    if @track.save
-      redirect_to track_path @track
-    else
-      redirect_to new_track_path
+    params[:tracks].each do |track_data|
+      track = current_user.tracks.new(track_data)
+      next unless track.save
     end
+    redirect_to user_path(current_user)
   end
 
   def show
