@@ -19,13 +19,13 @@ $connect.on('click', function(){
 
 var Track = function(opts){
   this.id = opts.id;
-  this.permalinkUrl = opts.permalinkUrl;
-  this.artworkUrl = opts.artworkUrl;
+  this.permalink_url = opts.permalink_url;
+  this.artwork_url = opts.artwork_url;
   this.description = opts.description;
   this.duration = opts.duration;
-  this.waveformUrl = opts.waveformUrl;
+  this.waveform_url = opts.waveform_url;
   this.bpm = opts.bpm;
-  this.streamUrl = opts.streamUrl;
+  this.stream_url = opts.stream_url;
   this.audio = {};
 }
 
@@ -66,7 +66,7 @@ Snippet.prototype.playFull = function(){
 }
 
 Track.prototype.audioCreator = function(){
-  this.audio = new Audio(streamUrl + '?client_id=' + <%= ENV['SOUNDCLOUD_APP_ID'] %>)
+  this.audio = new Audio(stream_url + '?client_id=' + <%= ENV['SOUNDCLOUD_APP_ID'] %>)
 }
 
 SoundcloudUser.prototype.searchSongs = function(){
@@ -75,13 +75,13 @@ SoundcloudUser.prototype.searchSongs = function(){
     $(tracks).each(function(i, userTrack){
       var opts = {
         id: userTrack.id,
-        permalinkUrl: userTrack.permalinkUrl,
-        artworkUrl: userTrack.artworkUrl,
+        permalink_url: userTrack.permalink_url,
+        artwork_url: userTrack.artwork_url,
         description: userTrack.description,
         duration: userTrack.duration,
-        waveformUrl: userTrack.waveform_url,
+        waveform_url: userTrack.waveform_url,
         bpm: userTrack.bpm,
-        streamUrl: userTrack.stream_url
+        stream_url: userTrack.stream_url
       }
       that.userTracks.push(new track(opts)
       );
