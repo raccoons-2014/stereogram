@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20141231195703) do
     t.string   "permalink_url"
     t.string   "artwork_url"
     t.string   "description"
-    t.string   "duration"
+    t.integer  "duration"
     t.string   "waveform_url"
-    t.string   "bpm"
+    t.integer  "bpm"
   end
 
   create_table "users", force: true do |t|
