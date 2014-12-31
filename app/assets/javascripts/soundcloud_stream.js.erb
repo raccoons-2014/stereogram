@@ -1,23 +1,21 @@
 $(document).ready(function(){
-  $('#connect').on('click', function(){
-    preventDefault();
-    SC.connect(function(){
-      var currentUser = new SoundcloudUser();
-      currentUser.searchSongs();
-      $.ajax({
-        url: '/tracks',
-        method: 'POST',
-        data: {
-          track: currentUser.track
-        },
-        dataType: 'JSON'
-      }).done(function(response){
-      })
-    });
-  });
+  $connect = $('#connect');
 });
 
-
+$connect.on('click', function(){
+  preventDefault();
+  SC.connect(function(){
+    var currentUser = new SoundcloudUser();
+    currentUser.searchSongs();
+    $.ajax({
+      url: '/tracks',
+      method: 'POST',
+      data: currentUser.userTracks,
+      dataType: 'JSON'
+    }).done(function(response){
+    })
+  });
+});
 
 var Track = function(opts){
   this.id = opts.id;
@@ -30,11 +28,6 @@ var Track = function(opts){
   this.streamUrl = opts.streamUrl;
   this.audio = {};
 }
-
-// var ajaxCaller = function(){
-//   return function(){
-//   }
-// }
 
 var SongView = function(){
   $body = $('body');
