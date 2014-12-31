@@ -1,6 +1,7 @@
-.widget{
+.playerlist-item{
+margin-top: -135px;
 width:100%;
-background-color: black;
+border-style: solid;
 position: absolute;
 display: inline-block;
 }
