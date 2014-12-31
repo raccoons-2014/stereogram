@@ -16,5 +16,12 @@ describe Users::OmniauthCallbacksController do
         post :facebook
       }.to change {User.count}.by(1)
     end
+
+    it "returns an already existing user" do
+      post :facebook
+      expect{
+        post :facebook
+      }.to_not change {User.count}
+    end
   end
 end
