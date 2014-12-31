@@ -1,5 +1,4 @@
 class TracksController < ApplicationController
-  include TracksHelper
   before_action :authenticate_user!
   def index
     @tracks = Track.all
