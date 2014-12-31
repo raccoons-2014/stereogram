@@ -10,7 +10,7 @@ $connect.on('click', function(){
     $.ajax({
       url: '/tracks',
       method: 'POST',
-      data: currentUser.userTracks,
+      data: {tracks: currentUser.userTracks},
       dataType: 'JSON'
     }).done(function(response){
     })
