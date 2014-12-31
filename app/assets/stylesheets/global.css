@@ -36,10 +36,15 @@ background-color:green;
   float: left;
 }
 
-.sound-artwork {
-  position: inherit;
-
+.soundstream-header {
+  position: relative;
+  float: center;
+  background-color: red;
+  height: inherit;
+  width: inherit;
+  margin-left: 10.38em;
 }
+
 /*#sc-widget{
   width: 100%;
 }*/
