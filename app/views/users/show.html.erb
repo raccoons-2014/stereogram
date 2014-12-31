@@ -2,7 +2,7 @@
 
 <%= @user.full_name %>
 
-<%= link_to "Link your Soundcloud Account", user_omniauth_authorize_path(:soundcloud) %>
+<%= render :partial => 'soundcloud/connect' %>
 
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
