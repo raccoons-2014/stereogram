@@ -1,9 +1,13 @@
 $(document).ready(function(){
   $connect = $('#connect');
+
+SC.initialize({
+  client_id: '<%= ENV['SOUNDCLOUD_APP_ID'] %>',
+  redirect_uri: 'http://localhost:3000/'
 });
 
-$connect.on('click', function(){
-  preventDefault();
+$connect.on('click', function(event){
+  event.preventDefault();
   SC.connect(function(){
     var currentUser = new SoundcloudUser();
     currentUser.searchSongs();
@@ -88,3 +92,4 @@ SoundcloudUser.prototype.searchSongs = function(){
     });
   });
 }
+});
