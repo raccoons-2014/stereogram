@@ -1,10 +1,24 @@
-$('#connect').on('click', function(){
-  preventDefault();
-  SC.connect(function(){
-    currentUser = new SoundcloudUser();
-    currentUser.searchSongs();
+$(document).ready(function(){
+  $('#connect').on('click', function(){
+    preventDefault();
+    SC.connect(function(){
+      var currentUser = new SoundcloudUser();
+      currentUser.searchSongs();
+      $.ajax({
+        url: '/tracks',
+        method: 'POST',
+        data: {
+          track: currentUser.track
+        },
+        dataType: 'JSON'
+      }).done(function(response){
+        //redirect?
+      })
+    });
   });
 });
+
+
 
 var Track = function(opts){
   this.id = opts.id;
@@ -17,6 +31,11 @@ var Track = function(opts){
   this.streamUrl = opts.streamUrl;
   this.audio = {};
 }
+
+// var ajaxCaller = function(){
+//   return function(){
+//   }
+// }
 
 var SongView = function(){
   $body = $('body');
