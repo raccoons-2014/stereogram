@@ -53,6 +53,8 @@ RSpec.configure do |config|
     request.env["HTTP_REFERER"] = "/"
   end
 
+  config.include Devise::TestHelpers, type: :controller
+
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
     :provider => 'facebook',
@@ -60,7 +62,8 @@ RSpec.configure do |config|
     :info          => {
       :first_name  => Faker::Name.first_name,
       :last_name   => Faker::Name.last_name,
-      :image       => Faker::Internet.url
+      :image       => Faker::Internet.url,
+      :email       => Faker::Internet.email
     },
     :credentials   => {
       :token => "nicetoken12443"

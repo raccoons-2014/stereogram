@@ -6,5 +6,7 @@ FactoryGirl.define do
     uid "1234567"
     token "ABCDEF..."
     profile_img_url "http//:pictures.com"
+    email {Faker::Internet.email}
+    encrypted_password ""
   end
 end
