@@ -59,6 +59,10 @@ gem 'faker', group: [:development, :test]
 #For generating test models
 gem "factory_girl_rails", group: [:development, :test]
 
+#Foundation
+gem "foundation-rails", '5.4.3.1'
+
+
 #Use Capybara
 group :test do
   gem 'capybara'
