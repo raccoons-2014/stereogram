@@ -3,9 +3,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :rememberable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :tracks
   has_many :snippets
-  has_many :follows, :foreign_key => "follower_id",
 
+  has_many :follows, :foreign_key => "follower_id",
   has_many :following, :through => :follows, :source => :followed
+
+  has_many :reverse_follows, :foreign_key => "followed_id",
+                             :class_name => "Follow",
+  has_many :followers, :through => :reverse_follows, :source => :follower
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
