@@ -4,12 +4,9 @@ Rails.application.routes.draw do
 
   root 'snippets#index'
 
-  resources :users, only: [:show]
   resources :users do
-    collection do
-      get 'following','followers'
-    end
-end
+    get 'following','followers', on: :member
+  end
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
   resources :snippets, only: [:index, :show, :create, :destroy]
 
