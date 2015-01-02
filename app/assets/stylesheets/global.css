@@ -1,43 +1,29 @@
-.container {
-  display:inline-block;
-  background-color:red;
-  width:100%;
-  height:600px;
-  margin-top: 150px;
-  font-family: 'Maven Pro', sans-serif;
+.playerlist-item {
+  height: 9.9em;
+  width: 64.3%;
+  border-color: black;
+  padding: 10px 0 0 0;
+  position: relative;
+  margin-left: 14em;
 }
 
-.playerlist-item {
-height: 8.9em;
-width: 64.3%;
-border-color: black;
-background-color:black;
-border-style: solid;
-}
-/*
+
 .activity {
-  position: relative;
-  margin-top: .9em;
-  height: 6.85em;
-  border-style: solid;
-  background-color: red;
+  height: 8.2em;
 }
+
 
 .soundstream-media-content {
-  position: relative;
-  margin-top: -.4em;
-  height: 7.1em;
-  width: 9.85em;
-  background-color: red;
-  border-style: solid;
+  height: 4.8em;
+  width: 5.4em;
   float: left;
+  background-color: grey;
 }
 
 .soundstream-header {
   position: relative;
   float: center;
-  background-color: white;
-  margin-left: 10.38em;
+  margin-left: 10.4em;
   height: 100%;
 }
 
@@ -47,8 +33,8 @@ border-style: solid;
   background-color: white;
   height: 50px;
   width: 50px;
-  margin-left: 20em;
-  top: 60px;
+  margin-left: 10em;
+  top: 4em;
 }
 
 #sound-pause-button {
@@ -56,17 +42,18 @@ border-style: solid;
   background-image: url('ic_pause_circle_outline_black_24dp.png');
   height: 50px;
   width: 50px;
-  margin-left: 24em;
-  top: 10px;
+  margin-left: 14em;
+  top: .89em;
 }
+
 
 #sound-rewind-button {
   position: relative;
   background-image: url('ic_fast_rewind_black_24dp.png');
   height: 50px;
   width: 50px;
-  margin-left: 16em;
-  top: -40.5px;
+  margin-left: 6em;
+  top: -2.2em;
 }
 
 #sound-fastforward-button {
@@ -74,10 +61,11 @@ border-style: solid;
   background-image: url('ic_fast_forward_black_24dp.png');
   height: 50px;
   width: 50px;
-  margin-left: 28em;
-  top: -91px;
+  margin-left: 18em;
+  top: -5.3em;
 }
 
+/*
 .sound-title {
   position: relative;
   top: -110px;
@@ -99,15 +87,13 @@ border-style: solid;
   margin-left: 1em;
   width: 35em;
 }
+*/
 
 .soundstream-button-actions {
   position: relative;
-  top: -111px;
-  width: 42px;
-  left: 771px;
-  height: 108.5px;
-  background-color: red;
-  border: solid;
+  top: -8em;
+  width: 2.7em;
+  left: 38em;
 }
 
 #favorite-button {
@@ -128,7 +114,7 @@ border-style: solid;
   width: 35px;
   background-image: url('ic_sync_black_18dp.png');
 }
-*/
+
 
 .snippets{
   float: right;
