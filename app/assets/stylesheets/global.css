@@ -7,7 +7,7 @@
   font-family: 'Maven Pro', sans-serif;
 }
 
-.playerlist-item{
+.playerlist-item {
 margin-top: -9.5em;
 height: 8.9em;
 width: 64.3%;
@@ -41,45 +41,6 @@ background-color:black;
   background-color: white;
   margin-left: 10.38em;
   height: 100%;
-<<<<<<< HEAD
-}
-
-#soundstream-track-player {
-  height: .08em;
-  color: black;
-  margin-top: -12.5em;
-  margin-left: 1em;
-  width: 35em;
-}
-
-#sound-play-button {
-  position: relative;
-  background-image: url('ic_play_circle_outline_black_24dp.png');
-  background-color: white;
-  height: 50px;
-  width: 50px;
-  margin-left: 20em;
-  top: 60px;
-}
-
-#sound-pause-button {
-  position: relative;
-  background-image: url('ic_pause_circle_outline_black_24dp.png');
-  height: 50px;
-  width: 50px;
-  margin-left: 24em;
-  top: 10px;
-}
-
-#sound-rewind-button {
-  position: relative;
-  background-image: url('ic_fast_rewind_black_24dp.png');
-  height: 50px;
-  width: 50px;
-  margin-left: 16em;
-  top: -40.5px;
-}
-
 }
 
 #sound-play-button {
@@ -131,6 +92,14 @@ background-color:black;
   top: -128px;
   left: 20px;
   width: 75px;
+}
+
+#soundstream-track-player {
+  height: .08em;
+  color: black;
+  margin-top: -12.5em;
+  margin-left: 1em;
+  width: 35em;
 }
 
 .soundstream-button-actions {
