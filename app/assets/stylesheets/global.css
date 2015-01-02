@@ -14,10 +14,10 @@
 
 
 .soundstream-media-content {
-  height: 4.8em;
-  width: 5.4em;
+  height: 6.8em;
+  width: 7.4em;
   float: left;
-  background-color: grey;
+  background-image: url('album-art.jpg')
 }
 
 .soundstream-header {
