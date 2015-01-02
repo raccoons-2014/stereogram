@@ -33,4 +33,12 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def is_following?(followed)
+    follows.find_by_followed_id(followed)
+  end
+
+  def follow(followed)
+    follows.create(:followed_id => followed.id)
+  end
+
 end
