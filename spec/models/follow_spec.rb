@@ -16,4 +16,9 @@ describe Follow do
     test_follower.follow(test_user)
     expect(test_follower.is_following?(test_user)).to eq(Follow.find_by(followed_id: test_user.id))
   end
+
+  it "assigns the correct user to be followed" do
+    test_follower.follow(test_user)
+    expect{test_follower.unfollow(test_user)}.to change {Follow.count}.by(-1)
+  end
 end
