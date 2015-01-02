@@ -8,15 +8,13 @@
 }
 
 .playerlist-item {
-margin-top: -9.5em;
 height: 8.9em;
 width: 64.3%;
-position: absolute;
 border-color: black;
 background-color:black;
-
+border-style: solid;
 }
-
+/*
 .activity {
   position: relative;
   margin-top: .9em;
@@ -130,9 +128,10 @@ background-color:black;
   width: 35px;
   background-image: url('ic_sync_black_18dp.png');
 }
+*/
+
 .snippets{
   float: right;
-  /*position: relative;*/
   width: 45%;
   height: 500px;
   background-color: black;
@@ -144,7 +143,6 @@ background-color:black;
 }
 
 .tracks{
-  /*position: relative;*/
   margin-top: 35px;
   opacity: 0.5;
   float: left;
