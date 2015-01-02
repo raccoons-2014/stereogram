@@ -14,7 +14,7 @@ width: 98.5%;
 border-style: solid;
 position: absolute;
 border-color: black;
-background-color:green;
+background-color:black;
 
 }
 
@@ -22,8 +22,8 @@ background-color:green;
   position: relative;
   margin-top: .9em;
   height: 6.85em;
-  border-style: dashed;
-  background-color: orange;
+  border-style: solid;
+  background-color: red;
 }
 
 .soundstream-media-content {
@@ -31,15 +31,15 @@ background-color:green;
   margin-top: -.4em;
   height: 7.1em;
   width: 9.85em;
-  background-color: yellow;
-  border-style: double;
+  background-color: red;
+  border-style: solid;
   float: left;
 }
 
 .soundstream-header {
   position: relative;
   float: center;
-  background-color: red;
+  background-color: white;
   margin-left: 10.38em;
   height: 100%;
 }
@@ -50,10 +50,49 @@ background-color:green;
   background-color: white;
   height: 50px;
   width: 50px;
+  margin-left: 20em;
+  top: 60px;
 }
 
-.sound-pause-button {
+#sound-pause-button {
   position: relative;
+  background-image: url('ic_pause_circle_outline_black_24dp.png');
+  height: 50px;
+  width: 50px;
+  margin-left: 24em;
+  top: 10px;
+}
+
+#sound-rewind-button {
+  position: relative;
+  background-image: url('ic_fast_rewind_black_24dp.png');
+  height: 50px;
+  width: 50px;
+  margin-left: 16em;
+  top: -40.5px;
+}
+
+#sound-fastforward-button {
+  position: relative;
+  background-image: url('ic_fast_forward_black_24dp.png');
+  height: 50px;
+  width: 50px;
+  margin-left: 28em;
+  top: -91px;
+}
+
+.sound-title {
+  position: relative;
+  top: -110px;
+  width: 100px;
+  left: 100px;
+}
+
+.sound-artist {
+  position: relative;
+  top: -128px;
+  left: 20px;
+  width: 75px;
 }
 
 .snippets{
