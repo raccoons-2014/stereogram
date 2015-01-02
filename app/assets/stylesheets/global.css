@@ -40,14 +40,21 @@ background-color:green;
   position: relative;
   float: center;
   background-color: red;
-  height: inherit;
-  width: inherit;
   margin-left: 10.38em;
+  height: 100%;
 }
 
-/*#sc-widget{
-  width: 100%;
-}*/
+#sound-play-button {
+  position: relative;
+  background-image: url('ic_play_circle_outline_black_24dp.png');
+  background-color: white;
+  height: 50px;
+  width: 50px;
+}
+
+.sound-pause-button {
+  position: relative;
+}
 
 .snippets{
   float: right;
