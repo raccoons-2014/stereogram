@@ -8,6 +8,10 @@ describe Follow do
     expect(test_user).to respond_to(:follow)
   end
 
+  it "should keep track of the users a given user is following" do
+    expect(test_user).to respond_to(:following)
+  end
+
   it "should allow users to follow other users" do
     expect{test_follower.follow(test_user)}.to change {Follow.count}.by(1)
   end
@@ -17,7 +21,7 @@ describe Follow do
     expect(test_follower.is_following?(test_user)).to eq(Follow.find_by(followed_id: test_user.id))
   end
 
-  it "assigns the correct user to be followed" do
+  it "should allow users to unfollow users they previously followed" do
     test_follower.follow(test_user)
     expect{test_follower.unfollow(test_user)}.to change {Follow.count}.by(-1)
   end
