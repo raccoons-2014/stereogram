@@ -60,7 +60,7 @@ gem 'faker', group: [:development, :test]
 gem "factory_girl_rails", group: [:development, :test]
 
 #Foundation
-gem "foundation-rails"
+gem "foundation-rails", '5.4.3.1'
 
 
 #Use Capybara
