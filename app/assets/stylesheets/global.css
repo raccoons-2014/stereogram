@@ -43,6 +43,14 @@ background-color:black;
   height: 100%;
 }
 
+#soundstream-track-player {
+  height: .08em;
+  color: black;
+  margin-top: -12.5em;
+  margin-left: 1em;
+  width: 35em;
+}
+
 #sound-play-button {
   position: relative;
   background-image: url('ic_play_circle_outline_black_24dp.png');
