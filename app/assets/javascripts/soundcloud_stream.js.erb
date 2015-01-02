@@ -59,26 +59,6 @@ $(document).ready(function(){
     // })
   });
 
-  SoundcloudUser.prototype.fauxSearchSongs = function(perma){
-    that = this;
-    SC.get(perma + '/tracks', function(tracks){
-      $(tracks).each(function(i, userTrack){
-        var opts = {
-          id: userTrack.id,
-          permalink_url: userTrack.permalink_url,
-          artwork_url: userTrack.artwork_url,
-          description: userTrack.description,
-          duration: userTrack.duration,
-          waveform_url: userTrack.waveform_url,
-          bpm: userTrack.bpm,
-          stream_url: userTrack.stream_url
-        }
-        that.userTracks.push(new track(opts)
-        });
-      });
-    });
-  }
-
   SoundcloudUser.prototype.fauxSearchSongs = function(){
     that = this;
     SC.get(that.userPerm + '/tracks', function(tracks){
