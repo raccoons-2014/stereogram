@@ -12,17 +12,17 @@ describe Follow do
     expect(test_user).to respond_to(:following)
   end
 
-  it "should allow users to follow other users" do
-    expect{test_follower.follow(test_user)}.to change {Follow.count}.by(1)
-  end
-
   it "should be valid if an existing user follows another existing user" do
     expect(test_follower.follow(test_user)).to be_valid
   end
 
+  it "should allow users to follow other users" do
+    expect{test_follower.follow(test_user)}.to change {Follow.count}.by(1)
+  end
+
   it "assigns the correct user to be followed" do
     test_follower.follow(test_user)
-    expect(test_follower.is_following?(test_user)).to eq(Follow.find_by(followed_id: test_user.id))
+    expect(test_follower.is_following?(test_user)).to eq(Follow.all.last)
   end
 
   it "should allow users to unfollow users they previously followed" do
