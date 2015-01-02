@@ -23,11 +23,16 @@ class TracksController < ApplicationController
   end
 
   def create
-    params[:tracks].each do |track_data|
-      track = current_user.tracks.new(track_data)
-      next unless track.save
+
+    if request.xhr?
+      params[:tracks].each do |track_data|
+        track = current_user.tracks.new(track_data)
+        next unless track.save
+      end
+      redirect_to user_path(current_user)
+    else
+
     end
-    redirect_to user_path(current_user)
   end
 
   def show
