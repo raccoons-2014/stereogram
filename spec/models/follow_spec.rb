@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Follow, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Follow do
+  let (:test_user) {create :user}
+  let (:test_follower) {create :user}
+
+  it "should have users that have the ability to follow other users" do
+    expect(test_user).to respond_to(:follow)
+  end
+
 end
