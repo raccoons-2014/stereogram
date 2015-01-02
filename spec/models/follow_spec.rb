@@ -8,4 +8,8 @@ describe Follow do
     expect(test_user).to respond_to(:follow)
   end
 
+  it "should allow users to follow other users" do
+    expect{test_follower.follow(test_user)}.to change {Follow.count}.by(1)
+  end
+
 end
