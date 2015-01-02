@@ -60,7 +60,8 @@ gem 'faker', group: [:development, :test]
 gem "factory_girl_rails", group: [:development, :test]
 
 #Foundation
-gem 'zurb-foundation'
+gem "foundation-rails"
+
 
 #Use Capybara
 group :test do
