@@ -74,4 +74,4 @@ $('.tracks').on('click', 'img', function(){
   });
 });
 
-Mousetrap.bindGlobal('s n i p', function(){currentSnippet.returnSnippet(), alert('SNIP!')})
+// Mousetrap.bindGlobal('s n i p', function(){currentSnippet.returnSnippet(), alert('SNIP!')})
