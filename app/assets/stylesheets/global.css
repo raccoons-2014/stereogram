@@ -10,8 +10,7 @@
 .playerlist-item{
 margin-top: -9.5em;
 height: 8.9em;
-width: 98.5%;
-border-style: solid;
+width: 64.3%;
 position: absolute;
 border-color: black;
 background-color:black;
@@ -95,6 +94,34 @@ background-color:black;
   width: 75px;
 }
 
+.soundstream-button-actions {
+  position: relative;
+  top: -111px;
+  width: 42px;
+  left: 771px;
+  height: 108.5px;
+  background-color: red;
+  border: solid;
+}
+
+#like-button {
+  position: relative;
+  height: 35px;
+  width: 35px;
+  background-image: url('ic_favorite_black_18dp.png')
+}
+
+#share-button {
+  height: 35px;
+  width: 35px;
+  background-image: url('ic_share_black_18dp.png')
+}
+
+#repost-button {
+  height: 35px;
+  width: 35px;
+  background-image: url('ic_sync_black_18dp.png');
+}
 .snippets{
   float: right;
   /*position: relative;*/
