@@ -61,8 +61,8 @@ $(document).ready(function(){
 
   SoundcloudUser.prototype.fauxSearchSongs = function(){
     that = this;
-    var getSongs = function(){
-      SC.get(that.userPerm + '/tracks', function(tracks){
+    var tracksGetter = function(){
+      return SC.get(that.userPerm + '/tracks', function(tracks){
         $(tracks).each(function(i, userTrack){
            opts = {
             source_id: userTrack.id,
@@ -79,7 +79,7 @@ $(document).ready(function(){
         });
       });
     }
-    $.when(getSongs()).done(function(){
+    $.when(tracksGetter()).done(function(){
       debugger
       $.ajax({
       url: '/tracks',
