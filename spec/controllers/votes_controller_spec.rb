@@ -23,5 +23,10 @@ before :each do
       expect(assigns(:vote).votable).to eq(test_track)
     end
 
+   it "should associate a vote with a snippet" do
+      post :create, snippet_id: test_snippet.id
+      expect(assigns(:vote).votable).to eq(test_snippet)
+    end
+
   end
 end
