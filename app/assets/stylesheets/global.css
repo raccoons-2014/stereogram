@@ -1,10 +1,98 @@
+.nav-bar {
+  opacity: 0.9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 225px;
+  overflow: hidden;
+  cursor: default;
+  color: #ADADAD;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -moz-transition: width ease-in-out 0.28s, background linear 0.1s;
+  -webkit-transition: width ease-in-out 0.28s, background linear 0.1s;
+  -o-transition: width ease-in-out 0.28s, background linear 0.1s;
+  transition: width ease-in-out 0.28s, background linear 0.1s;
+  -ms-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate(0px, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.stereogram-logo {
+  height: 14em;
+  width: 14em;
+  background-image: url('logo.jpg');
+  padding: 6px 0 0 1px;
+}
+
+.nav-links {
+  height: 30em;
+  width: 13em;
+  margin-top: 13.5em;
+  margin-left: 0.1em;
+}
+
+.tracks-link {
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  height: 74px;
+  width: 180px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: black;
+}
+
+.snippets-link {
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  height: 74px;
+  width: 180px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: black;
+}
+
+.me-link {
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  height: 74px;
+  width: 180px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: black;
+}
+
+.upload-link {
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  height: 74px;
+  width: 180px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: black;
+}
+
 .playerlist-item {
   height: 9.9em;
   width: 64.3%;
   border-color: black;
   padding: 10px 0 0 0;
   position: relative;
-  margin-left: 14em;
+  margin-left: 21em;
+  margin-top: 3.8em;
 }
 
 
