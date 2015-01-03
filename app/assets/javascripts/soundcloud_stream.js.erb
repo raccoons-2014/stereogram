@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   SC.initialize({
     client_id: '<%= ENV['SOUNDCLOUD_APP_ID'] %>',
-    redirect_uri: 'http://127.0.0.1:3000/'
+    // redirect_uri: 'http://127.0.0.1:3000/callback'
   });
 
   SoundcloudUser = function(){
@@ -61,35 +61,37 @@ $(document).ready(function(){
 
   SoundcloudUser.prototype.fauxSearchSongs = function(){
     that = this;
-    var tracksGetter = function(){
-      return SC.get(that.userPerm + '/tracks', function(tracks){
-        $(tracks).each(function(i, userTrack){
-           opts = {
-            source_id: userTrack.id,
-            permalink_url: userTrack.permalink_url,
-            artwork_url: userTrack.artwork_url,
-            description: userTrack.description,
-            duration: userTrack.duration,
-            waveform_url: userTrack.waveform_url,
-            bpm: userTrack.bpm,
-            stream_url: userTrack.stream_url
-          }
-          that.userTracks.push(new Track(opts)
-          );
+    SC.get(that.userPerm + '/tracks', function(tracks){
+
+      $.when().then(function(){
+         $(tracks).each(function(i, userTrack){
+         opts = {
+          source_id: userTrack.id,
+          permalink_url: userTrack.permalink_url,
+          artwork_url: userTrack.artwork_url,
+          description: userTrack.description,
+          duration: userTrack.duration,
+          waveform_url: userTrack.waveform_url,
+          bpm: userTrack.bpm,
+          stream_url: userTrack.stream_url
+        }
+        that.userTracks.push(new Track(opts)
+        );
+      })
+      }).then(function(){
+        $.ajax({
+        url: '/tracks',
+        method: 'POST',
+        data: {tracks: currentUser.userTracks},
+        dataType: 'JSON'
+        }).done(function(response){
         });
       });
-    }
-    $.when(tracksGetter()).done(function(){
-      debugger
-      $.ajax({
-      url: '/tracks',
-      method: 'POST',
-      data: {tracks: currentUser.userTracks},
-      dataType: 'JSON'
-      }).done(function(response){
-      })
-    });
+    }) // soundcloud get
   }
+
+
+
 //end of test
 
   $connect.on('click', function(event){
