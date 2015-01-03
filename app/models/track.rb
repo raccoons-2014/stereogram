@@ -10,4 +10,8 @@ class Track < ActiveRecord::Base
   def voters
     self.votes.includes(:user).map(&:user)
   end
+
+  def already_voted?(track)
+    track.voters.include?(current_user)
+  end
 end
