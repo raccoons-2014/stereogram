@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   SC.initialize({
     client_id: '<%= ENV['SOUNDCLOUD_APP_ID'] %>',
-    // redirect_uri: 'http://127.0.0.1:3000/callback'
+    redirect_uri: 'http://localhost:3000/callback'
   });
 
   SoundcloudUser = function(){
@@ -62,7 +62,6 @@ $(document).ready(function(){
   SoundcloudUser.prototype.fauxSearchSongs = function(){
     that = this;
     SC.get(that.userPerm + '/tracks', function(tracks){
-
       $.when().then(function(){
          $(tracks).each(function(i, userTrack){
          opts = {
