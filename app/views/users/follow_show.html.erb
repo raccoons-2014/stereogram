@@ -1,5 +1,5 @@
 <ul>
   <% @user.following.each do |user| %>
-    <li><%= user.first_name %></li>
+    <li><%= link_to "#{user.first_name}", user_path(user) %></li>
   <% end %>
 </ul>
