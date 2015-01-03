@@ -1,3 +1,19 @@
 require 'rails_helper'
 
+describe VotesController do
+  let (:test_user) {create :user}
+  let (:test_track) {create :track}
+  let (:test_snippet) {create :snippet}
 
+before :each do
+    sign_in :user, test_user
+  end
+
+  describe "#create" do
+   it "should associate a vote with a track" do
+      post :create, track_id: test_track.id
+      expect(assigns(:vote).votable).to eq(test_track)
+    end
+  end
+
+end
