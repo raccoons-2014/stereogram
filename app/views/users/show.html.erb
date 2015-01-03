@@ -1,9 +1,7 @@
 <%= image_tag @user.profile_img_url %>
 
 <%= @user.full_name %>
-
-<%= link_to "Link your Soundcloud Account", user_omniauth_authorize_path(:soundcloud) %>
-
+<% render 'follow_user_form' %>
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
     <% @user.tracks.each do |track| %>
