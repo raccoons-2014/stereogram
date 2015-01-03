@@ -11,5 +11,11 @@ describe FollowsController do
       ).to be_redirect
     end
 
+    it "should add a user follower relationship to the database" do
+      expect{
+        post :create, follow: {followed_id: (test_user.follow(test_follower))}
+      }.to change {Follow.count}.by(1)
+    end
+
   end
 end
