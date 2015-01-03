@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :snippets, only: [:index, :show, :create, :destroy]
 
   post "tracks/upload", :as => :upload
+
+  resources :votes, only: [:create]
 end
