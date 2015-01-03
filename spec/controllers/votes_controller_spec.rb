@@ -33,7 +33,12 @@ before :each do
       expect(assigns(:vote).user).to eq(test_user)
     end
 
-
+   it "should prevent voting more than once" do
+      post :create, track_id: test_track.id
+      expect{
+        post :create, track_id: test_track.id
+        }.to_not change {Vote.count}
+    end
 
   end
 end
