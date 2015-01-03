@@ -10,7 +10,7 @@ $(document).ready(function(){
   $connect = $('#connect');
 
   SC.initialize({
-    client_id: '<%= ENV['SOUNDCLOUD_APP_ID'] %>',
+    client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
     redirect_uri: 'http://localhost:3000/callback'
   });
 
