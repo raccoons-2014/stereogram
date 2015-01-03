@@ -1,4 +1,5 @@
+hi
 <%= form_for current_user.follows.new(:followed_id => @user.id) do |f| %>
   <div><%= f.hidden_field :followed_id %></div>
-  <div class="actions"><%= f.submit "Follow "@user.first_name %></div>
+  <button><%= f.submit "Follow "@user.first_name %></button>
 <% end %>

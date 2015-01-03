@@ -1,7 +1,7 @@
 <%= image_tag @user.profile_img_url %>
 
 <%= @user.full_name %>
-<% render 'follow_user_form' %>
+<%= render 'follow_user_form' %>
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
     <% @user.tracks.each do |track| %>
