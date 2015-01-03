@@ -49,14 +49,16 @@ $(document).ready(function(){
       $('body').append('<h2 id="user">' + users[0].uri + '</h2>');
       currentUser.userPerm = $('#user').html();
       currentUser.fauxSearchSongs();
+      setTimeout(function(){
+        $.ajax({
+        url: '/tracks',
+        method: 'POST',
+        data: {tracks: currentUser.userTracks},
+        dataType: 'JSON'
+      }).done(function(response){
+      })
+      }, 5000);
     })
-        // $.ajax({
-    //   url: '/tracks',
-    //   method: 'POST',
-    //   data: {tracks: currentUser.userTracks},
-    //   dataType: 'JSON'
-    // }).done(function(response){
-    // })
   });
 
   SoundcloudUser.prototype.fauxSearchSongs = function(){
