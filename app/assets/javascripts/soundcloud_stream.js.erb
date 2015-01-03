@@ -118,7 +118,7 @@ $(document).ready(function(){
   }
 
   Track.prototype.audioCreator = function(){
-    this.audio = new Audio(stream_url + '?client_id=' + <%= ENV['SOUNDCLOUD_APP_ID'] %>)
+    this.audio = new Audio(this.stream_url + '?client_id=' + "<%= ENV['SOUNDCLOUD_APP_ID'] %>")
   }
 
   SoundcloudUser.prototype.searchSongs = function(){
