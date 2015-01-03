@@ -40,11 +40,13 @@ class TracksController < ApplicationController
       end
     redirect_to user_path(current_user)
 
-    if @track.save
-      redirect_to track_path @track
     else
-      redirect_to new_track_path
-    end
+      @track = current_user.tracks.new(track_params)
+      if @track.save
+        redirect_to track_path @track
+      else
+        redirect_to new_track_path
+      end
     end
   end
 
