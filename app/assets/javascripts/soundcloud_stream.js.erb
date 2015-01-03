@@ -95,9 +95,8 @@ $(document).ready(function(){
 //end of test
 
   $connect.on('click', function(event){
-    event.preventDefault();
     SC.connect(function(){
-      currentUser = new SoundcloudUser();
+      var currentUser = new SoundcloudUser();
       currentUser.searchSongs();
     })
   });
@@ -146,7 +145,7 @@ $(document).ready(function(){
           $.ajax({
           url: '/tracks',
           method: 'POST',
-          data: {tracks: currentUser.userTracks},
+          data: {tracks: that.userTracks},
           dataType: 'JSON'
           }).done(function(response){
             console.log('AJAX Call complete')
