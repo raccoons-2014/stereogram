@@ -28,5 +28,12 @@ before :each do
       expect(assigns(:vote).votable).to eq(test_snippet)
     end
 
+   it "should associate a vote with current user" do
+      post :create, track_id: test_track.id
+      expect(assigns(:vote).user).to eq(test_user)
+    end
+
+
+
   end
 end
