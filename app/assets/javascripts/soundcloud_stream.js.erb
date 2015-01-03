@@ -1,4 +1,13 @@
 $(document).ready(function(){
+
+  $('.track').on('click', function(event){
+      $target = $(event.target)
+      debugger
+      a = new Audio
+      a.src = "http://api.soundcloud.com/tracks/" + $target[0].id + '/stream?client_id=' + "<%= ENV['SOUNDCLOUD_APP_ID'] %>"
+      a.play();
+    })
+
   $connect = $('#connect');
 
   SC.initialize({
