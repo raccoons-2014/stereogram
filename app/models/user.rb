@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  has_many :votes, as: :votable
   devise :database_authenticatable, :rememberable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :tracks
   has_many :snippets
