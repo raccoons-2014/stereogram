@@ -96,19 +96,10 @@ $(document).ready(function(){
 
   $connect.on('click', function(event){
     event.preventDefault();
-    window.open(
-      SC.connect(function(){
-        var currentUser = new SoundcloudUser();
-        currentUser.searchSongs();
-        $.ajax({
-          url: '/tracks',
-          method: 'POST',
-          data: {tracks: currentUser.userTracks},
-          dataType: 'JSON'
-        }).done(function(response){
-        })
-      })
-    )
+    SC.connect(function(){
+      currentUser = new SoundcloudUser();
+      currentUser.searchSongs();
+    })
   });
 
   Snippet.prototype.playSnip = function(){
@@ -136,20 +127,31 @@ $(document).ready(function(){
   SoundcloudUser.prototype.searchSongs = function(){
     that = this;
     SC.get('http://api.soundcloud.com/me/tracks', function(tracks){
-      $(tracks).each(function(i, userTrack){
-        var opts = {
-          source_id: userTrack.id,
-          permalink_url: userTrack.permalink_url,
-          artwork_url: userTrack.artwork_url,
-          description: userTrack.description,
-          duration: userTrack.duration,
-          waveform_url: userTrack.waveform_url,
-          bpm: userTrack.bpm,
-          stream_url: userTrack.stream_url
-        }
-        that.userTracks.push(new track(opts)
-        );
-      });
+      $.when().then(function(){
+        $(tracks).each(function(i, userTrack){
+          var opts = {
+            source_id: userTrack.id,
+            permalink_url: userTrack.permalink_url,
+            artwork_url: userTrack.artwork_url,
+            description: userTrack.description,
+            duration: userTrack.duration,
+            waveform_url: userTrack.waveform_url,
+            bpm: userTrack.bpm,
+            stream_url: userTrack.stream_url
+          }
+          that.userTracks.push(new Track(opts)
+          );
+        });
+      }).then(function(){
+          $.ajax({
+          url: '/tracks',
+          method: 'POST',
+          data: {tracks: currentUser.userTracks},
+          dataType: 'JSON'
+          }).done(function(response){
+            console.log('AJAX Call complete')
+          });
+        });
     });
   }
 });
