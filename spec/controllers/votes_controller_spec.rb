@@ -10,10 +10,18 @@ before :each do
   end
 
   describe "#create" do
+
+   it "should create a new vote" do
+      expect{
+        post :create,
+        track_id: test_track.id
+      }.to change {Vote.count}.by (1)
+    end
+
    it "should associate a vote with a track" do
       post :create, track_id: test_track.id
       expect(assigns(:vote).votable).to eq(test_track)
     end
-  end
 
+  end
 end
