@@ -25,7 +25,6 @@ class TracksController < ApplicationController
   def create
     if request.xhr?
       params[:tracks].each do |key, track_data|
-        binding.pry
         track = current_user.tracks.new(
           source_id: track_data['source_id'],
           permalink_url: track_data['permalink_url'],
