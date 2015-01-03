@@ -17,5 +17,12 @@ describe FollowsController do
       }.to change {Follow.count}.by(1)
     end
 
+    it "should prevent a user from following themselves" do
+      current_user = test_user
+      expect{
+        post :create, follow: {followed_id: test_user}
+      }.to_not change {Follow.count}
+    end
+
   end
 end
