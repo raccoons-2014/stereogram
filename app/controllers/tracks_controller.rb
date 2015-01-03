@@ -23,7 +23,6 @@ class TracksController < ApplicationController
   end
 
   def create
-    binding.pry
     if request.xhr?
       params[:tracks].each do |key, track_data|
         binding.pry
