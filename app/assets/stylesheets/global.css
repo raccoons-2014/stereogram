@@ -4,7 +4,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 225px;
+  width: 258px;
   overflow: hidden;
   cursor: default;
   color: #ADADAD;
@@ -37,19 +37,27 @@
 .nav-links {
   height: 30em;
   width: 13em;
-  margin-top: 13.5em;
-  margin-left: 0.1em;
+  margin-top: 16em;
+  margin-left: 1.1em;
 }
 
 .tracks-link {
   margin: 0;
   margin-left: 3em;
   padding: 0;
-  height: 74px;
+  height: 75px;
   width: 180px;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   color: black;
+}
+
+.track-icon {
+  background-image: url('track.png');
+  height: 67px;
+  width: 70px;
+  margin-left: -2.8em;
+  margin-top: -1.4em
 }
 
 .snippets-link {
@@ -63,6 +71,14 @@
   color: black;
 }
 
+.snippet-icon {
+  background-image: url('snippet.png');
+  height: 58px;
+  width: 72px;
+  margin-left: -3em;
+  margin-top: -1.5em;
+}
+
 .me-link {
   margin: 0;
   margin-left: 3em;
@@ -74,6 +90,14 @@
   color: black;
 }
 
+.me-icon {
+  background-image: url('me.png');
+  height: 68px;
+  width: 73px;
+  margin-left: -2.8em;
+  margin-top: -1.4em;
+}
+
 .upload-link {
   margin: 0;
   margin-left: 3em;
@@ -83,6 +107,14 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
   color: black;
+}
+
+.upload-icon {
+  background-image: url('upload.png');
+  height: 73px;
+  width: 73px;
+  margin-left: -2.8em;
+  margin-top: -1.4em;
 }
 
 .playerlist-item {
