@@ -12,7 +12,7 @@ $(document).ready(function(){
   }
 
   var Track = function(opts){
-    this.id = opts.id;
+    this.source_id = opts.source_id;
     this.permalink_url = opts.permalink_url;
     this.artwork_url = opts.artwork_url;
     this.description = opts.description;
@@ -64,7 +64,7 @@ $(document).ready(function(){
     SC.get(that.userPerm + '/tracks', function(tracks){
       $(tracks).each(function(i, userTrack){
          opts = {
-          id: userTrack.id,
+          source_id: userTrack.id,
           permalink_url: userTrack.permalink_url,
           artwork_url: userTrack.artwork_url,
           description: userTrack.description,
@@ -124,7 +124,7 @@ $(document).ready(function(){
     SC.get('http://api.soundcloud.com/me/tracks', function(tracks){
       $(tracks).each(function(i, userTrack){
         var opts = {
-          id: userTrack.id,
+          source_id: userTrack.id,
           permalink_url: userTrack.permalink_url,
           artwork_url: userTrack.artwork_url,
           description: userTrack.description,
