@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post "tracks/upload", :as => :upload
 
   resources :votes, only: [:create]
+  resources :follows, only: [:create, :destroy]
 end
