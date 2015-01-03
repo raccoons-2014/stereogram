@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+  include VotesHelper
 
   def create
     user = current_user
