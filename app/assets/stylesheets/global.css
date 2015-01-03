@@ -34,10 +34,18 @@
   padding: 6px 0 0 1px;
 }
 
+.stereogram-logo > a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 33px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 1em;
+}
 .nav-links {
   height: 30em;
   width: 13em;
-  margin-top: 16em;
+  margin-top: 14em;
   margin-left: 1.1em;
 }
 
@@ -253,6 +261,8 @@
   top: 1.2em;
   width: 5em;
   left: -0.1em;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .sound-artist {
@@ -260,6 +270,8 @@
   top: 1.3em;
   left: -0.1em;
   width: 5em;
+  font-family: 'Open Sans', sans-serif;
+
 }
 
 .soundstream-button-actions {
