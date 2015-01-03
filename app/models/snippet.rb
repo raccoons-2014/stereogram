@@ -19,7 +19,7 @@ class Snippet < ActiveRecord::Base
     self.votes.includes(:user).map(&:user)
   end
 
-  def already_voted?(snippet)
-    snippet.voters.include?(current_user)
+  def already_voted?(user)
+    self.voters.include?(user)
   end
 end

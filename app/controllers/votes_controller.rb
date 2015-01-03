@@ -1,5 +1,4 @@
 class VotesController < ApplicationController
-  include VotesHelper
 
   def create
     user = current_user
@@ -7,11 +6,11 @@ class VotesController < ApplicationController
 
     if params[:track_id]
       @track = Track.find(params[:track_id])
-      @track.votes << @vote unless already_voted?(@track)
+      @track.votes << @vote unless @track.already_voted?(current_user)
       redirect_to :back
     else
       @snippet = Snippet.find(params[:snippet_id])
-      @snippet.votes << @vote unless already_voted?(@snippet)
+      @snippet.votes << @vote unless @snippet.already_voted?(current_user)
       redirect_to :back
     end
   end
