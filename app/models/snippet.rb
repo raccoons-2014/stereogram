@@ -10,4 +10,12 @@ class Snippet < ActiveRecord::Base
   def original_creator
     self.track.user
   end
+
+  def score
+    self.votes.size
+  end
+
+  def voters
+    self.votes.includes(:user).map(&:user)
+  end
 end
