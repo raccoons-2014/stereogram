@@ -7,7 +7,9 @@
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
     <% @user.tracks.each do |track| %>
-      <%= link_to track_path(track) %>
+      <div class='track'>
+        <img id="<%= track.source_id %>" src="<%= track.artwork_url %>">
+      </div>
     <% end %>
   <% else %>
     <h3>You haven't made any tracks yet</h3>
