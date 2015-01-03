@@ -31,7 +31,7 @@
   height: 14em;
   width: 14em;
   background-image: url('logo.jpg');
-  padding: 6px 0 0 1px;
+  padding: 16px 0 0 1px;
 }
 
 .stereogram-logo > a {
@@ -302,16 +302,27 @@
 
 
 .snippets{
-  float: right;
-  width: 45%;
-  height: 500px;
+  height: 550px;
+  width: 51em;
   background-color: black;
   opacity: 0.5;
   display: inline-block;
-  border-radius: 10%;
-  margin-right: 35px;
-  margin-top: 35px;
+  margin-left: 21em;
+  margin-top: 1.5em;
 }
+
+.snippets ul {
+  padding: 0; /* remove default padding and all margins! */
+  margin: 0;
+  list-style-type: none; /* remove the • */
+}
+.snippets ul li {
+  width: 17em;
+  height: 9em;
+  background-color: white;
+  float: left;
+  border-style: solid;
+  border-color: black;}
 
 .tracks{
   margin-top: 35px;

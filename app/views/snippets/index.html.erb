@@ -3,6 +3,13 @@
 
 <div class="snippets">
   <h1>Snippets</h1>
+    <% @snippets.each do |snippet| %>
+      <ul>
+        <li id="snippet">
+          <%= snippet.start_time %>
+        </li>
+      </ul>
+    <%end%>
 </div>
 
 <%= render 'layouts/navigation' %>
