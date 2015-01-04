@@ -1,4 +1,5 @@
 function Track(opts){
+    this.id = opts.id
     this.source_id = opts.source_id;
     this.permalink_url = opts.permalink_url;
     this.artwork_url = opts.artwork_url;
