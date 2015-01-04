@@ -18,6 +18,10 @@ $(document).ready(function(){
     audioPlayer.play()
   })
 
+  $('.snippet').on('click', function(event){
+    snippet = new Snippet()
+  })
+
   $('body').on('click', '#pause', function(event){
     audioPlayer.pause()
     $(this).replaceWith("<div id='play'>PLAY~</div>"
