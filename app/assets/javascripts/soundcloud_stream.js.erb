@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   SC.initialize({
     client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
     redirect_uri: 'http://localhost:3000/callback'
@@ -10,12 +9,9 @@ $(document).ready(function(){
     currentUser.searchSongs();
   })
 
-  audioPlayer = new Audio
-
   $('.track').on('click', function(event){
     track = new Track({source_id: event.target.id})
-    audioPlayer.src = track.stream_url
-    audioPlayer.play()
+    track.audio.play()
   })
 
   $('.snippet').on('click', function(event){
@@ -23,20 +19,20 @@ $(document).ready(function(){
   })
 
   $('body').on('click', '#pause', function(event){
-    audioPlayer.pause()
+    track.audio.pause()
     $(this).replaceWith("<div id='play'>PLAY~</div>")
   })
 
   $('body').on('click', '#play', function(event){
-    audioPlayer.play()
+    track.audio.play()
     $(this).replaceWith("<div id='pause'>PAUSE~</div>")
   })
 
 
 
   $('body').on('click', '#snip', function(event){
-    var endTime = audioPlayer.currentTime
-    var startTime = audioPlayer.currentTime - 15
+    var endTime = track.audio.currentTime
+    var startTime = track.audio.currentTime - 15
     var newSnippet = new Snippet(track, startTime, endTime)
     $.ajax({
       url: '/snippets',
