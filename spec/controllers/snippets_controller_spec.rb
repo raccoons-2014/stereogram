@@ -37,8 +37,7 @@ describe SnippetsController do
     end
 
     it "does not associate a snippet with a track if track_id not present" do
-      post :create, snippet: attributes_for(:snippet)
-      expect(assigns(:snippet).track).to eq(nil)
+      expect{post :create, snippet: attributes_for(:snippet)}.to raise_error
     end
   end
 

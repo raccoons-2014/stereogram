@@ -1,24 +1,27 @@
 var Snippet = function(track, startTime, endTime){
-    this.track = track;
+    this.snippedAudio = track.audio;
+    this.track_id = track.id
     this.start_time = startTime;
     this.end_time = endTime;
-    this.snippedAudio = this.track.audio;
   }
 
   Snippet.prototype.playSnip = function(){
-    this.snippedAudio.currentTime = this.startTime;
+    this.snippedAudio.currentTime = this.start_time;
     this.snippedAudio.play();
     this.cutoff();
   }
 
   Snippet.prototype.cutoff = function(){
-    setInterval(function(){
-      if (this.snippedAudio.currentTime >= this.endTime){
-        this.snippedAudio.pause();
+    var that = this
+    var interval = setInterval(function(){
+      if (that.snippedAudio.currentTime >= that.end_time){
+        that.snippedAudio.pause();
+        clearInterval(interval)
       }
     }, 100 );
   }
 
   Snippet.prototype.playFull = function(){
-    this.track.audio.play();
+    this.snippedAudio.currentTime = 0;
+    this.snippedAudio.play();
   }
