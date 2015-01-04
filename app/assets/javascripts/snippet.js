@@ -1,8 +1,7 @@
 var Snippet = function(track, startTime, endTime){
-    this.track = track;
+    this.snippedAudio = track.audio;
     this.start_time = startTime;
     this.end_time = endTime;
-    this.snippedAudio = this.track.audio;
   }
 
   Snippet.prototype.playSnip = function(){
@@ -19,6 +18,6 @@ var Snippet = function(track, startTime, endTime){
     }, 100 );
   }
 
-  Snippet.prototype.playFull = function(){
-    this.track.audio.play();
-  }
+  // Snippet.prototype.playFull = function(){
+  //   this.track.audio.play();
+  // }
