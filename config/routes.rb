@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'following','followers', on: :member
   end
 
-  get '/userTracks', to: "users#getTracks"
+  get 'users/:id/userTracks', to: "users#getTracks"
 
   resources :users, only: [:show]
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
