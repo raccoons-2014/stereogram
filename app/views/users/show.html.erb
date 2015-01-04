@@ -15,8 +15,8 @@
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
     <% @user.tracks.each do |track| %>
-      <div class='track'>
-        <img id="<%= track.source_id %>" src="<%= track.artwork_url %>">
+      <div class='track' data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
+        <img src="<%= track.artwork_url %>">
       </div>
     <% end %>
   <% else %>

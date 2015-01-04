@@ -14,4 +14,15 @@ class UsersController < ApplicationController
     render 'follower_show'
   end
 
+  def getTracks
+    @user = User.find(params["id"])
+    @tracks = @user.tracks
+    @snippets = @user.snippets
+    # snippet_sources = snippets.map do |snippet|
+    #   snippet.source_id = snippet.track.source_id
+    # end
+    info = {"tracks" => @tracks, "snippets" => @snippets}
+    render :json => info
+  end
+
 end
