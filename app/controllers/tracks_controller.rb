@@ -26,7 +26,7 @@ class TracksController < ApplicationController
     if request.xhr?
       params[:tracks].each do |key, track_data|
         track = current_user.tracks.find_or_create_by(
-          source_id: track_data['source_id'],
+          source_id: track_data['id'],
           permalink_url: track_data['permalink_url'],
           artwork_url: track_data['artwork_url'],
           description: track_data['description'],
