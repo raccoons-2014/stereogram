@@ -1,7 +1,7 @@
 var Snippet = function(track, startTime, endTime){
     this.track = track;
-    this.startTime = startTime;
-    this.endTime = endTime;
+    this.start_time = startTime;
+    this.end_time = endTime;
     this.snippedAudio = this.track.audio;
   }
 
