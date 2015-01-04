@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def followers
     @user = User.find(params[:id])
-    render 'follow_show'
+    render 'follower_show'
   end
 
 end
