@@ -10,13 +10,24 @@ class SnippetsController < ApplicationController
 
   def create
     @user = current_user
-    @snippet = @user.snippets.new(snippet_params)
 
-    if @snippet.save
-      Track.find(params[:track_id]).snippets << @snippet if params[:track_id]
-      redirect_to snippet_path(@snippet)
-    else
-      redirect_to :back
+    respond_to do |format|
+      format.js {
+        binding.pry
+        @snippet = @user.snippets.new(snippet_params)
+        Track.find_by(source_id: params[:snippet][:track][:source_id]).snippets << @snippet
+        render plain: 'OK'
+      }
+
+      format.html {
+        @snippet = @user.snippets.new(snippet_params)
+        if @snippet.save
+          Track.find(params[:track_id]).snippets << @snippet if params[:track_id]
+          redirect_to snippet_path(@snippet)
+        else
+          redirect_to :back
+        end
+      }
     end
   end
 
