@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'snippets#index'
 
+  get '/callback', to: "pages#callback"
+
   resources :users, only: [:show]
   resources :tracks, only: [:index, :new, :create, :show, :destroy]
   resources :snippets, only: [:index, :show, :create, :destroy]

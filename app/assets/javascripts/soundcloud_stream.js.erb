@@ -1,0 +1,52 @@
+$(document).ready(function(){
+
+  SC.initialize({
+    client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
+    redirect_uri: 'http://localhost:3000/callback'
+  });
+
+  $('#connect').click(function(){
+    var currentUser = new SoundcloudUser
+    currentUser.searchSongs();
+  })
+
+  audioPlayer = new Audio
+
+  $('.track').on('click', function(event){
+    track = new Track({id: event.target.id})
+    audioPlayer.src = track.stream_url
+    audioPlayer.play()
+  })
+
+  $('.snippet').on('click', function(event){
+    snippet = new Snippet()
+  })
+
+  $('body').on('click', '#pause', function(event){
+    audioPlayer.pause()
+    $(this).replaceWith("<div id='play'>PLAY~</div>"
+)
+  })
+
+  $('body').on('click', '#play', function(event){
+    audioPlayer.play()
+    $(this).replaceWith("<div id='pause'>PAUSE~</div>"
+)
+  })
+
+
+
+  $('body').on('click', '#snip', function(event){
+    var endTime = audioPlayer.currentTime
+    var startTime = audioPlayer.currentTime - 15
+    var newSnippet = new Snippet(track, startTime, endTime)
+    $.ajax({
+      url: '/snippets',
+      method: 'POST',
+      data: {snippet: newSnippet},
+      dataType: 'JSON'
+    })
+  })
+
+
+});
