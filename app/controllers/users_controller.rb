@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def getTracks
-    @user = User.first
+    @user = User.find(params["id"])
     @tracks = @user.tracks
     @snippets = @user.snippets
     # snippet_sources = snippets.map do |snippet|
