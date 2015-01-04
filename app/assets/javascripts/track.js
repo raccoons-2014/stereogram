@@ -7,7 +7,7 @@ function Track(opts){
     this.waveform_url = opts.waveform_url;
     this.bpm = opts.bpm;
     this.stream_url = this.getStreamUrl();
-    this.audio = {};
+    this.audio = this.audioCreator();
 }
 
 Track.prototype.getStreamUrl = function() {
@@ -15,5 +15,5 @@ Track.prototype.getStreamUrl = function() {
 };
 
 Track.prototype.audioCreator = function(){
-    this.audio = new Audio(this.stream_url)
+    return new Audio(this.stream_url)
 }
