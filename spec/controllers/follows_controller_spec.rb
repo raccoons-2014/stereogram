@@ -11,14 +11,19 @@ describe FollowsController do
       ).to be_redirect
     end
 
-    it "should add a user follower relationship to the database" do
+    it "should add a user-follower relationship to the database" do
       expect{
         post :create, follow: {followed_id: (test_user.follow(test_follower))}
       }.to change {Follow.count}.by(1)
     end
 
+    it "should not add a user-follower relationship if invalid followed_id" do
+      expect{
+        post :create
+      }.to_not change {Follow.count}
+    end
+
     it "should prevent a user from following themselves" do
-      current_user = test_user
       expect{
         post :create, follow: {followed_id: test_user}
       }.to_not change {Follow.count}
