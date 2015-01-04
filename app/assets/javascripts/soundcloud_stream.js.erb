@@ -16,8 +16,8 @@ $(document).ready(function(){
 
   $('.snippet').on('click', function(event){
     var snippetTrack = new Track({source_id: event.currentTarget.dataset.sourceId});
-    snippet = new Snippet(snippetTrack, event.currentTarget.dataset.startTime, event.currentTarget.dataset.endTime
-    );
+    snippet = new Snippet({track: snippetTrack, startTime: event.currentTarget.dataset.startTime, endTime: event.currentTarget.dataset.endTime
+    });
     snippet.playSnip();
   })
 
@@ -34,7 +34,10 @@ $(document).ready(function(){
   $('body').on('click', '#snip', function(event){
     var endTime = track.audio.currentTime;
     var startTime = track.audio.currentTime - 15;
-    var newSnippet = new Snippet(track, startTime, endTime);
+    var newSnippet = new Snippet(
+      {track: track,
+      startTime: startTime,
+      endTime: endTime});
     $.ajax({
       url: '/snippets',
       method: 'POST',
