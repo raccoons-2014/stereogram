@@ -14,11 +14,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <% if current_user %>
     <header>
       <%= render 'layouts/header' %>
     </header>
     <%= render 'layouts/navigation' %>
-    <%= render "soundplayer" %>
+    <%= render 'snippets/soundplayer' %>
+    <% end %>
 
     <%= yield %>
   </body>
