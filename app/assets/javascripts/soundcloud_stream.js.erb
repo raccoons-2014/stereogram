@@ -13,7 +13,7 @@ $(document).ready(function(){
   audioPlayer = new Audio
 
   $('.track').on('click', function(event){
-    track = new Track({id: event.target.id})
+    track = new Track({source_id: event.target.id})
     audioPlayer.src = track.stream_url
     audioPlayer.play()
   })
@@ -24,14 +24,12 @@ $(document).ready(function(){
 
   $('body').on('click', '#pause', function(event){
     audioPlayer.pause()
-    $(this).replaceWith("<div id='play'>PLAY~</div>"
-)
+    $(this).replaceWith("<div id='play'>PLAY~</div>")
   })
 
   $('body').on('click', '#play', function(event){
     audioPlayer.play()
-    $(this).replaceWith("<div id='pause'>PAUSE~</div>"
-)
+    $(this).replaceWith("<div id='pause'>PAUSE~</div>")
   })
 
 
