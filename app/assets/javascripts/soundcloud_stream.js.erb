@@ -10,8 +10,24 @@ $(document).ready(function(){
     currentUser.searchSongs();
   })
 
-  $('.track').each(function(i, track){
+  audioPlayer = new Audio
 
+  $('.track').on('click', function(event){
+    var track = new Track({id: event.target.id})
+    audioPlayer.src = track.stream_url
+    audioPlayer.play()
+  })
+
+  $('body').on('click', '#pause', function(event){
+    audioPlayer.pause()
+    $(this).replaceWith("<div id='play'>PLAY~</div>"
+)
+  })
+
+  $('body').on('click', '#play', function(event){
+    audioPlayer.play()
+    $(this).replaceWith("<div id='pause'>PAUSE~</div>"
+)
   })
 
 
