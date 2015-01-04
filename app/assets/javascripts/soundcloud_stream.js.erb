@@ -10,7 +10,7 @@ $(document).ready(function(){
   })
 
   $('.track').on('click', function(event){
-    track = new Track({source_id: event.target.id})
+    track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
     track.audio.play()
   })
 
