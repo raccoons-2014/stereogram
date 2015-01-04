@@ -16,15 +16,10 @@ $(document).ready(function(){
 
   $('.snippet').on('click', function(event){
     var snipData = event.currentTarget.dataset;
-    var $testThing = $(event.currentTarget);
     var snippetTrack = new Track({source_id: snipData.sourceId});
     snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
     });
     snippet.playSnip();
-    $testThing.replaceWith('<div id="play-me">Play Full Song</div>');
-    $testThing.on('click',function(event){
-      snippet.playFull();
-    })
   })
 
   $('body').on('click', '#pause', function(event){
