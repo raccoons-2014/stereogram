@@ -31,14 +31,19 @@ describe FollowsController do
   end
 
   describe "#destroy" do
-    it "should require a user to sign in to unfollow" do
-      delete :destroy, :id => 1
-      response.should redirect_to(new_user_session_path)
+    before :each do
+      @new_follow = test_user.follow(test_follower)
     end
 
-    xit "should add a user as a follower" do
+    it "should require a user to sign in to unfollow" do
       expect(
-        post :create, follow: {followed_id: (test_user.follow(test_follower))}
+        delete :destroy, :id => 1
+      ).to redirect_to(new_user_session_path)
+    end
+
+    it "should allow a user to unfollow a user they previously followed" do
+      expect(
+        delete :destroy, id: @new_follow.id
       ).to be_redirect
     end
   end
