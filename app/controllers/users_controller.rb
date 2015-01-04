@@ -12,6 +12,13 @@ class UsersController < ApplicationController
   def followers
     @user = User.find(params[:id])
     render 'follower_show'
+
+  def getTracks
+    @user = User.first
+    @tracks = @user.tracks
+    @snippets = @user.snippets
+    info = {tracks: @tracks, snippets: @snippets}
+    render :json => info
   end
 
 end
