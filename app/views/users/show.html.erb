@@ -2,14 +2,14 @@
 
 <%= @user.full_name %>
 <a href="<%= following_user_path(@user) %>">
-<p><%= @user.following.count %> Following
+<p><%= @user.following.count %> Following</p></a>
 
 <%= render :partial => 'soundcloud/connect' %>
 
 <div id='pause'>PAUSE~</div>
 <div id='snip'>SNIPPET~</div>
 <a href="<%= followers_user_path(@user) %>">
-<%= @user.followers.count %> Followers</p>
+<%= @user.followers.count %> Followers</p></a>
 
 <%= render 'follow_form'%>
 <div class='user-tracks'>
