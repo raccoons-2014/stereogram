@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def followers
     @user = User.find(params[:id])
     render 'follower_show'
+  end
 
   def getTracks
     @user = User.first
