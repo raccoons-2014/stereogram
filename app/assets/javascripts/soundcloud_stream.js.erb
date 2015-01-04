@@ -1,156 +1,18 @@
 $(document).ready(function(){
 
-  $('.track').on('click', function(event){
-      $target = $(event.target)
-      a = new Audio
-      a.src = "http://api.soundcloud.com/tracks/" + $target[0].id + '/stream?client_id=' + "<%= ENV['SOUNDCLOUD_APP_ID'] %>"
-      a.play();
-    })
-
-  $connect = $('#connect');
-
   SC.initialize({
     client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
     redirect_uri: 'http://localhost:3000/callback'
   });
 
-  SoundcloudUser = function(){
-    this.userTracks = [],
-    this.userPerm = ""
-  }
+  $('#connect').click(function(){
+    var currentUser = new SoundcloudUser
+    currentUser.searchSongs();
+  })
 
-  var Track = function(opts){
-    this.source_id = opts.source_id;
-    this.permalink_url = opts.permalink_url;
-    this.artwork_url = opts.artwork_url;
-    this.description = opts.description;
-    this.duration = opts.duration;
-    this.waveform_url = opts.waveform_url;
-    this.bpm = opts.bpm;
-    this.stream_url = opts.stream_url;
-    this.audio = {};
-  }
+  $('.track').each(function(i, track){
 
-  var SongView = function(){
-    $body = $('body');
-    $startButton = $('input');
-    $stopButton = $('input');
-    $playbackWidget = $('widget');
-  }
-
-  var Snippet = function(track, startTime, endTime){
-    this.track = track;
-    this.startTime = startTime;
-    this.endTime = endTime;
-    this.snippedAudio = this.track.audio;
-  }
-
-//test for pulling songs from front end to back end
-  $('body').append('<h1 id="testconn" style="color:blue">CLICK ME!</h1>');
-  $('body').append('<form id="group"><input type="text"></form>');
-  $fauxConnect = $('#testconn');
-  $fauxConnect.on('click', function(event){
-    $group = $('#group input').val();
-    currentUser = new SoundcloudUser();
-    SC.get('http://api.soundcloud.com/users', {q: $group}, function(users){
-      $('body').append('<h2 id="user">' + users[0].uri + '</h2>');
-      currentUser.userPerm = $('#user').html();
-      currentUser.fauxSearchSongs();
-    })
-  });
-
-  SoundcloudUser.prototype.fauxSearchSongs = function(){
-    that = this;
-    SC.get(that.userPerm + '/tracks', function(tracks){
-      $.when().then(function(){
-         $(tracks).each(function(i, userTrack){
-         opts = {
-          source_id: userTrack.id,
-          permalink_url: userTrack.permalink_url,
-          artwork_url: userTrack.artwork_url,
-          description: userTrack.description,
-          duration: userTrack.duration,
-          waveform_url: userTrack.waveform_url,
-          bpm: userTrack.bpm,
-          stream_url: userTrack.stream_url
-        }
-        that.userTracks.push(new Track(opts)
-        );
-      })
-      }).then(function(){
-        $.ajax({
-        url: '/tracks',
-        method: 'POST',
-        data: {tracks: currentUser.userTracks},
-        dataType: 'JSON'
-        }).done(function(response){
-          console.log('AJAX Call complete')
-        });
-      });
-    })
-  }
+  })
 
 
-
-//end of test
-
-  $connect.on('click', function(event){
-    SC.connect(function(){
-      var currentUser = new SoundcloudUser();
-      currentUser.searchSongs();
-    })
-  });
-
-  Snippet.prototype.playSnip = function(){
-    this.snippedAudio.currentTime = this.startTime;
-    this.snippedAudio.play();
-    this.cutoff();
-  }
-
-  Snippet.prototype.cutoff = function(){
-    setInterval(function(){
-      if (this.snippedAudio.currentTime >= this.endTime){
-        this.snippedAudio.pause();
-      }
-    }, 100 );
-  }
-
-  Snippet.prototype.playFull = function(){
-    this.track.audio.play();
-  }
-
-  Track.prototype.audioCreator = function(){
-    this.audio = new Audio(this.stream_url + '?client_id=' + "<%= ENV['SOUNDCLOUD_APP_ID'] %>")
-  }
-
-  SoundcloudUser.prototype.searchSongs = function(){
-    that = this;
-    SC.get('http://api.soundcloud.com/me/tracks', function(tracks){
-      $.when().then(function(){
-        $(tracks).each(function(i, userTrack){
-          var opts = {
-            source_id: userTrack.id,
-            permalink_url: userTrack.permalink_url,
-            artwork_url: userTrack.artwork_url,
-            description: userTrack.description,
-            duration: userTrack.duration,
-            waveform_url: userTrack.waveform_url,
-            bpm: userTrack.bpm,
-            stream_url: userTrack.stream_url
-          }
-          that.userTracks.push(new Track(opts)
-          );
-        });
-      }).then(function(){
-          $.ajax({
-          url: '/tracks',
-          method: 'POST',
-          data: {tracks: that.userTracks},
-          dataType: 'JSON'
-          }).done(function(response){
-            console.log('AJAX Call complete')
-          });
-        });
-    });
-  }
 });
