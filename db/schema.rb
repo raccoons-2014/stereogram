@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20150103143325) do
     t.integer  "user_id",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "source_id"
+    t.integer  "source_id"
     t.string   "permalink_url"
     t.string   "artwork_url"
-    t.text     "description"
-    t.string   "duration"
+    t.string   "description"
+    t.integer  "duration"
     t.string   "waveform_url"
-    t.string   "bpm"
+    t.integer  "bpm"
   end
 
   create_table "users", force: true do |t|
