@@ -44,18 +44,4 @@ $(document).ready(function(){
 
     })
   })
-
-  var getBackend = function(){
-    $.getJSON( window.location.pathname + "/userTracks" ,function( data ) {
-      var tracks = data.tracks
-      var snippets = data.snippets
-      $.each( snippets , function( key, val ) {
-        snippet = new Snippet()
-      });
-    })
-  }
-
-  getBackend();
-
-
 });
