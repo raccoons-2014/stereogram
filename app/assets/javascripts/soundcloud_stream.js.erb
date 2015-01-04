@@ -35,4 +35,18 @@ $(document).ready(function(){
   })
 
 
+
+  $('body').on('click', '#snip', function(event){
+    var endTime = audioPlayer.currentTime
+    var startTime = audioPlayer.currentTime - 15
+    var newSnippet = new Snippet(track, startTime, endTime)
+    $.ajax({
+      url: '/snippets',
+      method: 'POST',
+      data: {snippet: newSnippet},
+      dataType: 'JSON'
+    })
+  })
+
+
 });
