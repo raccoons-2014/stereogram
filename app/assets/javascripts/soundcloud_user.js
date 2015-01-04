@@ -4,10 +4,7 @@ var SoundcloudUser = function(){
 }
 
 SoundcloudUser.prototype.searchSongs = function(){
-    // var i = 0
     SC.connect(function(){
-      // i++
-      // if (i > 1){
         SC.get('/me/tracks', function(
           foundTracks){
           $.ajax({
@@ -16,10 +13,8 @@ SoundcloudUser.prototype.searchSongs = function(){
             data: {tracks: foundTracks},
             dataType: 'JSON'
           }).success(function(response){
-            debugger
             $('body').append(response)
           })
         })
-      // }
     })
   }
