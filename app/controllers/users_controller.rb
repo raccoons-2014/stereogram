@@ -16,8 +16,11 @@ class UsersController < ApplicationController
   def getTracks
     @user = User.first
     @tracks = @user.tracks
-    @snippets = @user.snippets
-    info = {tracks: @tracks, snippets: @snippets}
+    snippets = @user.snippets
+    @snippets = snippets.map do |snippet|
+      snippet.source_id = snippet.track.source_id
+    end
+    info = {"tracks" => @tracks, "snippets" => @snippets}
     render :json => info
   end
 
