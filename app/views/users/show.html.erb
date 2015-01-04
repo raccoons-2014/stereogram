@@ -4,6 +4,9 @@
 
 <%= render :partial => 'soundcloud/connect' %>
 
+<div id='pause'>PAUSE~</div>
+<div id='snip'>SNIPPET~</div>
+
 <div class='user-tracks'>
   <% if !@user.tracks.empty? %>
     <% @user.tracks.each do |track| %>
@@ -19,7 +22,10 @@
 <div class='user-snippets'>
   <% if !@user.snippets.empty? %>
     <% @user.snippets.each do |snippet| %>
-      <%= link_to snippet_path(snippet) %>
+      <div class='snippet'>
+        <p>A Snippet from <%= snippet.original_creator.full_name %></p>
+        <img src="<%= snippet.track.artwork_url %>">
+      </div>
     <% end %>
   <% else %>
     <h3>You haven't made any snippets yet</h3>

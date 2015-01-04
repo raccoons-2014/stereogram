@@ -5,11 +5,9 @@
 
 </section>
 <ol>
-  <% @songs.each do |song| %>
+  <% @tracks.each do |track| %>
     <li>
-      <%= song.key %>
-      <br>
-      <%= link_to 'Destroy',  track_path(song),  method: :delete, data: { confirm: 'Are you sure?' } %>
+      <img src="<%= track.artwork_url %>" alt="">
     </li>
   <% end %>
 </ol>

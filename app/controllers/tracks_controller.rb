@@ -23,10 +23,12 @@ class TracksController < ApplicationController
   end
 
   def create
-    if request.xhr?
-      params[:tracks].each do |key, track_data|
-        track = current_user.tracks.new(
-          source_id: track_data['source_id'],
+
+    respond_to do |format|
+      format.js{
+        params[:tracks].each do |key, track_data|
+        track = current_user.tracks.find_or_create_by(
+          source_id: track_data['id'],
           permalink_url: track_data['permalink_url'],
           artwork_url: track_data['artwork_url'],
           description: track_data['description'],
@@ -36,15 +38,17 @@ class TracksController < ApplicationController
           )
         next unless track.save
       end
-    redirect_to user_path(current_user)
+      render plain: 'AJAX OK'
+      }
 
-    else
-      @track = current_user.tracks.new(track_params)
-      if @track.save
-        redirect_to track_path @track
-      else
-        redirect_to new_track_path
-      end
+      format.html {
+        @track = current_user.tracks.new(track_params)
+        if @track.save
+          redirect_to track_path @track
+        else
+          redirect_to new_track_path
+        end
+      }
     end
   end
 
