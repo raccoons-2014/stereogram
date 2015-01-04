@@ -31,14 +31,17 @@ $(document).ready(function(){
 
 
   $('body').on('click', '#snip', function(event){
-    var endTime = track.audio.currentTime
-    var startTime = track.audio.currentTime - 15
-    var newSnippet = new Snippet(track, startTime, endTime)
+    var endTime = track.audio.currentTime;
+    var startTime = track.audio.currentTime - 15;
+    var newSnippet = new Snippet(track, startTime, endTime);
+    debugger
     $.ajax({
       url: '/snippets',
       method: 'POST',
-      data: {snippet: newSnippet},
+      data: {snippet: {track_id: newSnippet.track_id, start_time: newSnippet.start_time, end_time: newSnippet.end_time}},
       dataType: 'JSON'
+    }).done(function(response){
+
     })
   })
 
