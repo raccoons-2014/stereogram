@@ -13,7 +13,7 @@ $(document).ready(function(){
   audioPlayer = new Audio
 
   $('.track').on('click', function(event){
-    var track = new Track({id: event.target.id})
+    track = new Track({id: event.target.id})
     audioPlayer.src = track.stream_url
     audioPlayer.play()
   })
