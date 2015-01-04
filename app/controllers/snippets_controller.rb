@@ -13,7 +13,6 @@ class SnippetsController < ApplicationController
 
     respond_to do |format|
       format.js {
-        binding.pry
         @snippet = @user.snippets.new(snippet_params)
         Track.find_by(source_id: params[:snippet][:track][:source_id]).snippets << @snippet
         render plain: 'OK'
