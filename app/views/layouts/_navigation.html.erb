@@ -1,20 +1,17 @@
-<div class="large-1 columns">
-  <div class="icon-bar large-vertical four-up">
-    <a class="item">
-      <img src="assets/img/images/track.png" >
-      <label>Tracks</label>
-    </a>
-    <a class="item">
-      <img src="assets/img/images/snippet.png" >
-      <label>Snippets</label>
-    </a>
-    <a class="item">
-      <img src="assets/img/images/me.png" >
-      <label>Me</label>
-    </a>
-    <a class="item">
-      <img src="assets/img/images/upload.png" >
-      <label>Upload</label>
-    </a>
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Home", root_path %></a></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="divider"></li>
+      <li><%= link_to "Tracks", tracks_path %></li>
+      <li class="divider"></li>
+      <li><%= link_to "Snippets", snippets_path %></li>
+      <li class="divider"></li>
+      <li><%= link_to "My Profile", user_path(current_user.id) %></li>
+    </ul>
   </div>
-</div>
+</nav>
