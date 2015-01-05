@@ -16,7 +16,7 @@ class SnippetsController < ApplicationController
       format.js {
         @snippet = @user.snippets.new(snippet_params)
         Track.find(params[:snippet][:track_id]).snippets << @snippet
-        render plain: 'OK'
+        render plain: 'This will be a snippet partial'
       }
 
       format.html {
