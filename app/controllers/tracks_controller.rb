@@ -2,7 +2,6 @@ class TracksController < ApplicationController
   before_action :authenticate_user!
   def index
     @tracks = Track.all
-    @songs = $s3.buckets.first.objects
   end
 
   def new
