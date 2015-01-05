@@ -16,14 +16,21 @@
 
 
   <body>
-    <div class="row">
+    <div class="row top_nav">
+      <div class="small-12 columns">
+        <% if current_user %>
       <%= render 'layouts/navigation_top' %>
+      </div>
     </div>
-    <div class="small-1 columns">
+
+    <div class="row">
+      <div class="small-3 columns">
         <%= render 'layouts/navigation_side' %>
-    </div>
-    <div class="small-11 columns">
-      <%= yield %>
+      </div>
+    <% end %>
+      <div class="small-9 columns">
+        <%= yield %>
+      </div>
     </div>
 
   <%= javascript_include_tag "application" %>
