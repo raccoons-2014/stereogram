@@ -11,27 +11,34 @@
   background-repeat: none !important;
 }
 
-div.row.top_nav{
 
-  z-index: 2;
-}
-
-div.small-2.columns{
+#left.small-2.columns{
   position:fixed !important;
   height: 100% !important;
   padding: 0 !important;
+  width: 7% !important;
   left:0 !important;
 }
 
-div.small-5.columns.left{
-  background-color: red !important;
+#center.small-5.columns{
   height: 100% !important;
   padding: 0 !important;
+  margin-left: 7% !important;
 }
 
-div.small-5.columns.right{
-position:relative !important;
-  background-color: blue !important;
+#right.small-5.columns{
   height: 100% !important;
   padding: 0 !important;
+  left: 140px;
+  opacity: 0.7;
+  background-color: black !important;
+}
+
+.player{
+  position: absolute !important;
+  height: 100% !important;
+  width: 100% !important;
+  background-image: url("background.jpg") !important;
+  background-size: 100% !important;
+  z-index: -1;
 }
