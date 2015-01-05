@@ -1,8 +1,8 @@
-var Snippet = function(track, startTime, endTime){
-    this.snippedAudio = track.audio;
-    this.track_id = track.id
-    this.start_time = startTime;
-    this.end_time = endTime;
+var Snippet = function(opts){
+    this.snippedAudio = opts.track.audio;
+    this.track_id = opts.track.id
+    this.start_time = opts.startTime;
+    this.end_time = opts.endTime;
   }
 
   Snippet.prototype.playSnip = function(){
