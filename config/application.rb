@@ -32,6 +32,5 @@ module Stereogram
       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
       )
     $s3 = AWS::S3.new
-
   end
 end
