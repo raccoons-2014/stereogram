@@ -43,8 +43,8 @@ $(document).ready(function(){
       url: '/snippets',
       method: 'POST',
       data: {snippet: {track_id: newSnippet.track_id, start_time: newSnippet.start_time, end_time: newSnippet.end_time}},
-      dataType: 'JSON'
     }).done(function(response){
+      $('.user-snippets').append(response);
     })
   })
 });
