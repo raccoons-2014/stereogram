@@ -16,10 +16,22 @@ div.row.top_nav{
   z-index: 2;
 }
 
-div.small-3.columns{
+div.small-2.columns{
   position:fixed !important;
   height: 100% !important;
   padding: 0 !important;
-  top:45px !important;
   left:0 !important;
+}
+
+div.small-5.columns.left{
+  background-color: red !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+div.small-5.columns.right{
+position:relative !important;
+  background-color: blue !important;
+  height: 100% !important;
+  padding: 0 !important;
 }
