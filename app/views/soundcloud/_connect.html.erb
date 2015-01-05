@@ -1,1 +1,7 @@
-<div id="connect"> CONNECT! </div>
+<div id="connect">
+  <% if !@user.tracks.empty? %>
+    UPDATE!
+  <% else %>
+    CONNECT!
+  <% end %>
+</div>
