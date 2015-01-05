@@ -12,15 +12,6 @@ class TracksController < ApplicationController
     end
   end
 
-  def upload
-    begin
-        $s3.buckets.first.objects.create(sanitize_filename(params[:mp3file].original_filename), params[:mp3file].read, 'dbc-stereogram', :access => :public_read)
-        redirect_to tracks_path
-    rescue
-        render :text => "Couldn't complete the upload"
-    end
-  end
-
   def create
 
     respond_to do |format|
@@ -55,22 +46,8 @@ class TracksController < ApplicationController
     @track = Track.find params[:id]
   end
 
-  def destroy
-    if (params[:song])
-      $s3.buckets.first.objects.find(params[:song], BUCKET).delete
-      redirect_to root_path
-    else
-      render :text => "No song was found to delete!"
-    end
-  end
-
   private
     def track_params
       params.require(:track).permit(:source_id, :permalink_url, :artwork_url, :description, :duration, :waveform_url, :bpm)
-    end
-
-    def sanitize_filename(file_name)
-      just_filename = File.basename(file_name)
-      just_filename.sub(/[^\w\.\-]/,'_')
     end
 end
