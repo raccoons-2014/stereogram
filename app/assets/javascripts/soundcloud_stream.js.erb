@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  SC.initialize({
-    client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
-    redirect_uri: 'http://localhost:3000/callback'
-  });
 
   $('#connect').click(function(){
     var currentUser = new SoundcloudUser

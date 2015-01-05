@@ -4,6 +4,11 @@ var SoundcloudUser = function(){
 }
 
 SoundcloudUser.prototype.searchSongs = function(){
+  SC.initialize({
+    client_id: "b99714ff12392f9d7e1498ab5166732d",
+    redirect_uri: 'http:localhost:3000/callback'
+  });
+
     SC.connect(function(){
         SC.get('/me/tracks', function(
           foundTracks){
