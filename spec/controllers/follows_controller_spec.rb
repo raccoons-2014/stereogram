@@ -17,6 +17,7 @@ describe FollowsController do
       }.to change {Follow.count}.by(1)
     end
 
+    # Love your testing of edge-cases
     it "should not add a user-follower relationship if invalid followed_id" do
       expect{
         post :create

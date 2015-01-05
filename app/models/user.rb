@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    super.tap do |user|
+    super.tap do |user| #wtf, you use #tap?  It's awesome, but srsly,  Devise
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def follow(followed)
-    follows.create(:followed_id => followed.id)
+    follows.create(:followed_id => followed.id) unless followed.id == self.id
   end
 
   def unfollow(followed)

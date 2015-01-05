@@ -5,7 +5,7 @@ describe VotesController do
   let (:test_track) {create :track}
   let (:test_snippet) {create :snippet}
 
-before :each do
+  before :each do
     sign_in :user, test_user
   end
 
@@ -37,7 +37,7 @@ before :each do
       post :create, track_id: test_track.id
       expect{
         post :create, track_id: test_track.id
-        }.to_not change {Vote.count}
+      }.to_not change {Vote.count}
     end
 
   end
