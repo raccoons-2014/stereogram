@@ -1,0 +1,10 @@
+<div class="row track" data-source-id="<%= @track.source_id %>" data-track-id="<%= @track.id %>">
+  <ul class="small-block-grid-3">
+  <li><img src="<%= @track.artwork_url %>"/></li>
+  <li>Description: <%= @track.description %></li>
+  <li>Length: <%= @track.duration %></li>
+  <li>Posted By: <%= User.find(@track.user_id).first_name %></li>
+</ul>
+</div>
+
+

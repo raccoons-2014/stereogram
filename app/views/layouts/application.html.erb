@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'http://connect.soundcloud.com/sdk.js'%>
+    <%= csrf_meta_tags %>
+  </head>
+
+
+  <body>
+    <div class="row top_nav">
+      <div class="small-12 columns">
+        <% if current_user %>
+      <%= render 'layouts/navigation_top' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-3 columns">
+        <%= render 'layouts/navigation_side' %>
+      </div>
+    <% end %>
+      <div class="small-9 columns">
+        <%= yield %>
+      </div>
+    </div>
+
+  <%= javascript_include_tag "application" %>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<ul>
+  <%= form_for @track do |f| %>
+    <%f.label :soundcloud_track_id %>
+    <%= f.text_field :soundcloud_track_id, :placeholder => "Enter your soundcloud url"%>
+  <br>
+  <br>
+    <%= f.submit "Create Your Track" %>
+  <% end %>
+</ul>
