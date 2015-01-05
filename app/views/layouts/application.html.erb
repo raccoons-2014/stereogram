@@ -13,15 +13,19 @@
     <%= javascript_include_tag 'http://connect.soundcloud.com/sdk.js'%>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <% if current_user %>
-    <header>
-      <%= render 'layouts/header' %>
-    </header>
-    <%= render 'layouts/navigation' %>
-    <%= render 'snippets/soundplayer' %>
-    <% end %>
 
-    <%= yield %>
-  </body>
+
+  <body>
+    <div class="row">
+      <%= render 'layouts/navigation_top' %>
+    </div>
+    <div class="small-1 columns">
+        <%= render 'layouts/navigation_side' %>
+    </div>
+    <div class="small-11 columns">
+      <%= yield %>
+    </div>
+
+  <%= javascript_include_tag "application" %>
+</body>
 </html>
