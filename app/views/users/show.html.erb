@@ -2,7 +2,6 @@
 <%= image_tag (@user.profile_img_url), :class => "profile_image" %>
 </div>
 
-
 <ul class="small-block-grid-3">
   <li class="follow_div"><a href="<%= followers_user_path(@user) %>">
   <%= @user.followers.count %> Followers</p></a></li>
@@ -15,10 +14,6 @@
 <div class="row">
 <%= render :partial => 'soundcloud/connect' %>
 </div>
-
-
-
-
 
 <div class='user-tracks'>
   <% @user.tracks.each do |track| %>
