@@ -1,13 +1,12 @@
-<%= link_to "Upload a New Song", new_track_path %>
-
 <h2>Stream A Song</h2>
 <section id='audio'>
-
-</section>
 <ol>
   <% @tracks.each do |track| %>
     <li>
+      <h2>track.title</h2>
       <img src="<%= track.artwork_url %>" alt="">
+      <p> <%= track.description %> </p>
     </li>
   <% end %>
 </ol>
+</section>
