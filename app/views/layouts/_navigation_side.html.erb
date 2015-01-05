@@ -1,22 +1,22 @@
 <div class="icon-bar vertical five-up">
   <a class="item" href="/">
-    <img src="assets/logo.jpg" >
+    <img src="<%= asset_path('logo.jpg') %>" >
     <label>Home</label>
   </a>
   <a class="item" href="/tracks">
-    <img src="assets/track.png" >
+    <img src="<%= asset_path('track.png')%>" >
     <label>Tracks</label>
   </a>
   <a class="item" href="/snippets">
-    <img src="assets/snippet.png" >
+    <img src=" <%= asset_path('snippet.png') %>" >
     <label>Snippets</label>
   </a>
   <a class="item" href="/users/<%= current_user.id %>">
-    <img src="assets/me.png" >
+    <img src="<%= asset_path('me.png') %>" >
     <label>Me</label>
   </a>
   <a class="item" href="/upload">
-    <img src="assets/upload.png" >
+    <img src="<%= asset_path('upload.png') %>" >
     <label>Upload</label>
   </a>
 </div>
