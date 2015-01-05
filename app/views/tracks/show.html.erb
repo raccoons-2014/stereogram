@@ -1,10 +1,10 @@
-<p>
-  <h5><%= @track.soundcloud_track_id %></h5>
-  <h4>Posted By: <%= User.find(@track.user_id).first_name %></h4>
-  <p>Created At:</p><p><%= @track.created_at %></p>
-  <p> This Track Has <%= @track.snippets.count %> snippets </p>
-</p>
+<div class="row track" data-source-id="<%= @track.source_id %>" data-track-id="<%= @track.id %>">
+  <ul class="small-block-grid-3">
+  <li><img src="<%= @track.artwork_url %>"/></li>
+  <li>Description: <%= @track.description %></li>
+  <li>Length: <%= @track.duration %></li>
+  <li>Posted By: <%= User.find(@track.user_id).first_name %></li>
+</ul>
+</div>
 
 
-<div class="button"><%= link_to "Track", new_track_path(@track) %></div>
-<%= button_to "Delete", track_path(@track), method: :delete %>
