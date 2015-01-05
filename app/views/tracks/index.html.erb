@@ -1,13 +1,30 @@
-<%= link_to "Upload a New Song", new_track_path %>
+<section>
+  <h2>Tracks</h2>
+  <ol>
+    <% @tracks.each do |track| %>
+    <div class="row" id='audio'>
 
-<h2>Stream A Song</h2>
-<section id='audio'>
+      <div class="small-4 columns">
+        <% !if nil? %>
+          <img src="<%= track.artwork_url %>">
+        <% else %>
+        <img src="<%= asset_path('logo.jpg') %>">
+        <% end %>
+      </div>
 
+      <div class="small-8 columns">
+        <p>Track Title</p>
+        <p>Track Artist</p>
+        <p>
+          <% !if nil? %>
+            <%= track.description %>
+          <% else %>
+            <p> No Track Description Provided </p>
+          <% end %>
+        <p>
+      </div>
+
+    </div>
+    <% end %>
+  </ol>
 </section>
-<ol>
-  <% @tracks.each do |track| %>
-    <li>
-      <img src="<%= track.artwork_url %>" alt="">
-    </li>
-  <% end %>
-</ol>

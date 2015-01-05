@@ -19,11 +19,13 @@
 
     <div class="player">
     </div>
-    <div class="small-2 columns" id="left"><%= render 'layouts/navigation_side' %></div>
+    <div class="small-2 columns" id="left">
+      <%= render 'layouts/navigation_side' %>
+    </div>
     <div class="small-5 columns" id="center">PLAYER GOES HERE</div>
-    <div class="small-5 columns" id="right"><%= yield %></div>
-
-
+    <div class="small-5 columns" id="right">
+      <%= yield %>
+    </div>
 
   <%= javascript_include_tag "application" %>
 </body>
