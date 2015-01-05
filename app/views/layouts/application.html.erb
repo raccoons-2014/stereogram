@@ -16,39 +16,12 @@
 
 
   <body>
-      <div class="row">
-        <div class="small-2 columns">
-          <%= render 'layouts/navigation_side' %>
-        </div>
-        <div class="small-5 columns left">
-          PLAYER GOES HERE
-        </div>
-        <div class="small-5 columns right">
-          <%= yield %>
-        </div>
-      </div>
 
-
-      <div class="row">
-  <div class="small-12 medium-4 columns">
-    <div class="panel">
-      <%= render 'layouts/navigation_side' %>
+    <div class="player">
     </div>
-  </div>
-  <div class="small-12 medium-4 columns">
-    <div class="panel">
-
-    </div>
-    <div class="panel">
-      PLAYER GOES HERE
-    </div>
-  </div>
-  <div class="small-12 medium-4 columns">
-    <div class="panel">
-      <%= yield %>
-    </div>
-  </div>
-</div>
+    <div class="small-2 columns" id="left"><%= render 'layouts/navigation_side' %></div>
+    <div class="small-5 columns" id="center">PLAYER GOES HERE</div>
+    <div class="small-5 columns" id="right"><%= yield %></div>
 
 
 
