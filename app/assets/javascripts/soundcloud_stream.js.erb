@@ -1,7 +1,7 @@
 $(document).ready(function(){
   SC.initialize({
     client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
-    redirect_uri: 'http://cryptic-dusk-7305.herokuapp.com/callback'
+    redirect_uri: 'http://localhost:3000/callback'
   });
 
   $('#connect').click(function(){
@@ -9,12 +9,12 @@ $(document).ready(function(){
     currentUser.searchSongs();
   })
 
-  $('.track').on('click', function(event){
+  $('.user-tracks').on('click', '.track', function(event){
     track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
     track.audio.play()
   })
 
-  $('.snippet').on('click', function(event){
+  $('.user-snippets').on('click', '.snippet', function(event){
     var snipData = event.currentTarget.dataset;
     var snippetTrack = new Track({source_id: snipData.sourceId});
     snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
@@ -22,17 +22,17 @@ $(document).ready(function(){
     snippet.playSnip();
   })
 
-  $('body').on('click', '#pause', function(event){
+  $('.columns#right').on('click', '#pause', function(event){
     track.audio.pause()
     $(this).replaceWith("<div id='play'>PLAY~</div>")
   })
 
-  $('body').on('click', '#play', function(event){
+  $('.columns#right').on('click', '#play', function(event){
     track.audio.play()
     $(this).replaceWith("<div id='pause'>PAUSE~</div>")
   })
 
-  $('body').on('click', '#snip', function(event){
+  $('.columns#right').on('click', '#snip', function(event){
     var endTime = track.audio.currentTime;
     var startTime = track.audio.currentTime - 15;
     var newSnippet = new Snippet(
