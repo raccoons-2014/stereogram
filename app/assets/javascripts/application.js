@@ -16,4 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+  SC.initialize({
+    client_id: "b99714ff12392f9d7e1498ab5166732d",
+    redirect_uri: 'http://localhost:3000/callback'
+  });
+});
