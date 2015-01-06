@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
                              :class_name => "Follow"
   has_many :followers, :through => :reverse_follows, :source => :follower
 
-  before_save :remember
+  before_create :remember
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
