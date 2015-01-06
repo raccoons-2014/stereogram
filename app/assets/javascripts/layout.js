@@ -1,6 +1,6 @@
 $('#right.small-5.columns').mouseover(function() {
     $('#right.small-5.columns').animate({
-      left:"140px"},500);
+      left:"600px"},500);
     $('.profile_image').css(
       "padding-left","17em");
     $('.username').show;
@@ -9,7 +9,7 @@ $('#right.small-5.columns').mouseover(function() {
 
 $('#right.small-5.columns').mouseleave(function() {
     $('#right.small-5.columns').animate({
-      left:"625px"},500);
+      left:"1045px"},500);
     $('.profile_image').css(
       "padding-left","3em");
     $('.username').hide;
