@@ -1,8 +1,8 @@
-<section>
+<div class="user-tracks">
   <h2>Tracks</h2>
   <ol>
     <% @tracks.each do |track| %>
       <%= render :partial => 'tracks/track', :locals => {:track => track} %>
     <% end %>
   </ol>
-</section>
+</div>
