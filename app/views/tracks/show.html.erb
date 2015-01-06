@@ -4,7 +4,9 @@
   </div>
 
   <div class="small-offset-1 small-8 columns padded-column">
-    <p>Description: <%= @track.description %></p>
+    <p><%= @track.title %></p>
+    <p> By: <%= @track.artist %> </p>
+    <p>About this Track:<%= @track.description %></p>
     <p>Length: <%= @track.duration %></p>
   </div>
 </div>
