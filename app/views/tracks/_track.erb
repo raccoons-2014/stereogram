@@ -1,0 +1,23 @@
+<div class="row" id='audio'>
+
+      <div class="small-4 columns album_art">
+        <% !if nil? %>
+          <img class="album_art" src="<%= track.artwork_url %>">
+        <% else %>
+          <img class="album_art" src="<%= asset_path('logo.png') %>">
+        <% end %>
+      </div>
+
+      <div class="small-8 columns">
+        <p>Track Title</p>
+        <p>Track Artist</p>
+        <p>
+          <% !if nil? %>
+            <%= track.description %>
+          <% else %>
+            <p> No Track Description Provided </p>
+          <% end %>
+        <p>
+      </div>
+
+</div>
