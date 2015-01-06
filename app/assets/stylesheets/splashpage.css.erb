@@ -46,7 +46,6 @@
 
 .login {
   position:absolute;
-  background: rgba(232, 77, 63, .3);
   border-radius: 48%;
   left:60.5%;
   bottom:35.5%;
@@ -55,7 +54,7 @@
   height:79.5%;
   overflow:hidden;
   z-index: 2;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transform:scale(0);
 }
 
@@ -68,6 +67,17 @@
     padding: 45px 0 0 0;
     height: 140px;
     font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.login p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    opacity: 0;
+    transition: all 1s ease-in-out 0.4s;
 }
 
 .login p a {
@@ -87,6 +97,11 @@
 }
 
 .login-content:hover .login{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.login-content:hover .login p{
   transform: scale(1);
   opacity: 1;
 }
