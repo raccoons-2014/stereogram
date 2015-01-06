@@ -17,12 +17,12 @@ $('#right.small-5.columns').mouseleave(function() {
 })
 
 
-$('.row#audio').mouseover(function() {
+$('.row.collapse.track.partial').mouseover(function() {
     $(this).css(
       "background-color","#E8B504");
 })
 
-$('.row#audio').mouseleave(function() {
+$('.row.collapse.track.partial').mouseleave(function() {
     $(this).css(
       "background-color","black");
 })
