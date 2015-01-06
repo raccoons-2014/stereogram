@@ -36,12 +36,15 @@ $('.widget').on('click', '.icon.play', function(event){
 
 $('.widget').on('click', '.icon.next', function(event){
   track.audio.pause()
+  previousTrack = track
   track = nextTrack
+
   track.audio.play()
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
   track.audio.pause()
+  nextTrack = track
   track = previousTrack
   track.audio.play()
 })
