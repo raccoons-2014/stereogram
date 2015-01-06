@@ -1,4 +1,7 @@
-SNIPPET_LENGTH_CONSTANT = 15;
+snippetLength = function(constant){
+  SNIPPET_LENGTH_CONSTANT = constant || 15;
+}
+snippetLength();
 
 $('#connect').click(function(){
   new SoundcloudUser
