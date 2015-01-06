@@ -13,11 +13,11 @@ class TracksController < ApplicationController
   end
 
   def create
-
     respond_to do |format|
       format.js{
+        tracks = []
         params[:tracks].each do |key, track_data|
-        track = current_user.tracks.find_or_create_by(
+          track = current_user.tracks.find_or_create_by(
           source_id: track_data['id'],
           permalink_url: track_data['permalink_url'],
           artwork_url: track_data['artwork_url'],
@@ -26,9 +26,10 @@ class TracksController < ApplicationController
           waveform_url: track_data['waveform_url'],
           bpm: track_data['bpm']
           )
-        next unless track.save
-      end
-      render plain: 'AJAX OK'
+          next unless track.save
+          tracks << track
+        end
+        render partial: "tracks/updated_show", locals: {tracks: tracks}
       }
 
       format.html {
@@ -40,6 +41,7 @@ class TracksController < ApplicationController
         end
       }
     end
+
   end
 
   def show
