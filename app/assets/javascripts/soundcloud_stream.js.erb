@@ -4,6 +4,14 @@ $('#connect').click(function(){
 
 $('.user-tracks').on('click', '#audio', function(event){
   track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
+  var nextTrackDiv = event.currentTarget.nextElementSibling
+  var previousTrackDiv = event.currentTarget.previousElementSibling
+  if (nextTrackDiv){
+    nextTrack = new Track({id: nextTrackDiv.dataset.trackId, source_id: nextTrackDiv.dataset.sourceId})
+  }
+  if (previousTrackDiv){
+    previousTrack = new Track({id: previousTrackDiv.dataset.trackId, source_id: previousTrackDiv.dataset.sourceId})
+  }
   track.audio.play()
 })
 
@@ -23,7 +31,17 @@ $('.widget').on('click', '.icon.play', function(event){
   track.audio.play()
 })
 
-$('.widget').on('click', '#snip', function(event){
+$('.widget').on('click', '.icon.next', function(event){
+  track.audio.pause()
+  nextTrack.audio.play()
+})
+
+$('.widget').on('click', '.icon.previous', function(event){
+  track.audio.pause()
+  previousTrack.audio.play()
+})
+
+$('.widget').on('click', '.icon.snip', function(event){
   var endTime = track.audio.currentTime;
   var startTime = track.audio.currentTime - 15;
   var newSnippet = new Snippet(
