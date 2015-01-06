@@ -1,5 +1,3 @@
-
-
 $('#right.small-5.columns').mouseover(function() {
     $('#right.small-5.columns').animate({
       left:"140px"},500);
