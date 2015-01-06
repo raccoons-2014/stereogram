@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
                              :class_name => "Follow"
   has_many :followers, :through => :reverse_follows, :source => :follower
 
+  before_save :remember
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.first_name = auth['info']['first_name']
@@ -49,6 +51,10 @@ class User < ActiveRecord::Base
 
   def unfollow(followed)
     follows.find_by_followed_id(followed).destroy
+  end
+
+  def remember
+    self.remember_created_at = DateTime.now
   end
 
 end
