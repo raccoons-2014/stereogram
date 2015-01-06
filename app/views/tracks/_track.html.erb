@@ -1,4 +1,4 @@
-<div class="row collapse track partial">
+<div class="row collapse track partial" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
   <div class="small-2 columns padded-column">
     <% if !track.artwork_url.empty? %>
       <img class="album_art" src="<%= track.artwork_url %>">
@@ -19,6 +19,5 @@
       <a class="item" href="/vote">
         <img class="like"  src="<%= asset_path('like.png') %>" >
       </a>
-
   </div>
 </div>
