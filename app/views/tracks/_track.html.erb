@@ -1,4 +1,4 @@
-<div class="row collapse track partial" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
+<div class="row collapse track partial">
   <div class="small-2 columns padded-column">
     <% if !track.artwork_url.empty? %>
       <img class="album_art" src="<%= track.artwork_url %>">
@@ -8,15 +8,12 @@
   </div>
 
   <div class="small-offset-1 small-6 columns padded-column">
-    <p>Track Title</p>
-    <p>Track Artist</p>
+    <%= track.description %>
   </div>
   <div class="small-2 end columns padded-column">
-
       <a class="item" href="/share">
         <img class="share" src="<%= asset_path('share.png') %>" >
       </a>
-
       <a class="item" href="/vote">
         <img class="like"  src="<%= asset_path('like.png') %>" >
       </a>
