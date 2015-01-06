@@ -5,39 +5,41 @@
 
 .O {
   position: absolute;
-  height: 75%;
-  width: 48%;
-  left: 10%;
+  height: 20em;
+  width: 26em;
+  left: 20%;
 }
 
 .icon {
-  height: 19%;
-  width: 12%;
+  height: 3em;
+  width: 5em;
 }
 
 .play {
   position: absolute;
-  left: 13%;
+  left: 22%;
+  top: 6%;
 }
 
 .stop {
   position: absolute;
-  left: 45%;
+  left: 42.5%;
+  top: 6%;
 }
 
 .next {
   position: absolute;
-  left: 45%;
-  top: 64%;
+  left: 42.5%;
+  top: 54%;
 }
 .previous {
   position: absolute;
-  left: 13%;
-  top: 64%;
+  left: 22%;
+  top: 54%;
 }
 .snip {
   position: absolute;
-  left: 29%;
+  left: 32.5%;
   top: 75%;
 }
 
