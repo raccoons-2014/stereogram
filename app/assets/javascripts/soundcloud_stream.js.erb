@@ -1,8 +1,10 @@
-$(document).ready(function(){
+  SC.initialize({
+    client_id: "b99714ff12392f9d7e1498ab5166732d",
+    redirect_uri: 'http://localhost:3000/callback'
+  });
 
   $('#connect').click(function(){
-    var currentUser = new SoundcloudUser
-    currentUser.searchSongs();
+    new SoundcloudUser
   })
 
   $('.user-tracks').on('click', '.track', function(event){
@@ -43,4 +45,3 @@ $(document).ready(function(){
       $('.user-snippets').append(response);
     })
   })
-});
