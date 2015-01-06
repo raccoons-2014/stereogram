@@ -13,6 +13,7 @@ SoundcloudUser.prototype.searchSongs = function(){
         data: {tracks: foundTracks},
       }).done(function(response){
         $('.user-tracks').append(response);
+      }).fail(function(){
       })
     })
   })
