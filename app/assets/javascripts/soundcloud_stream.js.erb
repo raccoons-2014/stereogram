@@ -3,6 +3,9 @@ $('#connect').click(function(){
 })
 
 $('.user-tracks').on('click', '.track', function(event){
+  if(window.track){
+    track.audio.pause()
+  }
   track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
   var nextTrackDiv = event.currentTarget.nextElementSibling
   var previousTrackDiv = event.currentTarget.previousElementSibling
@@ -33,12 +36,14 @@ $('.widget').on('click', '.icon.play', function(event){
 
 $('.widget').on('click', '.icon.next', function(event){
   track.audio.pause()
-  nextTrack.audio.play()
+  track = nextTrack
+  track.audio.play()
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
   track.audio.pause()
-  previousTrack.audio.play()
+  track = previousTrack
+  track.audio.play()
 })
 
 $('.widget').on('click', '.icon.snip', function(event){
