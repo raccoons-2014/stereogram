@@ -2,7 +2,7 @@ $('#connect').click(function(){
   new SoundcloudUser
 })
 
-$('.user-tracks').on('click', '.track', function(event){
+$('.user-tracks').on('click', '#audio', function(event){
   track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
   track.audio.play()
 })
