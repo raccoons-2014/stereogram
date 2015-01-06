@@ -23,14 +23,3 @@
   <% end %>
 </div>
 
-<div class='user-snippets'>
-    <% @user.snippets.each do |snippet| %>
-      <div class='snippet' data-source-id="<%= snippet.track.source_id %>" data-start-time="<%= snippet.start_time %>" data-end-time="<%= snippet.end_time %>" >
-        <p>A Snippet from <%= snippet.original_creator.full_name %></p>
-        <img src="<%= snippet.track.artwork_url %>">
-      </div>
-    <% end %>
-  <% else %>
-    <h3>You haven't made any snippets yet</h3>
-  <% end %>
-</div>
