@@ -1,23 +1,21 @@
-<div class="row" id="audio">
+<div class="row" id="audio" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
+  <div class="small-4 columns album_art">
+    <% if !track.artwork_url.empty? %>
+      <img class="album_art" src="<%= track.artwork_url %>">
+    <% else %>
+      <img class="album_art" src="<%= asset_path('logo.png') %>">
+    <% end %>
+  </div>
 
-      <div class="small-4 columns album_art">
-        <% if !track.artwork_url.empty? %>
-          <img class="album_art" src="<%= track.artwork_url %>">
-        <% else %>
-          <img class="album_art" src="<%= asset_path('logo.png') %>">
-        <% end %>
-      </div>
-
-      <div class="small-8 columns">
-        <p>Track Title</p>
-        <p>Track Artist</p>
-        <p>
-          <% if !track.description.empty? %>
-            <%= track.description %>
-          <% else %>
-            <p> No Track Description Provided </p>
-          <% end %>
-        <p>
-      </div>
-
+  <div class="small-8 columns">
+    <p>Track Title</p>
+    <p>Track Artist</p>
+    <p>
+      <% if !track.description.empty? %>
+        <%= track.description %>
+      <% else %>
+        <p> No Track Description Provided </p>
+      <% end %>
+    <p>
+  </div>
 </div>
