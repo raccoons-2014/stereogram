@@ -6,15 +6,8 @@ $('.user-tracks').on('click', '.track', function(event){
   if(window.track){
     track.audio.pause()
   }
+  clickedTrack = event.currentTarget
   track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
-  var nextTrackDiv = event.currentTarget.nextElementSibling
-  var previousTrackDiv = event.currentTarget.previousElementSibling
-  if (nextTrackDiv){
-    nextTrack = new Track({id: nextTrackDiv.dataset.trackId, source_id: nextTrackDiv.dataset.sourceId})
-  }
-  if (previousTrackDiv){
-    previousTrack = new Track({id: previousTrackDiv.dataset.trackId, source_id: previousTrackDiv.dataset.sourceId})
-  }
   track.audio.play()
 })
 
@@ -27,26 +20,23 @@ $('.user-snippets').on('click', '.snippet', function(event){
 })
 
 $('.widget').on('click', '.icon.stop', function(event){
-  track.audio.pause()
+  track.audio.pause();
 })
 
 $('.widget').on('click', '.icon.play', function(event){
-  track.audio.play()
+  track.audio.play();
 })
 
 $('.widget').on('click', '.icon.next', function(event){
-  track.audio.pause()
-  previousTrack = track
-  track = nextTrack
-
-  track.audio.play()
+  if (window.clickedTrack){
+    clickedTrack.nextElementSibling.click()
+  }
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
-  track.audio.pause()
-  nextTrack = track
-  track = previousTrack
-  track.audio.play()
+  if (window.clickedTrack){
+    clickedTrack.previousElementSibling.click();
+  }
 })
 
 $('.widget').on('click', '.icon.snip', function(event){
