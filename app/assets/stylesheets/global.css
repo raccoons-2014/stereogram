@@ -22,3 +22,8 @@ h1{
   color:white;
   text-align: center;
 }
+
+// border around track box
+div.row#audio{
+  border-style: solid;
+}
