@@ -1,11 +1,14 @@
+<div class="row">
+<%= image_tag (@user.profile_img_url), :class => "profile_image" %>
+</div>
+
+
 <ul class="small-block-grid-3">
-  <li><%= image_tag (@user.profile_img_url), :class => "profile_image" %></li>
+  <li class="follow_div"><a href="<%= followers_user_path(@user) %>">
+  <%= @user.followers.count %> Followers</p></a></li>
   <li class="username"><%= @user.full_name %></li>
   <li class="follow_div"><a href="<%= following_user_path(@user) %>">
-  <%= @user.following.count %> Following</a><br>
-  <a href="<%= followers_user_path(@user) %>">
-  <%= @user.followers.count %> Followers</p></a><br>
-  <%= render 'follow_form'%>
+  <%= @user.following.count %> Following</a>
   </li>
 </ul>
 
