@@ -14,7 +14,7 @@
 <ul class="small-block-grid-3">
   <li><%= image_tag (@user.profile_img_url), :class => "profile_image" %></li>
   <li class="connect"><%= render :partial => 'soundcloud/connect' %></li>
-  <li><img class="follow" src="<%= asset_path('follow.png') %>" ></li>
+  <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
 </ul><br><br>
 
 <div class='user-tracks'>
