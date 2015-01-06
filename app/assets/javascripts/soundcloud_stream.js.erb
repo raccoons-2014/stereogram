@@ -3,7 +3,18 @@ $('#connect').click(function(){
 })
 
 $('.user-tracks').on('click', '.track', function(event){
+  if(window.track){
+    track.audio.pause()
+  }
   track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
+  var nextTrackDiv = event.currentTarget.nextElementSibling
+  var previousTrackDiv = event.currentTarget.previousElementSibling
+  if (nextTrackDiv){
+    nextTrack = new Track({id: nextTrackDiv.dataset.trackId, source_id: nextTrackDiv.dataset.sourceId})
+  }
+  if (previousTrackDiv){
+    previousTrack = new Track({id: previousTrackDiv.dataset.trackId, source_id: previousTrackDiv.dataset.sourceId})
+  }
   track.audio.play()
 })
 
@@ -15,17 +26,30 @@ $('.user-snippets').on('click', '.snippet', function(event){
   snippet.playSnip();
 })
 
-$('.columns#right').on('click', '#pause', function(event){
+$('.widget').on('click', '.icon.stop', function(event){
   track.audio.pause()
-  $(this).replaceWith("<div id='play'>PLAY~</div>")
 })
 
-$('.columns#right').on('click', '#play', function(event){
+$('.widget').on('click', '.icon.play', function(event){
   track.audio.play()
-  $(this).replaceWith("<div id='pause'>PAUSE~</div>")
 })
 
-$('.columns#right').on('click', '#snip', function(event){
+$('.widget').on('click', '.icon.next', function(event){
+  track.audio.pause()
+  previousTrack = track
+  track = nextTrack
+
+  track.audio.play()
+})
+
+$('.widget').on('click', '.icon.previous', function(event){
+  track.audio.pause()
+  nextTrack = track
+  track = previousTrack
+  track.audio.play()
+})
+
+$('.widget').on('click', '.icon.snip', function(event){
   var endTime = track.audio.currentTime;
   var startTime = track.audio.currentTime - 15;
   var newSnippet = new Snippet(
