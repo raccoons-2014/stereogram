@@ -1,5 +1,5 @@
-.splash {
-  position:relative;
+.wrapper {
+  position:fixed;
   background:url("<%= asset_path('background.jpg') %>") no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -7,44 +7,59 @@
   background-size: cover;
   width:100%;
   height:100%;
-  z-index: -1;
-}
-
-.login {
-  position:relative;
-  text-align: center;
-  top:50%;
 }
 
 .center-o {
-  position:absolute;
-  left:29%;
+  position:relative;
+  border-radius: 50%;
+  left:20%;
   top:27%;
-}
-
-.center-o img {
-  width:57%;
+  width:56%;
+  height:56%;
   z-index: 1;
 }
 
 .gram {
   position:absolute;
-  left:54%;
-  top:22%;
-  margin-right:-8%;
-}
-
-.gram img {
-  width:100%;
-  height:100%;
+  left:58.5%;
+  top:33%;
+  width:48%;
+  height:48%;
+  z-index: -1;
 }
 
 .stere {
   position:absolute;
-  top:22%;
-  left:-7.5%;
+  top:34%;
+  right:62%;
+  width:44.5%;
+  height:44.5%;
+  z-index: -1;
 }
-.stere img{
-  width:48%;
-  height:48%;
+
+.login-content {
+  position:fixed;
+  width:30%;
+  height:30%;
+  border-radius: 50%;
+}
+
+.login {
+  position:absolute;
+  background: rgba(63,147,147, 0.8);
+  border-radius: 48%;
+  left:50%;
+  bottom:36%;
+  text-align: center;
+  width:92%;
+  height:95%;
+  overflow:hidden;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+  transform:scale(0);
+}
+
+.login-content:hover .login{
+  transform: scale(1);
+  opacity: 1;
 }
