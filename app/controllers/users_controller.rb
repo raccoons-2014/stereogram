@@ -14,4 +14,5 @@ class UsersController < ApplicationController
     render 'follower_show'
   end
 
+
 end

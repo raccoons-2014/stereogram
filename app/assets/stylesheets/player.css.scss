@@ -3,43 +3,51 @@
   width: 100%;
   height: 70%;}
 
+#player {
+  height: auto;
+  width: auto;
+  max-width: 30em;
+  max-width: 24em;
+}
+
 .O {
   position: absolute;
-  height: 20em;
-  width: 26em;
-  left: 20%;
+  height: 69%;
+  width: 38%;
+  left: 15%;
 }
 
 .icon {
+
   height: 3em;
   width: 5em;
 }
 
 .play {
   position: absolute;
-  left: 22%;
-  top: 6%;
+  left: 21%;
+  top: 5%;
 }
 
 .stop {
   position: absolute;
-  left: 42.5%;
-  top: 6%;
+  left: 41.75%;
+  top: 5%;
 }
 
 .next {
   position: absolute;
-  left: 42.5%;
-  top: 54%;
+  left: 41.5%;
+  top: 60%;
 }
 .previous {
   position: absolute;
-  left: 22%;
-  top: 54%;
+  left: 21.5%;
+  top: 60%;
 }
 .snip {
   position: absolute;
-  left: 32.5%;
+  left: 31.5%;
   top: 75%;
 }
 
