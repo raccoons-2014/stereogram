@@ -1,10 +1,13 @@
 <div class="row track" data-source-id="<%= @track.source_id %>" data-track-id="<%= @track.id %>">
-  <ul class="small-block-grid-3">
-  <li><img src="<%= @track.artwork_url %>"/></li>
-  <li>Description: <%= @track.description %></li>
-  <li>Length: <%= @track.duration %></li>
-  <li>Posted By: <%= User.find(@track.user_id).first_name %></li>
-</ul>
+  <div class="small-2 columns padded-column">
+    <img src="<%= @track.artwork_url %>"/></li>
+  </div>
+
+  <div class="small-offset-1 small-8 columns padded-column">
+    <p>Description: <%= @track.description %></p>
+    <p>Length: <%= @track.duration %></p>
+  </div>
 </div>
-
-
+<div class="row">
+  <p>Posted By: <%= User.find(@track.user_id).first_name %></p>
+</div>
