@@ -4,12 +4,18 @@ class FollowsController < ApplicationController
   def create
     @user = User.find(params[:follow][:followed_id])
     current_user.follow(@user) unless current_user.id == @user.id
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
   end
 
   def destroy
     @user = Follow.find(params[:id]).followed
     current_user.unfollow(@user)
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
   end
 end
