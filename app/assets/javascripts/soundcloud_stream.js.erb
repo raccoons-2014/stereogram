@@ -1,3 +1,5 @@
+SNIPPET_LENGTH_CONSTANT = 15;
+
 $('#connect').click(function(){
   new SoundcloudUser
 })
@@ -41,7 +43,7 @@ $('.widget').on('click', '.icon.previous', function(event){
 
 $('.widget').on('click', '.icon.snip', function(event){
   var endTime = track.audio.currentTime;
-  var startTime = track.audio.currentTime - 15;
+  var startTime = track.audio.currentTime - SNIPPET_LENGTH_CONSTANT;
   var newSnippet = new Snippet(
     {track: track,
     startTime: startTime,
