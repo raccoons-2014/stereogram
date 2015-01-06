@@ -1,6 +1,6 @@
-.splash{
-  position:relative;
-  background:url("<%= asset_path('splash.jpg') %>") no-repeat center center fixed;
+.wrapper {
+  position:fixed;
+  background:url("<%= asset_path('background.jpg') %>") no-repeat center center fixed;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -9,9 +9,99 @@
   height:100%;
 }
 
-.login{
+.center-o {
   position:relative;
-  text-align: center;
-  top:50%;
+  border-radius: 50%;
+  left:20%;
+  top:14%;
+  width:56%;
+  height:56%;
+  z-index: 1;
+}
 
+.gram {
+  position:absolute;
+  left:58.5%;
+  top:20%;
+  width:48%;
+  height:48%;
+  z-index: -1;
+}
+
+.stere {
+  position:absolute;
+  top:21%;
+  right:62%;
+  width:44.5%;
+  height:44.5%;
+  z-index: -1;
+}
+
+.login-content {
+  position:absolute;
+  width:45%;
+  height:45%;
+  top:32%;
+  left:30%;
+  border-radius: 50%;
+}
+
+.login {
+  border-radius: 48%;
+  text-align: center;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  transform:scale(0);
+}
+
+.login h3 {
+  color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2em;
+    margin: 0 30px;
+    padding: 45px 0 0 0;
+    height: 140px;
+    opacity:.7;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.login p {
+    color: #fff;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 1em;
+    border-top: 1.5px solid rgba(232, 77, 63,0.3);
+    opacity: 0;
+    transition: all 1s ease-in-out 0.4s;
+}
+
+.login p a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.login p a:hover {
+    color: rgba(232, 77, 63,0.6);
+}
+
+.login-content:hover .login{
+  transform: scale(1);
+  opacity: 1;
+}
+
+.login-content:hover .login p{
+  transform: scale(1);
+  opacity: 1;
 }
