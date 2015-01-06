@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-<div class="row" id="audio" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
-  <div class="small-4 columns album_art">
+<div class="row collapse" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>">
+  <div class="small-2 columns padded-column">
     <% if !track.artwork_url.empty? %>
       <img class="album_art" src="<%= track.artwork_url %>">
     <% else %>
@@ -8,7 +7,7 @@
     <% end %>
   </div>
 
-  <div class="small-8 columns">
+  <div class="small-offset-1 small-6 columns padded-column">
     <p>Track Title</p>
     <p>Track Artist</p>
     <p>
@@ -18,5 +17,13 @@
         <p> No Track Description Provided </p>
       <% end %>
     <p>
+  </div>
+
+  <div class="small-2 end columns padded-column">
+    <% if !track.artwork_url.empty? %>
+      <img class="album_art" src="<%= track.artwork_url %>">
+    <% else %>
+      <img class="album_art" src="<%= asset_path('logo.png') %>">
+    <% end %>
   </div>
 </div>
