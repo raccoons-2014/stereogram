@@ -1,7 +1,7 @@
 <div id="connect">
   <% if !@user.tracks.empty? %>
-    UPDATE!
+    <img class="connect" src="<%= asset_path('update.png')%>">
   <% else %>
-    CONNECT!
+    <img class="connect"src="<%= asset_path('connect.png')%>">
   <% end %>
 </div>
