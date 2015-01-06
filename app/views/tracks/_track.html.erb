@@ -18,12 +18,15 @@
       <% end %>
     <p>
   </div>
-
   <div class="small-2 end columns padded-column">
-    <% if !track.artwork_url.empty? %>
-      <img class="album_art" src="<%= track.artwork_url %>">
-    <% else %>
-      <img class="album_art" src="<%= asset_path('logo.png') %>">
-    <% end %>
+
+      <a class="item" href="/follow">
+        <img src="<%= asset_path('logo.png') %>" >
+      </a>
+
+      <a class="item" href="/vote">
+        <img src="<%= asset_path('logo.png') %>" >
+      </a>
+
   </div>
 </div>
