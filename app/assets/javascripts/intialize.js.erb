@@ -1,7 +1,7 @@
 $(function(){
   $(document).foundation();
   SC.initialize({
-    client_id: "<%= ENV['SOUNDCLOUD_APP_ID']%>",
-    redirect_uri: 'http://localhost:3000/callback'
+    client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
+    redirect_uri: "<%= ENV['SC_REDIRECT'] %>"
   });
 });
