@@ -8,18 +8,16 @@
   </div>
 
   <div class="small-offset-1 small-6 columns padded-column">
-    <p>Track Title</p>
-    <p>Track Artist</p>
+    <%= track.artist %>
+    <%= track.duration %>
+    <%= track.title %>
   </div>
   <div class="small-2 end columns padded-column">
-
       <a class="item" href="/share">
         <img class="share" src="<%= asset_path('share.png') %>" >
       </a>
-
       <a class="item" href="/vote">
         <img class="like"  src="<%= asset_path('like.png') %>" >
       </a>
-
   </div>
 </div>

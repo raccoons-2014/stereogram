@@ -1,30 +1,8 @@
-<section>
+<div class="user-tracks">
   <h2>Tracks</h2>
   <ol>
     <% @tracks.each do |track| %>
-    <div class="row" id='audio'>
-
-      <div class="small-4 columns">
-        <% !if nil? %>
-          <img src="<%= track.artwork_url %>">
-        <% else %>
-        <img src="<%= asset_path('logo.png') %>">
-        <% end %>
-      </div>
-
-      <div class="small-8 columns">
-        <p>Track Title</p>
-        <p>Track Artist</p>
-        <p>
-          <% !if nil? %>
-            <%= track.description %>
-          <% else %>
-            <p> No Track Description Provided </p>
-          <% end %>
-        <p>
-      </div>
-
-    </div>
+      <%= render :partial => 'tracks/track', :locals => {:track => track} %>
     <% end %>
   </ol>
-</section>
+</div>
