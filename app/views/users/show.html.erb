@@ -22,7 +22,7 @@
 
 <div class='user-tracks'>
   <% @user.tracks.each do |track| %>
-    <%= render :partial => 'tracks/track', :locals => {:track => @track} %>
+    <%= render :partial => 'tracks/track', :locals => {:track => track} %>
   <% end %>
 </div>
 
