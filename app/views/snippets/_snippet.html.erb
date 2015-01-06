@@ -1,0 +1,36 @@
+<div class="row collapse">
+  <div class="small-2 columns padded-column">
+    <% if !snippet.track.artwork_url.empty? %>
+      <img class="album_art" src="<%= snippet.track.artwork_url %>">
+    <% else %>
+      <img class="album_art" src="<%= asset_path('logo.png') %>">
+    <% end %>
+  </div>
+
+  <div class="small-offset-1 small-6 columns padded-column">
+    <div class='snippet' data-source-id="<%= snippet.track.source_id %>" data-start-time="<%= snippet.start_time %>" data-end-time="<%= snippet.end_time %>" >
+    <p>A Snippet from <%= snippet.original_creator.full_name %></p>
+
+    <% if !snippet.track.artwork_url.empty? %>
+      Track Title:
+    <% else %>
+      Track Title: <%= snippet.track.title %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="small-2 end columns padded-column">
+
+      <a class="item" href="/share">
+        <img class="share" src="<%= asset_path('share.png') %>" >
+      </a>
+
+      <a class="item" href="/vote">
+        <img class="like"  src="<%= asset_path('like.png') %>" >
+      </a>
+
+  </div>
+</div>
+
+
+
