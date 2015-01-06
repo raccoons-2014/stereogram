@@ -10,18 +10,11 @@
   <div class="small-offset-1 small-6 columns padded-column">
     <p>Track Title</p>
     <p>Track Artist</p>
-    <p>
-      <% if !track.description.empty? %>
-        <%= track.description %>
-      <% else %>
-        <p> No Track Description Provided </p>
-      <% end %>
-    <p>
   </div>
   <div class="small-2 end columns padded-column">
 
-      <a class="item" href="/follow">
-        <img class="follow" src="<%= asset_path('follow.png') %>" >
+      <a class="item" href="/share">
+        <img class="share" src="<%= asset_path('share.png') %>" >
       </a>
 
       <a class="item" href="/vote">

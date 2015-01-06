@@ -1,25 +1,60 @@
 .connect{
-  height:8em;
-  width:10em;
-  display: block;
-  margin: 15px auto;
+  height: 5em;
+  width: 8em;
+  left: 23%;
+  top:8%;
+  position: absolute;
 }
 
 .small-2.end.columns.padded-column{
   top:-5px;
 }
 
-.image.album_art{
+image.album_art{
   left:5px;
-  top:-5px;
+  top:5px;
 }
 
-img.like{
-  bottom: -121px;
+.like{
+  bottom: -81px;
+  position: absolute;
+  left: -25%;
+}
+
+.follow{
+  height: 35%;
+  width: 50%;
+  left: 54%;
+  top: 8%;
   position: absolute;
 }
 
-img.follow{
-  left:10px;
+img.profile_image{
+  left: 7%;
+  top: 11%;
+  position: absolute;
+}
+
+.username{
+ left: 3%;
+ top: 3%;
+ position: absolute;
+}
+
+li.follow_div_1{
+ left:30%;
+ top: 2%;
+ position: absolute;
+}
+
+li.follow_div_2{
+ left:64%;
+ top: 2%;
+ position: absolute;
+}
+
+img.share{
+  left: 60%;
+  top: 12px;
   position: absolute;
 }
