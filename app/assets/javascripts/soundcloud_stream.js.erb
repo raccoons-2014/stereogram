@@ -38,7 +38,7 @@ $('.user-snippets').on('click', '.snippet', function(event){
 })
 
 $('.widget').on('click', '.icon.stop', function(event){
-  track.audio.pause();
+  currentAudio.pause();
   clearInterval(rotInt);
 })
 
@@ -46,7 +46,7 @@ $('.widget').on('click', '.icon.play', function(event){
   rotInt = setInterval(function(){
     document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
     rotate = rotate + 0.025},1)
-  track.audio.play();
+  currentAudio.play();
 })
 
 $('.widget').on('click', '.icon.next', function(event){
