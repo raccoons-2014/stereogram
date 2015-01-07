@@ -14,8 +14,9 @@ $('.user-tracks').on('click', '.track', function(event){
   }
   rotate = 0;
   clickedTrack = event.currentTarget
+  var artworkUrl = event.currentTarget.querySelector('.album_art').src
+  $('#soundplayer-widget-picture').attr('src',artworkUrl);
   var track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
-  $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl);
   currentAudio = track.audio
   currentAudio.play()
   rotInt = setInterval(function(){
