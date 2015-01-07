@@ -24,7 +24,11 @@ $('.user-tracks').on('click', '.track', function(event){
 })
 
 $('.user-snippets').on('click', '.snippet', function(event){
-  var snipData = event.currentTarget.dataset;
+  if(window.currentAudio){
+    currentAudio.pause();
+  }
+  clickedTrack = event.currentTarget;
+  var snipData = clickedTrack.dataset;
   var snippetTrack = new Track({source_id: snipData.sourceId});
   snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
   });
