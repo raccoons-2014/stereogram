@@ -14,9 +14,10 @@ $('.user-tracks').on('click', '.track', function(event){
   }
   rotate = 0;
   clickedTrack = event.currentTarget
-  track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
-  $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl)
-  track.audio.play()
+  var track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
+  $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl);
+  currentAudio = track.audio
+  currentAudio.play()
   rotInt = setInterval(function(){
     document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
     rotate = rotate + 0.025},1)
