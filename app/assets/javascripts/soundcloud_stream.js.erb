@@ -33,6 +33,8 @@ $('.user-snippets').on('click', '.snippet', function(event){
   var snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
   });
   snippet.playSnip();
+  currentAudio = snippet.snippedAudio;
+  currentAudio.play();
 })
 
 $('.widget').on('click', '.icon.stop', function(event){
