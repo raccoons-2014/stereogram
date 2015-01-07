@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  include FacebookHelper
   before_action :authenticate_user!
 
   def index
@@ -27,6 +28,7 @@ class SnippetsController < ApplicationController
           redirect_to :back
         end
       }
+      share({token: current_user.token})
     end
   end
 
