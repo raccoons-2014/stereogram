@@ -1,4 +1,4 @@
-<div class="row collapse track partial" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>"
+<div class="row collapse partial track" data-source-id="<%= track.source_id %>" data-track-id="<%= track.id %>"
 data-artwork-url="<%= track.artwork_url %>"
 data-track-desc="<%= track.description %>"
 data-track-len="<%= track.string_duration %>">
@@ -11,9 +11,9 @@ data-track-len="<%= track.string_duration %>">
   </div>
 
   <div class="small-offset-1 small-6 columns padded-column">
-    <%= track.artist %>
-    <%= track.duration %>
-    <%= track.title %>
+    <span>Artist: </span><%= link_to track.artist, user_path(id: track.user_id), class: "link_artist" %><br>
+    <span>Length: </span> <%= track.string_duration %><br>
+    <span>Title: </span><%= link_to track.title, track_path(id: track.id), class: "link_artist" %>
   </div>
   <div class="small-2 end columns padded-column">
       <a class="item" href="/share">
