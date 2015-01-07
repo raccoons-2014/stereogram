@@ -3,3 +3,43 @@
   left: 31.5%;
   top: 75%;
 }
+
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
+
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 1.5;
+
+  }
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
+
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 1.5;
+  }
+}
+
+.snip:active{
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: .1;
+  animation-iteration-count: .1;
+}
