@@ -13,3 +13,9 @@
 <div class="row">
   <p>Posted By: <%= User.find(@track.user_id).first_name %></p>
 </div>
+<p>Snippets made from this track</p>
+<div class='user-snippets'>
+  <% @track.snippets.each do |snippet| %>
+    <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
+  <% end %>
+</div>
