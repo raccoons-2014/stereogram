@@ -1,4 +1,4 @@
-$('.row.collapse.track.partial').mouseover(function() {
+$('.row.collapse.partial').mouseover(function() {
     $(this).css(
       "background-color","#E8B504");
     var span = $(this).find("span")
@@ -6,7 +6,7 @@ $('.row.collapse.track.partial').mouseover(function() {
       "color","black");
 })
 
-$('.row.collapse.track.partial').mouseleave(function() {
+$('.row.collapse.partial').mouseleave(function() {
     $(this).css(
       "background-color","black");
     var span = $(this).find("span")
