@@ -1,6 +1,5 @@
-.share {
-  left: 67%;
-  position: absolute;
+a.item.share.pulse {
+
 }
 
 @-webkit-keyframes pulse {
@@ -34,7 +33,7 @@
   }
 }
 
-.share.pulse:active {
+a.item.share.pulse:active {
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-animation-duration: 1s;

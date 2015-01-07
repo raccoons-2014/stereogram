@@ -1,10 +1,5 @@
-.heart {
-  height: 60px;
-  width: 85px;
-  right: -1%;
-  position: relative;
-  margin-left: -20%;
-
+.track-icon{
+  width: 64px;
 }
 
 @-webkit-keyframes pulse {
@@ -38,7 +33,7 @@
   }
 }
 
-.heart.pulse:active{
+a.item.like.pulse:active{
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-animation-duration: 1s;

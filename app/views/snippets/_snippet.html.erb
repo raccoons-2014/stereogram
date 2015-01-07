@@ -28,13 +28,10 @@
 
   <div class="small-2 end columns padded-column">
 
-      <a class="item" href="/share">
-        <img class="share" src="<%= asset_path('share.png') %>" >
-      </a>
 
-      <a class="item" href="/vote">
-        <img class="like"  src="<%= asset_path('like.png') %>" >
-      </a>
+<%= link_to image_tag('share.png', :class => 'track-icon'), votes_path, method: :post, class: "item share pulse" %>
+
+<%= link_to image_tag('like.png', :class => 'track-icon'), votes_path, method: :post, class: "item like pulse" %>
 
   </div>
 </div>
