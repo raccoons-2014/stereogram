@@ -1,9 +1,5 @@
-.connect{
-  height: 5em;
-  width: 8em;
-  left: 23%;
-  top:6%;
-  position: absolute;
+.small-block-grid-3{
+  height:10%;
 }
 
 .small-2.end.columns.padded-column{
@@ -15,20 +11,22 @@ image.album_art{
   top:5px;
 }
 
-
-.follow{
-  height: 27%;
-  width: 50%;
-  left: 54%;
-  top: 3%;
-  position: absolute;
+img.connect{
+  position: relative;
+  margin-top: 10%;
+  right: 17%;
+  height: 140px;
+  top: -20%;
 }
 
-img.profile_image{
-  left: 7%;
-  top: 8%;
-  position: absolute;
+img.follow{
+ position: relative;
+  margin-top: 13%;
+  height: 159px;
+  top: 35px;
+  right: 14%;
 }
+
 
 .username{
  left: 3%;
@@ -36,17 +34,7 @@ img.profile_image{
  position: absolute;
 }
 
-li.follow_div_1{
- left:30%;
- top: 2%;
- position: absolute;
-}
 
-li.follow_div_2{
- left:64%;
- top: 2%;
- position: absolute;
-}
 
 img.share{
   left: 60%;
@@ -54,4 +42,12 @@ img.share{
   position: absolute;
 }
 
+.me{
+  font-size:1.25em;
+}
+
+img.profile_image{
+  margin-top:40%;
+  margin-left:17%;
+}
 
