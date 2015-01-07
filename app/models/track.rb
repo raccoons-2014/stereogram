@@ -1,4 +1,6 @@
 class Track < ActiveRecord::Base
+  scope :most_recent, -> { order(created_at: :desc) }
+
   has_many :snippets
   belongs_to :user
   has_many :votes, as: :votable
@@ -21,4 +23,5 @@ class Track < ActiveRecord::Base
   def already_voted?(user)
     self.voters.include?(user)
   end
+
 end

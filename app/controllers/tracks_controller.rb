@@ -49,4 +49,5 @@ class TracksController < ApplicationController
     def track_params
       params.require(:track).permit(:source_id, :permalink_url, :artwork_url, :description, :duration, :waveform_url, :bpm, :title, :artist)
     end
+
 end

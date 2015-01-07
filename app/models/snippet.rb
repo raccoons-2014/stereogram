@@ -1,4 +1,6 @@
 class Snippet < ActiveRecord::Base
+  scope :most_recent, -> { order(created_at: :desc) }
+  
   belongs_to :track
   belongs_to :user
 
