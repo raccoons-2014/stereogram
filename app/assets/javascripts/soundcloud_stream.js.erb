@@ -8,8 +8,8 @@ $('#connect').click(function(){
 })
 
 $('.user-tracks').on('click', '.track', function(event){
-  if(window.track){
-    track.audio.pause();
+  if(window.currentAudio){
+    currentAudio.pause();
     clearInterval(rotInt);
   }
   rotate = 0;
