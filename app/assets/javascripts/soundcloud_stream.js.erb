@@ -15,6 +15,10 @@ $('.user-tracks').on('click', '.track', function(event){
   track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
   $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl)
   track.audio.play()
+  var rotate = 0;
+  setInterval(function(){
+    document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
+    rotate = rotate + 0.025},1)
 })
 
 $('.user-snippets').on('click', '.snippet', function(event){
