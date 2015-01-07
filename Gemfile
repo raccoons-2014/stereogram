@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Use Omniauth-facebook
 gem 'omniauth-facebook'
 
+#Use FB Graph
+gem 'fb_graph'
+
 #Use Devise
 gem 'devise'
 
@@ -46,9 +49,6 @@ gem 'aws-sdk'
 
 #Use ENV
 gem 'dotenv-rails'
-
-#Koala gem
-gem 'koala'
 
 # Use Rspec for testing
 gem 'rspec-rails', group: [:development, :test]
