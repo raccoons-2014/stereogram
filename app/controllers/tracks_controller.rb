@@ -13,7 +13,7 @@ class TracksController < ApplicationController
   end
 
   def create
-
+    @tracks = []
     respond_to do |format|
       format.js{
         params[:tracks].each do |key, track_data|
@@ -29,8 +29,8 @@ class TracksController < ApplicationController
             title: track_data['title']
           )
         next unless track.save
+        @tracks << track
       end
-      render plain: 'AJAX OK'
       }
 
       format.html {
