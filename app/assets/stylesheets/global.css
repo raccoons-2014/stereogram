@@ -64,8 +64,78 @@ h2{
   margin-right:none !important;
 }
 
-
 a.item.home{
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+a.item.home.first:hover {
+  content: url('orange_home.png');
+  width:100%;
+}
+
+a.item.home.first.orange{
+  display:none;
+}
+
+a.item.home.first.orange:hover{
+  display:block;
+  width:100%;
+}
+
+a.item.home.second:hover {
+  content: url('orange_track.png');
+  width:100%;
+}
+
+a.item.home.second.orange{
+  display:none;
+}
+
+a.item.home.second.orange:hover{
+  display:block;
+  width:100%;
+}
+
+a.item.home.third:hover {
+  content: url('orange_snippet.png');
+  width:100%;
+}
+
+a.item.home.third.orange{
+  display:none;
+}
+
+a.item.home.third.orange:hover{
+  display:block;
+  width:100%;
+}
+a.item.home.fourth:hover {
+  content: url('orange_me.png');
+  width:100%;
+}
+
+a.item.home.fourth.orange{
+  display:none;
+}
+
+a.item.home.fourth.orange:hover{
+  display:block;
+  width:100%;
+}
+
+a.item.home.fifth:hover {
+  content: url('orange_logout.png');
+  width:100%;
+}
+
+a.item.home.fifth.orange{
+  display:none;
+}
+
+a.item.home.fifth.orange:hover{
+  display:block;
+  width:100%;
+}
+
+
