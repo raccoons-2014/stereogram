@@ -40,6 +40,7 @@ a:visited {
 
 span{
   color:  #E8B504;
+  font-weight: bold;
 }
 
 .row.collapse:hover span{
@@ -48,4 +49,23 @@ span{
 
 .row.collapse:hover{
   background-color: #E8B504;
+}
+
+h2{
+  text-align: center;
+  margin-left: 12px !important;
+  color:white;
+}
+
+.home img{
+  height:100% !important;
+  width:100% !important;
+  margin-left:none !important;
+  margin-right:none !important;
+}
+
+
+a.item.home{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
