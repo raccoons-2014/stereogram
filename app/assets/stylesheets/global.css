@@ -30,10 +30,13 @@ div.row#audio{
 
 a:link {
     color: white;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 a:visited {
-    color: #E8B504;
-    font-size: 1.5em;
+    color:white;
+}
+
+span{
+  color: #E8B504;
 }
