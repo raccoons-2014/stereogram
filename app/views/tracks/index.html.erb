@@ -1,6 +1,6 @@
 <div class="user-tracks">
   <h2>Tracks</h2>
-  <ol>
+  <ol id="tracks-column">
     <% @tracks.each do |track| %>
       <%= render :partial => 'tracks/track', :locals => {:track => track} %>
     <% end %>
