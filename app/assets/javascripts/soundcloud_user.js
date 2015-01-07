@@ -12,7 +12,7 @@ SoundcloudUser.prototype.searchSongs = function(){
         method: 'POST',
         data: {tracks: foundTracks},
       }).success(function(response){
-        $('body').append(response)
+        $('.user-tracks').append(response)
       })
     })
   })
