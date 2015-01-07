@@ -27,7 +27,9 @@ $('.user-tracks').on('click', '.track', function(event){
 $('.user-snippets').on('click', '.snippet', function(event){
   if(window.currentAudio){
     currentAudio.pause();
+    clearInterval(rotInt);
   }
+  rotate = 0;
   clickedTrack = event.currentTarget;
   var artworkUrl = event.currentTarget.querySelector('.album_art').src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
@@ -38,6 +40,9 @@ $('.user-snippets').on('click', '.snippet', function(event){
   snippet.playSnip();
   currentAudio = snippet.snippedAudio;
   currentAudio.play();
+  rotInt = setInterval(function(){
+    document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
+    rotate = rotate + 0.025},1)
 })
 
 $('.widget').on('click', '.icon.stop', function(event){
