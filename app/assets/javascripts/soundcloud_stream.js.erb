@@ -30,7 +30,7 @@ $('.user-snippets').on('click', '.snippet', function(event){
   clickedTrack = event.currentTarget;
   var snipData = clickedTrack.dataset;
   var snippetTrack = new Track({source_id: snipData.sourceId});
-  snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
+  var snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
   });
   snippet.playSnip();
 })
