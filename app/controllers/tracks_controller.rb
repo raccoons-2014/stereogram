@@ -17,14 +17,16 @@ class TracksController < ApplicationController
     respond_to do |format|
       format.js{
         params[:tracks].each do |key, track_data|
-        track = current_user.tracks.find_or_create_by(
-          source_id: track_data['id'],
-          permalink_url: track_data['permalink_url'],
-          artwork_url: track_data['artwork_url'],
-          description: track_data['description'],
-          duration: track_data['duration'],
-          waveform_url: track_data['waveform_url'],
-          bpm: track_data['bpm']
+          track = current_user.tracks.find_or_create_by(
+            source_id: track_data['id'],
+            permalink_url: track_data['permalink_url'],
+            artwork_url: track_data['artwork_url'],
+            description: track_data['description'],
+            duration: track_data['duration'],
+            waveform_url: track_data['waveform_url'],
+            bpm: track_data['bpm'],
+            artist: track_data['user']['username'],
+            title: track_data['title']
           )
         next unless track.save
       end
@@ -48,6 +50,6 @@ class TracksController < ApplicationController
 
   private
     def track_params
-      params.require(:track).permit(:source_id, :permalink_url, :artwork_url, :description, :duration, :waveform_url, :bpm)
+      params.require(:track).permit(:source_id, :permalink_url, :artwork_url, :description, :duration, :waveform_url, :bpm, :title, :artist)
     end
 end

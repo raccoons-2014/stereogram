@@ -11,7 +11,6 @@ SoundcloudUser.prototype.searchSongs = function(){
         url: '/tracks',
         method: 'POST',
         data: {tracks: foundTracks},
-        dataType: 'JSON'
       }).success(function(response){
         $('body').append(response)
       })
