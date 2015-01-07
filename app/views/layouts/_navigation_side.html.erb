@@ -1,7 +1,21 @@
 <div class="icon-bar vertical five-up">
-  <%= link_to image_tag('home.png'), root_path, class: "item home" %>
-  <%= link_to image_tag('track.png'), tracks_path, class: "item home" %>
-  <%= link_to image_tag('snippet.png'), snippets_path, class: "item home" %>
-  <%= link_to image_tag('me.png'), user_path(id: current_user.id), class: "item home" %>
-  <%= link_to image_tag('logout.png'), destroy_user_session_path, method: "delete", class: "item home" %>
+
+  <%= link_to image_tag('home.png'), root_path, class: "item home first" %>
+  <%= link_to image_tag('orange_home.png'), root_path, class: "item home first orange" %>
+
+  <%= link_to image_tag('track.png'), tracks_path, class: "item home second" %>
+  <%= link_to image_tag('orange_track.png'), tracks_path, class: "item home second orange" %>
+
+  <%= link_to image_tag('snippet.png'), snippets_path, class: "item home third" %>
+  <%= link_to image_tag('orange_snippet.png'), snippets_path, class: "item home third orange" %>
+
+  <%= link_to image_tag('me.png'), user_path(id: current_user.id), class: "item home fourth" %>
+  <%= link_to image_tag('orange_me.png'), user_path(id: current_user.id), class: "item home fourth orange" %>
+
+
+  <%= link_to image_tag('logout.png'), destroy_user_session_path, method: "delete", class: "item home fifth" %>
+  <%= link_to image_tag('orange_logout.png'), destroy_user_session_path, method: "delete", class: "item home fifth orange" %>
+
+
+
 </div>
