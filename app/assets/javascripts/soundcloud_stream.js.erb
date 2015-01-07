@@ -12,7 +12,8 @@ $('.user-tracks').on('click', '.track', function(event){
     track.audio.pause()
   }
   clickedTrack = event.currentTarget
-  track = new Track({id: event.currentTarget.dataset.trackId, source_id: event.currentTarget.dataset.sourceId})
+  track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
+  $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl)
   track.audio.play()
 })
 
