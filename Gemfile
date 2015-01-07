@@ -50,9 +50,6 @@ gem 'aws-sdk'
 #Use ENV
 gem 'dotenv-rails'
 
-#Koala gem
-gem 'koala'
-
 # Use Rspec for testing
 gem 'rspec-rails', group: [:development, :test]
 
