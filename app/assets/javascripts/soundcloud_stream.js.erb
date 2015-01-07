@@ -29,6 +29,8 @@ $('.user-snippets').on('click', '.snippet', function(event){
     currentAudio.pause();
   }
   clickedTrack = event.currentTarget;
+  var artworkUrl = event.currentTarget.querySelector('.album_art').src
+  $('#soundplayer-widget-picture').attr('src',artworkUrl);
   var snipData = clickedTrack.dataset;
   var snippetTrack = new Track({source_id: snipData.sourceId});
   var snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
