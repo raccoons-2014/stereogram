@@ -32,6 +32,9 @@ gem 'bcrypt', '~> 3.1.7'
 #Use Omniauth-facebook
 gem 'omniauth-facebook'
 
+#Use FB Graph
+gem 'fb_graph'
+
 #Use Devise
 gem 'devise'
 
