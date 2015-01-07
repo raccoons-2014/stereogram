@@ -1,4 +1,4 @@
-<div class="row collapse partial snippet">
+<div class="row collapse partial snippet" data-source-id="<%= snippet.track.source_id %>" data-start-time="<%= snippet.start_time %>" data-end-time="<%= snippet.end_time %>" >
   <div class="small-2 columns padded-column">
     <% if !snippet.track.artwork_url.empty? %>
       <img class="album_art" src="<%= snippet.track.artwork_url %>">
@@ -8,8 +8,6 @@
   </div>
 
   <div class="small-offset-1 small-6 columns padded-column">
-    <div class='snippet' data-source-id="<%= snippet.track.source_id %>" data-start-time="<%= snippet.start_time %>" data-end-time="<%= snippet.end_time %>" >
-
     <% if !snippet.track.artwork_url.empty? %>
       <span>Title: </span><%= link_to snippet.track.title, track_path(id: snippet.track.id), class: "link_artist" %>
     <% else %>
@@ -23,7 +21,6 @@
     <% end %><br>
 
     <span>Created By:</span> <%= snippet.original_creator.full_name %>
-    </div>
   </div>
 
   <div class="small-2 end columns padded-column">
