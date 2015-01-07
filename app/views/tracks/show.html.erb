@@ -14,5 +14,7 @@
   <p>Posted By: <%= User.find(@track.user_id).first_name %></p>
 </div>
 <div class="row">
-    <%= @track.snippets.most_recent %>
+    <% @track.snippets.most_recent.each do |snippet| %>
+    <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
+    <% end %>
 </div>
