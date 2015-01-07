@@ -1,4 +1,5 @@
 module FacebookHelper
+
   def share(args)
     user = FbGraph::User.me(args[:token])
     user.link!(

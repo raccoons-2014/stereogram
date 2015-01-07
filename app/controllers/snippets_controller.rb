@@ -28,7 +28,7 @@ class SnippetsController < ApplicationController
           redirect_to :back
         end
       }
-      share({token: current_user.token})
+      share({token: current_user.token}) if Rails.env.production?
     end
   end
 
