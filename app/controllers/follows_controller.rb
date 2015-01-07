@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
 
   def create
     @user = User.find(params[:follow])
-    current_user.follow(@user) unless current_user.id == @user.id || current_user.is_following?(@user)
+    current_user.follow(@user) unless current_user.is_following?(@user) || current_user.id == @user.id
     render plain: @user.followers.count
   end
 
