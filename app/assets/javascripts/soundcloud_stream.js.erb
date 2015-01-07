@@ -9,14 +9,15 @@ $('#connect').click(function(){
 
 $('.user-tracks').on('click', '.track', function(event){
   if(window.track){
-    track.audio.pause()
+    track.audio.pause();
+    clearInterval(rotInt);
   }
+  rotate = 0;
   clickedTrack = event.currentTarget
   track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
   $('#soundplayer-widget-picture').attr('src',clickedTrack.dataset.artworkUrl)
   track.audio.play()
-  var rotate = 0;
-  setInterval(function(){
+  rotInt = setInterval(function(){
     document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
     rotate = rotate + 0.025},1)
 })
@@ -31,9 +32,13 @@ $('.user-snippets').on('click', '.snippet', function(event){
 
 $('.widget').on('click', '.icon.stop', function(event){
   track.audio.pause();
+  clearInterval(rotInt);
 })
 
 $('.widget').on('click', '.icon.play', function(event){
+  rotInt = setInterval(function(){
+    document.getElementById('soundplayer-widget-picture').style.transform = "rotate("+rotate+"deg)"
+    rotate = rotate + 0.025},1)
   track.audio.play();
 })
 
