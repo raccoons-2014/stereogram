@@ -37,6 +37,15 @@ a:visited {
     color:white;
 }
 
+
 span{
-  color: #E8B504;
+  color:  #E8B504;
+}
+
+.row.collapse:hover span{
+  color: black;
+}
+
+.row.collapse:hover{
+  background-color: #E8B504;
 }
