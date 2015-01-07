@@ -5,6 +5,6 @@ $('.small-block-grid-3').on('click', 'img.follow', function(event){
     method: 'POST',
     data: {follow:userId}
   }).done(function(response){
-    $('.follow_div_1').html(response)
+    $('.follow-count').html(response)
   })
 })
