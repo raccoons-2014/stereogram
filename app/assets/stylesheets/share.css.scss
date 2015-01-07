@@ -1,0 +1,45 @@
+.share {
+  left: 67%;
+  position: absolute;
+}
+
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
+
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 1.5;
+
+  }
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
+
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 1.5;
+  }
+}
+
+.share.pulse:active {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: .1;
+  animation-iteration-count: .1;
+
+}

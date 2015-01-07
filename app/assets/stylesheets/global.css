@@ -7,6 +7,7 @@
 
 .tracks{
   margin-top: 35px;
+  margin-left: -7%;
   opacity: 0.5;
   float: left;
   margin-left: 35px;
@@ -23,7 +24,6 @@ h1{
   text-align: center;
 }
 
-// border around track box
 div.row#audio{
   border-style: solid;
 }

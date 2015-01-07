@@ -16,11 +16,11 @@ data-track-len="<%= track.string_duration %>">
     <span>Title: </span><%= link_to track.title, track_path(id: track.id), class: "link_artist" %>
   </div>
   <div class="small-2 end columns padded-column">
-      <a class="item" href="/share">
-        <img class="share" src="<%= asset_path('share.png') %>" >
+      <a class="item">
+        <img class="share pulse" src="<%= asset_path('share.png') %>" >
       </a>
-      <a class="item" href="/vote">
-        <img class="like"  src="<%= asset_path('like.png') %>" >
+      <a class="item">
+        <img class="heart pulse" src="<%= asset_path('like.png') %>" >
       </a>
   </div>
 </div>
