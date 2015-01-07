@@ -1,42 +1,48 @@
-.heart-image {
-
-}
-
-img.heart-image{
-  margin-left: -20%;
-}
-
 .heart {
-  font-size: 152px;
-  text-align: center;
-  color: #a51919;
-  padding: 0;
-  margin: 0 0 -7px 0;
   height: 60px;
   width: 85px;
   right: -1%;
   position: relative;
+  margin-left: -20%;
+
 }
 
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
 
-.pulse2 {
-  -webkit-animation: pulse2 1s linear infinite;
-  -moz-animation: pulse2 1s linear infinite;
-  -ms-animation: pulse2 1s linear infinite;
-  animation: pulse2 1s linear infinite;
-}
-
-@-webkit-keyframes "pulse2" {
-  0% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
   }
-  50% {
+  75% {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
+    opacity: 1.5;
+
   }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.75;
+
   }
+  75% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 1.5;
+  }
+}
+
+.heart.pulse:active{
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: .1;
+  animation-iteration-count: .1;
 }
