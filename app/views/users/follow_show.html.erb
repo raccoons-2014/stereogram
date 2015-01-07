@@ -1,5 +1,6 @@
 <ul>
   <% @user.following.each do |user| %>
     <li><%= link_to "#{user.first_name}", user_path(user) %></li>
+    <%= image_tag (user.profile_img_url) %>
   <% end %>
 </ul>
