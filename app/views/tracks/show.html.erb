@@ -13,3 +13,6 @@
 <div class="row">
   <p>Posted By: <%= User.find(@track.user_id).first_name %></p>
 </div>
+<div class="row">
+    <%= @track.snippets.most_recent %>
+</div>
