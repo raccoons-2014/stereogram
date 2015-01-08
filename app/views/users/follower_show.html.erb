@@ -1,6 +1,7 @@
 <ul>
   <h2>Followers</h2>
 
+  <div class="row collapse">
   <div class="followers-column">
     <% @user.followers.each do |user| %>
       <span>
@@ -11,11 +12,12 @@
         <%= link_to "#{user.full_name}", user_path(user) %>
       </div>
       <div class="followers-audio">
-        <p><%= user.tracks.count %> Tracks
-        <%= user.snippets.count %> Snippets</p>
+        <p><span><%= user.tracks.count %> Tracks</span>
+        <span><%= user.snippets.count %> Snippets</span></p>
       </div>
     </span>
     <% end %>
   </div>
+</div>
 </div>
 </ul>
