@@ -1,3 +1,10 @@
+<meta property="og:title" content="<%= @track.title %>" />
+<meta property="og:site_name" content="Stereogram"/>
+<meta property="og:url" content="http://stere-o-gram.herokuapp.com/tracks/<%= @track.id %>" />
+<meta property="og:description" content=<%= @track.description %> />
+<meta property="og:type" content='music.song'/>
+<meta property="og:image" content="<%= asset_path('logo_yellow.png') %>">
+
 <div class="user-tracks">
   <div class="row track" data-source-id="<%= @track.source_id %>" data-track-id="<%= @track.id %>">
     <div class="small-2 columns padded-column">
