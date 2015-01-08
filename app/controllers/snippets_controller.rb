@@ -20,23 +20,13 @@ class SnippetsController < ApplicationController
 
   def create
     @user = current_user
+    @snippet = @user.snippets.new(snippet_params)
 
-    respond_to do |format|
-      format.js {
-        @snippet = @user.snippets.new(snippet_params)
-        Track.find(params[:snippet][:track_id]).snippets << @snippet
-        render plain: 'This will be a snippet partial'
-      }
-
-      format.html {
-        @snippet = @user.snippets.new(snippet_params)
-        if Track.find(params[:track_id]).snippets << @snippet
-          redirect_to snippet_path(@snippet)
-        else
-          redirect_to :back
-        end
-      }
+    if Track.find(params[:snippet][:track_id]).snippets << @snippet
       share({token: current_user.token}) if Rails.env.production?
+      render nothing: true
+    else
+      redirect_to :back
     end
   end
 
