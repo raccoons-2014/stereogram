@@ -80,7 +80,5 @@ $('.widget').on('click', '.icon.snip', function(event){
     url: '/snippets',
     method: 'POST',
     data: {snippet: {track_id: newSnippet.track_id, start_time: newSnippet.start_time, end_time: newSnippet.end_time}},
-  }).done(function(response){
-    $('.user-snippets').append(response);
   })
 });
