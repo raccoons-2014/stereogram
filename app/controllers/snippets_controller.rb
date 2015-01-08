@@ -22,10 +22,12 @@ class SnippetsController < ApplicationController
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
 
-    Track.find(params[:snippet][:track_id]).snippets << @snippet if @snippet.save
-    share({token: current_user.token}) if Rails.env.production?
-
-    render nothing: true
+    if Track.find(params[:snippet][:track_id]).snippets << @snippet
+      share({token: current_user.token}) if Rails.env.production?
+      render nothing: true
+    else
+      redirect_to :back
+    end
   end
 
   def destroy
