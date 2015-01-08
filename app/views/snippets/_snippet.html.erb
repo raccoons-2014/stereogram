@@ -24,11 +24,8 @@
   </div>
 
   <div class="small-2 end columns padded-column">
-
-
-<%= link_to image_tag('share.png', :class => 'track-icon'), votes_path, method: :post, class: "item share pulse" %>
-
-<%= link_to image_tag('like.png', :class => 'track-icon'), votes_path, method: :post, class: "item like pulse" %>
-
+    <%= link_to image_tag('share.png', :class => 'track-icon'), votes_path, method: :post, class: "item share pulse" %>
+    <%= link_to image_tag('like.png', :class => 'snippet-like track-icon'), "#", id: snippet.id, class: "item like pulse" %>
+    <div class='score' id='<%= snippet.id %>'><%= snippet.score %></div>
   </div>
 </div>
