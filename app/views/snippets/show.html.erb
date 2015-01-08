@@ -1,4 +1,18 @@
-<h2>A Snippet by <%= @snippet.user.first_name %></h2>
-<%= @snippet %>
-<h4>Orginial Track by</h4>
-<%= @snippet.original_creator %>
+<div class="user-snippets">
+  <div class="row snippet" data-source-id="<%= @snippet.track.source_id %>" data-snippet-id="<%= @snippet.id %>">
+    <div class="small-2 columns padded-column">
+      <img src="<%= @snippet.track.artwork_url %>"/></li>
+    </div>
+    <div class="small-offset-1 small-8 columns padded-column">
+      <span>A Snippet by <%= @snippet.user.first_name %></span>
+      <p><%= @snippet.track.title %></p>
+      <p>By: <%= @snippet.track.artist %> </p>
+      <p>About this Track:<%= @snippet.track.description %></p>
+      <p>Length: <%= @snippet.track.string_duration %></p>
+    </div>
+  </div>
+</div>
+<p> Snipped From: </p>
+<div class='user-tracks'>
+  <%= render :partial => 'tracks/track', :locals => {:track => @snippet.track} %>
+</div>
