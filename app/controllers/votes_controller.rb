@@ -4,15 +4,9 @@ class VotesController < ApplicationController
     user = current_user
     @vote = user.votes.new
 
-    if params[:track_id]
-      @track = Track.find(params[:track_id])
-      @track.votes << @vote unless @track.already_voted?(current_user)
-      redirect_to :back
-    else
-      @snippet = Snippet.find(params[:snippet_id])
-      @snippet.votes << @vote unless @snippet.already_voted?(current_user)
-      redirect_to :back
-    end
+    votable = params[:track_id].nil? ? Snippet.find(params[:snippet_id]) : Track.find(params[:track_id])
+    votable.votes << @vote unless votable.already_voted?(current_user)
+      render partial: "votes/vote", locals: {votable: votable}
   end
 
 
