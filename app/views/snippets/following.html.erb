@@ -1,5 +1,5 @@
 <div class='user-snippets'>
-  <h2> <%= current_user.first_name %> 's Feed </h2>
+  <h2> <%= current_user.first_name %>'s Feed </h2>
    <% @snippets.each do |snippet| %>
     <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
    <% end %>
