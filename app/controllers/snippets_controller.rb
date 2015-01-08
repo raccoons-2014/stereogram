@@ -6,6 +6,14 @@ class SnippetsController < ApplicationController
     @snippets = Snippet.all
   end
 
+  def following
+    @snippets = []
+    current_user.following.each do |followed|
+      @snippets.push(followed.snippets.most_recent.limit(3))
+    end
+    @snippets.flatten!
+  end
+
   def show
     @snippet = Snippet.find(params[:id])
   end
