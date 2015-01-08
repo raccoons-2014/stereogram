@@ -7,14 +7,14 @@ $('#connect').click(function(){
   new SoundcloudUser
 })
 
-$('.user-tracks').on('click', '.track', function(event){
+$('.user-tracks').on('click', '.album_art', function(event){
   if(window.currentAudio){
     currentAudio.pause();
     clearInterval(rotInt);
   }
   rotate = 0;
-  clickedTrack = event.currentTarget
-  var artworkUrl = event.currentTarget.querySelector('.album_art').src
+  clickedTrack = event.currentTarget.parentElement.parentElement;
+  var artworkUrl = event.currentTarget.src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
   track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
   currentAudio = track.audio
@@ -24,14 +24,14 @@ $('.user-tracks').on('click', '.track', function(event){
     rotate = rotate + 0.025},1)
 })
 
-$('.user-snippets').on('click', '.snippet', function(event){
+$('.user-snippets').on('click', '.album_art', function(event){
   if(window.currentAudio){
     currentAudio.pause();
     clearInterval(rotInt);
   }
   rotate = 0;
-  clickedTrack = event.currentTarget;
-  var artworkUrl = event.currentTarget.querySelector('.album_art').src
+  clickedTrack = event.currentTarget.parentElement.parentElement;
+  var artworkUrl = event.currentTarget.src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
   var snipData = clickedTrack.dataset;
   var snippetTrack = new Track({source_id: snipData.sourceId});
@@ -59,13 +59,13 @@ $('.widget').on('click', '.icon.play', function(event){
 
 $('.widget').on('click', '.icon.next', function(event){
   if (window.clickedTrack){
-    clickedTrack.nextElementSibling.click()
+    clickedTrack.nextElementSibling.firstElementChild.querySelector('img').click()
   }
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
   if (window.clickedTrack){
-    clickedTrack.previousElementSibling.click();
+    clickedTrack.previousElementSibling.firstElementChild.querySelector('img').click();
   }
 })
 
