@@ -11,8 +11,8 @@
         <%= link_to "#{user.full_name}", user_path(user) %>
       </div>
       <div class="followers-audio">
-        <%= user.tracks.count %> Tracks
-        <%= user.snippets.count %> Snippets
+        <p><%= user.tracks.count %> Tracks
+        <%= user.snippets.count %> Snippets</p>
       </div>
     </span>
     <% end %>
