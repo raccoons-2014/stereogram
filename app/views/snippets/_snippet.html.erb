@@ -14,7 +14,7 @@
       Track Title:
     <% end %><br>
 
-    <% if !snippet.track.artwork_url.empty? %>
+    <% if !snippet.track.artist.empty? %>
       <span>Artist: </span><%= link_to snippet.track.artist, user_path(id: snippet.track.user_id), class: "link_artist" %>
     <% else %>
       <span>Artist: </span>
