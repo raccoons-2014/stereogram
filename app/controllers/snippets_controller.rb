@@ -21,7 +21,6 @@ class SnippetsController < ApplicationController
   def create
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
-
     if Track.find(params[:snippet][:track_id]).snippets << @snippet
       share({token: current_user.token}) if Rails.env.production?
       render nothing: true
