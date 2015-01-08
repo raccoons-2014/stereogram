@@ -54,7 +54,10 @@ img.profile_image{
 .followers {
   padding: 5px 5px 5px 5px;
 }
+.followers-column:hover{
+  background-color:#E8B504;
+}
 
-.following {
-  padding: 5px 5px 5px 5px;  
+.followers-audio:hover p{
+  color: black;
 }
