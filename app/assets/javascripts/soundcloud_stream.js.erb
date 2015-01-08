@@ -16,7 +16,7 @@ $('.user-tracks').on('click', '.track', function(event){
   clickedTrack = event.currentTarget
   var artworkUrl = event.currentTarget.querySelector('.album_art').src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
-  var track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
+  track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
   currentAudio = track.audio
   currentAudio.play()
   rotInt = setInterval(function(){
@@ -70,8 +70,8 @@ $('.widget').on('click', '.icon.previous', function(event){
 })
 
 $('.widget').on('click', '.icon.snip', function(event){
-  var endTime = track.audio.currentTime;
-  var startTime = track.audio.currentTime - SNIPPET_LENGTH_CONSTANT;
+  var endTime = currentAudio.currentTime;
+  var startTime = currentAudio.currentTime - SNIPPET_LENGTH_CONSTANT;
   var newSnippet = new Snippet(
     {track: track,
     startTime: startTime,
