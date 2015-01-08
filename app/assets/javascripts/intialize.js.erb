@@ -2,6 +2,6 @@ $(function(){
   $(document).foundation();
   SC.initialize({
     client_id: "<%= ENV['SOUNDCLOUD_APP_ID'] %>",
-    redirect_uri: "<%= ENV['SC_REDIRECT'] %>"
+    redirect_uri: "http://stere-o-gram.herokuapp.com/callback"
   });
 });
