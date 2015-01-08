@@ -1,9 +1,21 @@
 <ul>
-  <div class="following">
-    <h2>Following</h2>
+  <h2>Following</h2>
+
+  <div class="following-column">
     <% @user.following.each do |user| %>
+    <span>
+      <div class="following-picture">
         <%= link_to image_tag(user.profile_img_url), user_path(user) %>
-        <span><%= link_to "#{user.full_name}", user_path(user) %></span>
+      </div>
+      <div class="following-name">
+        <%= link_to "#{user.full_name}", user_path(user) %>
+      </div>
+      <div class="following-audio">
+        <%= user.tracks.count %> Tracks
+        <%= user.snippets.count %> Snippets
+      </div>
+    </span>
     <% end %>
   </div>
+</div>
 </ul>
