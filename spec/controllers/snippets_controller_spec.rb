@@ -12,31 +12,46 @@ describe SnippetsController do
   describe "#create" do
     it "creates a snippet with valid params" do
       expect{
-        post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
+        post :create, snippet: {
+          start_time: rand(1..10).to_s,
+          end_time: rand(11..50).to_s,
+          track_id: test_track.id
+        }
       }.to change {Snippet.count}.by(1)
     end
 
     it "fails for no user logged in" do
-      session[:user_id] = nil
+      sign_out test_user
       expect(
-        post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
+        post :create, snippet: {
+          start_time: test_snippet.start_time,
+          end_time: test_snippet.end_time,
+          track_id:test_track.id
+        }
       ).to be_redirect
     end
 
     it "fails for a snippet with invalid params" do
       expect(
-        post :create, track_id: test_track.id, snippet: {
-          user_id: nil, start_time: nil, end_time: nil
+        post :create, snippet: {
+          user_id: nil,
+          start_time: nil,
+          end_time: nil,
+          track_id: test_track.id
         }
       ).to be_redirect
     end
 
     it "associates a snippet with a track if track_id present" do
-      post :create, track_id: test_track.id, snippet: attributes_for(:snippet)
+      post :create, snippet: {
+        start_time: test_snippet.start_time,
+        end_time: test_snippet.end_time,
+        track_id: test_track.id
+      }
       expect(assigns(:snippet).track).to eq(test_track)
     end
 
-    it "does not associate a snippet with a track if track_id not present" do
+    it "fails track_id not present" do
       expect{post :create, snippet: attributes_for(:snippet)}.to raise_error
     end
   end
