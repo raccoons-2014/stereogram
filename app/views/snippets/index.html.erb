@@ -1,6 +1,6 @@
 <div class='user-snippets'>
-  <h2>Snippets</h2>
-   <% @snippets.each do |snippet| %>
+  <h2> Snippets Feed </h2>
+   <% @snippets.most_recent.each do |snippet| %>
 
     <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
 
