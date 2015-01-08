@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   post "tracks/upload", :as => :upload
 
+  post "/share", to: 'facebook#post_to_facebook'
+
   resources :votes, only: [:create]
   resources :follows, only: [:create, :destroy]
 end
