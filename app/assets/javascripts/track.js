@@ -18,3 +18,4 @@ Track.prototype.getStreamUrl = function() {
 Track.prototype.audioCreator = function(){
     return new Audio(this.stream_url)
 }
+

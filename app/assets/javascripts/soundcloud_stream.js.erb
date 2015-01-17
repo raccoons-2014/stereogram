@@ -64,16 +64,24 @@ $('.widget').on('click', '.icon.play', function(event){
 })
 
 $('.widget').on('click', '.icon.next', function(event){
-  if (window.clickedTrack){
-    clickedTrack.nextElementSibling.click()
-  }
+    nextTrack();
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
+    previousTrack();
+})
+
+nextTrack = function(){
+  if (window.clickedTrack){
+    clickedTrack.nextElementSibling.click();
+  }
+}
+
+previousTrack = function(){
   if (window.clickedTrack){
     clickedTrack.previousElementSibling.click();
   }
-})
+}
 
 $('.widget').on('click', '.icon.snip', function(event){
   var endTime = currentAudio.currentTime;
