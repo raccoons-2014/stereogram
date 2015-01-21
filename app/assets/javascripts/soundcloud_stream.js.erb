@@ -16,7 +16,9 @@ $('.user-tracks').on('click', '.album_art', function(event){
   clickedTrack = event.currentTarget.parentElement.parentElement;
   var artworkUrl = event.currentTarget.src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
-  track = new Track({id: clickedTrack.dataset.trackId, source_id: clickedTrack.dataset.sourceId})
+  track = new Track(
+    {id: clickedTrack.dataset.trackId,
+         source_id: clickedTrack.dataset.sourceId})
   currentAudio = track.audio
   currentAudio.play()
   rotInt = setInterval(function(){
@@ -34,8 +36,12 @@ $('.user-snippets').on('click', '.album_art', function(event){
   var artworkUrl = event.currentTarget.src
   $('#soundplayer-widget-picture').attr('src',artworkUrl);
   var snipData = clickedTrack.dataset;
-  var snippetTrack = new Track({source_id: snipData.sourceId});
-  var snippet = new Snippet({track: snippetTrack, startTime: snipData.startTime, endTime: snipData.endTime
+  var snippetTrack = new Track(
+    {source_id: snipData.sourceId});
+  var snippet = new Snippet(
+    {track: snippetTrack,
+    startTime: snipData.startTime,
+    endTime: snipData.endTime
   });
   snippet.playSnip();
   currentAudio = snippet.snippedAudio;
@@ -58,16 +64,24 @@ $('.widget').on('click', '.icon.play', function(event){
 })
 
 $('.widget').on('click', '.icon.next', function(event){
-  if (window.clickedTrack){
-    clickedTrack.nextElementSibling.firstElementChild.querySelector('img').click()
-  }
+    nextTrack();
 })
 
 $('.widget').on('click', '.icon.previous', function(event){
+    previousTrack();
+})
+
+nextTrack = function(){
+  if (window.clickedTrack){
+    clickedTrack.nextElementSibling.click();
+  }
+}
+
+previousTrack = function(){
   if (window.clickedTrack){
     clickedTrack.previousElementSibling.firstElementChild.querySelector('img').click();
   }
-})
+}
 
 $('.widget').on('click', '.icon.snip', function(event){
   var endTime = currentAudio.currentTime;
@@ -79,6 +93,9 @@ $('.widget').on('click', '.icon.snip', function(event){
   $.ajax({
     url: '/snippets',
     method: 'POST',
-    data: {snippet: {track_id: newSnippet.track_id, start_time: newSnippet.start_time, end_time: newSnippet.end_time}},
+    data: {snippet: {
+      track_id: newSnippet.track_id,
+      start_time: newSnippet.start_time,
+      end_time: newSnippet.end_time}},
   })
 });
