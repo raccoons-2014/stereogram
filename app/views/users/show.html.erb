@@ -16,8 +16,10 @@
 <ul class="small-block-grid-3 me">
   <li><%= @user.full_name %></li>
 
-  <li class="follow_div_1"><a href="<%= followers_user_path(@user) %>"><div class="follow-count">
-  <%= @user.followers.count %></div> Followers</p></a></li>
+  <li>
+  <%= @user.followers.count %>
+  <%= link_to "Followers", followers_user_path(@user) %>
+  </li>
 
   <li>
   <%= @user.following.count %>
