@@ -26,13 +26,13 @@
   <%= link_to "Following", following_user_path(@user) %>
   <li>
 </ul><br><br>
-<h3> Recent Tracks </h3>
+<h4> Recent Tracks </h4>
 <div class='user-tracks'>
   <% @user.tracks.most_recent.each do |track| %>
     <%= render :partial => 'tracks/track', :locals => {:track => track} %>
   <% end %>
 </div>
-<h3> Recent Snippets </h3>
+<h4> Recent Snippets </h4>
 <div class='user-snippets'>
   <% @user.snippets.most_recent.each do |snippet| %>
     <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
