@@ -9,7 +9,13 @@ class ApplicationController < ActionController::Base
 
   def layout
     # only turn it off for login pages:
-    current_user ? "application" : "devise/sessions"
+    if is_a?(Devise::SessionsController)
+      "devise/sessions"
+    elsif current_user.nil?
+      "guest/guest"
+    else
+      "application"
+    end
   end
 
 end
