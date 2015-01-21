@@ -4,9 +4,14 @@
 
 <ul class="small-block-grid-3">
   <li><%= image_tag (@user.profile_img_url), :class => "profile_image" %></li>
-  <li class="connect"><%= render :partial => 'soundcloud/connect' %></li>
+  <% if @user == current_user %>
+    <li class="connect"><%= render :partial => 'soundcloud/connect' %></li>
+  <% end %>
+  <% if @user != current_user %>
   <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
-</ul><br><br>
+  <% end %>
+</ul>
+<br><br>
 
 <ul class="small-block-grid-3 me">
   <li><%= @user.full_name %></li>
