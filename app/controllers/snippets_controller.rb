@@ -1,6 +1,6 @@
 class SnippetsController < ApplicationController
   include FacebookHelper
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create, :following]
 
   def index
     @snippets = Snippet.all
@@ -22,7 +22,7 @@ class SnippetsController < ApplicationController
     @user = current_user
     @snippet = @user.snippets.new(snippet_params)
     if Track.find(params[:snippet][:track_id]).snippets << @snippet
-      share({token: current_user.token}) if Rails.env.production?
+      share({token: current_user.token, item: @snippet}) if Rails.env.production?
       render nothing: true
     else
       redirect_to :back
