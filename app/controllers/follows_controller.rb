@@ -8,7 +8,8 @@ class FollowsController < ApplicationController
   end
 
   def destroy
-    @user = Follow.find(params[:id]).followed
-    current_user.unfollow(@user)
+    @user = User.find(params[:id])
+    current_user.follows.find_by(followed_id: params[:id]).destroy
+    render plain: @user.followers.count
   end
 end
