@@ -24,13 +24,20 @@ img.connect{
 }
 
 img.follow{
- position: relative;
+  position: relative;
   margin-top: 13%;
   height: 159px;
   top: 35px;
   right: 14%;
 }
 
+img.unfollow{
+  position: relative;
+  margin-top: 13%;
+  height: 159px;
+  top: 35px;
+  right: 14%;
+}
 
 .username{
  left: 3%;
