@@ -69,7 +69,6 @@ Tag reviewers whenever putting in pull request and be sure to merge into develop
 
 ###Known Issues (1/23/15)
 - Player artwork animation is off-center in some browsers
-- Recently removed unfollowing for demo purposes and will soon reimplement
 
 ###Future Plans
 - Add additional social networks to share snippets to

@@ -8,34 +8,37 @@
     <li class="connect"><%= render :partial => 'soundcloud/connect' %></li>
   <% end %>
   <% if @user != current_user %>
-  <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+    <% if current_user.is_following?(@user) %>
+      <li><img class="unfollow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+    <% else %>
+      <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+    <% end %>
   <% end %>
-</ul>
-<br><br>
+</ul><br><br>
 
 <ul class="small-block-grid-3 me">
   <li><%= @user.full_name %></li>
-
   <li>
-  <%= @user.followers.count %>
-  <%= link_to "Followers", followers_user_path(@user) %>
+    <div class="follow-count"><%= @user.followers.count %></div>
+    <%= link_to "Followers", followers_user_path(@user) %>
   </li>
 
   <li>
-  <%= @user.following.count %>
-  <%= link_to "Following", following_user_path(@user) %>
+    <%= @user.following.count %>
+    <%= link_to "Following", following_user_path(@user) %>
   <li>
 </ul><br><br>
+
 <h4> Recent Tracks </h4>
 <div class='user-tracks'>
   <% @user.tracks.most_recent.each do |track| %>
     <%= render :partial => 'tracks/track', :locals => {:track => track} %>
   <% end %>
 </div>
+
 <h4> Recent Snippets </h4>
 <div class='user-snippets'>
   <% @user.snippets.most_recent.each do |snippet| %>
     <%= render :partial => 'snippets/snippet', :locals => {:snippet => snippet} %>
   <% end %>
 </div>
-
