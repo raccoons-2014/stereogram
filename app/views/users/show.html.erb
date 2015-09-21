@@ -8,10 +8,14 @@
     <li class="connect"><%= render :partial => 'soundcloud/connect' %></li>
   <% end %>
   <% if @user != current_user %>
-    <% if current_user.is_following?(@user) %>
-      <li><img class="unfollow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+    <% if current_user %>
+      <% if current_user.is_following?(@user) %>
+        <li><img class="unfollow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+      <% else %>
+        <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+      <% end %>
     <% else %>
-      <li><img class="follow" src="<%= asset_path('follow.png') %>"  data-user-id="<%= @user.id %>"></li>
+      <li>you're not logged in</li>
     <% end %>
   <% end %>
 </ul><br><br>
